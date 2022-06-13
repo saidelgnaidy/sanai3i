@@ -4,6 +4,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
+import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 
 showSnackBar(String msg) {
@@ -32,8 +33,6 @@ showSnackBar(String msg) {
   );
 }
 
-
-
 class LangSwitch extends StatelessWidget {
   const LangSwitch({Key? key}) : super(key: key);
 
@@ -60,6 +59,35 @@ class KIconButton extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       icon: Icon(icon, color: KColors.of(context).icon),
+    );
+  }
+}
+
+class KButton extends StatelessWidget {
+  const KButton({super.key, required this.title, required this.onPressed, this.width});
+
+  final String title;
+  final Function() onPressed;
+  final double? width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: SizedBox(
+        width: width ?? Get.width,
+        height: 50,
+        child: RawMaterialButton(
+          onPressed: onPressed,
+          fillColor: KColors.of(context).rawMatBtn,
+          shape: KHelper.btnShape,
+          elevation: 0,
+          child: Text(
+            title,
+            style: KTextStyle.of(context).title,
+          ),
+        ),
+      ),
     );
   }
 }

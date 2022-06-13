@@ -15,6 +15,7 @@ class KColors {
   static const Color iconL = Color(0xffffffff);
   static const Color shadowL = Color(0x60000000);
   static const Color rawMatBtnL = Colors.white;
+  static const Color cursorL = Colors.black;
 
   //Dark
   static const Color appbarD = Color(0xFF191720);
@@ -24,6 +25,7 @@ class KColors {
   static const Color shadowD = Color(0x80000000);
   static const Color scaffoldD = Color(0xFF191720);
   static const Color rawMatBtnD = Color(0xFF3b3941);
+  static const Color cursorD = Colors.white;
 
   //Getters
   Color get appBar {
@@ -40,5 +42,9 @@ class KColors {
 
   Color get rawMatBtn {
     return Theme.of(context!).brightness == Brightness.dark ? rawMatBtnL : rawMatBtnD;
+  }
+
+  Color get cursor {
+    return Theme.of(context!).brightness == Brightness.light ? cursorD : cursorL;
   }
 }

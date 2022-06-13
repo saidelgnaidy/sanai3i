@@ -1,138 +1,133 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/theme/colors.dart';
+import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'hero_dialog.dart';
 
-class CustomDrop extends StatelessWidget {
-  final String? title;
-  final IconData? icon;
-  final Widget? child;
-  final String? tag;
-  final double? width;
-  final Color? color;
+class KPopupDialg extends StatelessWidget {
+  final Widget child;
+  final String tag, title;
+  final double? height;
 
-  const CustomDrop({super.key, this.title, this.icon, this.tag, this.width, this.color, this.child});
+  const KPopupDialg({super.key, required this.tag, required this.child, required this.title, this.height});
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
-    return Hero(
-      tag: tag!,
-      createRectTween: (begin, end) {
-        return HeroTween(begin: begin, end: end);
-      },
-      child: Container(
-        width: width ?? size.width,
-        margin: const EdgeInsets.fromLTRB(5, 8, 5, 0),
-        height: 50,
-        decoration: BoxDecoration(
-          color: color,
-          //boxShadow: shadow,
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: RawMaterialButton(
-          shape: const StadiumBorder(),
-          onPressed: () {
-            Navigator.push(
-              context,
-              HeroDialog(
-                builder: (context) => child!,
-                settings: RouteSettings(
-                  name: tag,
+    return FittedBox(
+      child: SingleChildScrollView(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Hero(
+              tag: tag,
+              createRectTween: (begin, end) {
+                return HeroTween(begin: begin, end: end);
+              },
+              child: Material(
+                elevation: 0,
+                color: Colors.transparent,
+                child: Container(
+                  width: Get.width,
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(KHelper.btnRadius),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                      child: Container(
+                        decoration: BoxDecoration(color: KColors.of(context).rawMatBtn.withOpacity(.5)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 30),
+                          child: child,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              textDirection: TextDirection.ltr,
-              children: [
-                Icon(icon, color: Colors.transparent, size: 20),
-                Text(
-                  title!,
-                  style: TextStyle(color: color, fontSize: 16),
-                ),
-                Icon(
-                  icon,
-                  color: Colors.green,
-                  size: 20,
-                ),
-              ],
             ),
-          ),
+            Positioned(
+              top: 20,
+              child: Hero(
+                tag: 'title',
+                child: Material(
+                  elevation: 0,
+                  color: Colors.transparent,
+                  child: Text(
+                    title,
+                    style: KTextStyle.of(context).title,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
-class CustomDropMini extends StatelessWidget {
-  final String? title;
-  final Widget? child;
-  final String? tag;
+class ButtonToDialog extends StatelessWidget {
+  final Widget child;
+  final String tag;
+  final double? dialogHeight;
 
-  const CustomDropMini({super.key, this.title, this.tag, this.child});
+  const ButtonToDialog({super.key, required this.tag, required this.child, this.dialogHeight});
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
-    return Hero(
-      tag: tag!,
-      createRectTween: (begin, end) {
-        return HeroTween(begin: begin, end: end);
-      },
-      child: Container(
-        width: size.width * .5 - 5,
-        margin: EdgeInsets.fromLTRB(tag == 'pickJop' ? .1 : 5, 0, tag != 'pickJop' ? 0 : 0, 0),
-        height: 40,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(topRight: Radius.circular(tag == 'pickJop' ? 15 : 0), topLeft: Radius.circular(tag == 'pickJop' ? 0 : 15)),
-        ),
-        child: RawMaterialButton(
-          shape: const StadiumBorder(),
-          onPressed: () {
-            Navigator.push(
-                context,
-                HeroDialog(
-                  builder: (context) => child!,
-                  settings: RouteSettings(
-                    name: tag,
-                  ),
-                ));
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Hero(
+          tag: tag,
+          createRectTween: (begin, end) {
+            return HeroTween(begin: begin, end: end);
           },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            textDirection: TextDirection.ltr,
-            children: [
-              SizedBox(
-                width: 40,
-                height: 40,
-                child: RawMaterialButton(
-                  padding: EdgeInsets.zero,
-                  shape: const StadiumBorder(),
-                  child: const Icon(Icons.clear, color: Colors.green, size: 20),
-                  onPressed: () {},
-                ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: SizedBox(
+              width: Get.width,
+              height: 50,
+              child: RawMaterialButton(
+                fillColor: KColors.of(context).rawMatBtn,
+                shape: KHelper.btnShape,
+                elevation: 0,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    HeroDialog(
+                      builder: (context) => KPopupDialg(
+                        tag: tag,
+                        title: Tr.get.login_register,
+                        height: dialogHeight,
+                        child: child,
+                      ),
+                      settings: RouteSettings(name: tag),
+                    ),
+                  );
+                },
               ),
-              Expanded(
-                child: Center(
-                  child: Text(
-                    title!,
-                    style: KTextStyle.of(context).body,
-                    textDirection: TextDirection.rtl,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 10),
-            ],
+            ),
           ),
         ),
-      ),
+        IgnorePointer(
+          child: Hero(
+            tag: 'title',
+            child: Material(
+              elevation: 0,
+              color: Colors.transparent,
+              child: Text(
+                Tr.get.login_register,
+                style: KTextStyle.of(context).rawBtn,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

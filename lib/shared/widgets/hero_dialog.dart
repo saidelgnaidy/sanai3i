@@ -19,7 +19,7 @@ class HeroDialog extends PageRoute {
   bool get maintainState => true;
 
   @override
-  Color get barrierColor => Colors.black.withOpacity(.5);
+  Color get barrierColor => Colors.black.withOpacity(.3);
 
   @override
   Duration get transitionDuration => const Duration(milliseconds: 450);

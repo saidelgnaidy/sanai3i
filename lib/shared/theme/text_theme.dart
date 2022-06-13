@@ -60,4 +60,21 @@ class KTextStyle {
       fontWeight: FontWeight.bold,
     );
   }
+
+  TextStyle get hint {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.dark ? mainL.withOpacity(.5) : mainD.withOpacity(.5),
+      fontSize: 16,
+      fontFamily: fontFamily,
+    );
+  }
+
+  TextStyle get title {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
+      fontSize: 16,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.bold,
+    );
+  }
 }

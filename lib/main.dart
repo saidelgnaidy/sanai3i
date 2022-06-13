@@ -29,31 +29,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SettingsBloc()..loadSettings(),
-      child: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) {
-          return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: Tr.delegates,
-            supportedLocales: Tr.supportedLocales,
-            locale: SettingsBloc.of(context).locale,
-            localeResolutionCallback: (Locale? locale, Iterable<Locale> iterable) {
-              return SettingsBloc.of(context).locale;
-            },
-            theme: KThemeData.light,
-            darkTheme: KThemeData.dark,
-            themeMode: SettingsBloc.of(context).themeMode,
-            home: Builder(
-              builder: (context) {
-                return AnnotatedRegion<SystemUiOverlayStyle>(
-                  value: KThemeData.of(context).overlayStyle,
-                  child: const Landing(),
-                );
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context)..focusedChild..unfocus();
+      },
+      child: BlocProvider(
+        create: (context) => SettingsBloc()..loadSettings(),
+        child: BlocBuilder<SettingsBloc, SettingsState>(
+          builder: (context, state) {
+            return GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: Tr.delegates,
+              supportedLocales: Tr.supportedLocales,
+              locale: SettingsBloc.of(context).locale,
+              localeResolutionCallback: (Locale? locale, Iterable<Locale> iterable) {
+                return SettingsBloc.of(context).locale;
               },
-            ),
-          );
-        },
+              theme: KThemeData.light,
+              darkTheme: KThemeData.dark,
+              themeMode: SettingsBloc.of(context).themeMode,
+              home: Builder(
+                builder: (context) {
+                  return AnnotatedRegion<SystemUiOverlayStyle>(
+                    value: KThemeData.of(context).overlayStyle,
+                    child: const Landing(),
+                  );
+                },
+              ),
+            );
+          },
+        ),
       ),
     );
   }
