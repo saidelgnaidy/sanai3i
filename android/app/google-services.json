@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "905314520718",
+    "firebase_url": "https://sanai3i-9951b.firebaseio.com",
+    "project_id": "sanai3i-9951b",
+    "storage_bucket": "sanai3i-9951b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905314520718:android:26e75660c3906f791343df",
+        "android_client_info": {
+          "package_name": "com.masritech.sanai3i"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905314520718-398hd2tcderu0gduv2b5utr2csk4abln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masritech.sanai3i",
+            "certificate_hash": "42642e78ee2c32d33b7bd7270d3a38522c79a765"
+          }
+        },
+        {
+          "client_id": "905314520718-e8j1fd4183ihf5pqst03qj0hedhrh6cp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masritech.sanai3i",
+            "certificate_hash": "98ce207efd0b28b03a7a8e34f56164e404aeeb63"
+          }
+        },
+        {
+          "client_id": "905314520718-inkjapln1sq4eneqfvuqara06g4dr38c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masritech.sanai3i",
+            "certificate_hash": "b1c80a3159c62d96d20dc6d8913987824f5678bb"
+          }
+        },
+        {
+          "client_id": "905314520718-t1jfe50218f512noams9a62g6fm5fbhd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masritech.sanai3i",
+            "certificate_hash": "fb12bdd49ea9bc1162ea9493557713a4bf37ad83"
+          }
+        },
+        {
+          "client_id": "905314520718-bubh1tufji7i12m2t71ms9bcj6ivu930.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVjiSQq1yucYu8eypHhgIlBlX1XSw68zY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905314520718-bubh1tufji7i12m2t71ms9bcj6ivu930.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "905314520718-3pvvdu284u409fk34aoqp4e1pind2jlh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newSanai3i"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

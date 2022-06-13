@@ -1,0 +1,15 @@
+{
+  "appTitle": "Template",
+  "lang": "language",
+  "theme": "Theme",
+  "light": "Light Theme",
+  "dark": "Dark Theme",
+  "system": "System Theme",
+  "en": "En",
+  "ar": "Ar",
+  "click": "Click",
+  "phone": "Phone",
+  "description": "An application that enables you to search by profession for all the providers of this profession around you through maps and easy to communicate with them directly via phone or chatYou can also search for stores and exhibitions near you and locate them on the map",
+"login_register": "LogIn / Register"
+
+}
