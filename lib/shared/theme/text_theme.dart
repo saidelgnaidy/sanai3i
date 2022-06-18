@@ -52,12 +52,16 @@ class KTextStyle {
     );
   }
 
+  TextStyle get error {
+    return const TextStyle(color: Colors.red, fontSize: 15, fontFamily: fontFamily);
+  }
+
   TextStyle get rawBtn {
     return TextStyle(
       color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
       fontSize: 16,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.bold
     );
   }
 

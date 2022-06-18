@@ -33,7 +33,7 @@ class NotificationCtrl {
   }
 
   static Future _selectNotification(payload) async {
-    Get.offAll(() => const Landing());
+    Get.offAll(() => const Wrapper());
   }
 
   static Future sendNotification({String? title, String? body}) async {

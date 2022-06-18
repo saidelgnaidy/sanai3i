@@ -10,6 +10,15 @@
   "click": "Click",
   "phone": "Phone",
   "description": "An application that enables you to search by profession for all the providers of this profession around you through maps and easy to communicate with them directly via phone or chatYou can also search for stores and exhibitions near you and locate them on the map",
-"login_register": "LogIn / Register"
-
+  "login_register": "LogIn / Register",
+  "empty_phone": "Please enter your phone number",
+  "wrong_phone": "Please enter a valid phone number",
+  "missing": "Missing",
+  "something_went_wrong": "Something went wrong",
+  "validation_code": "Validation code",
+  "send_code": "Send",
+  "validate": "Validate",
+  "wrong_code": "Wrong code",
+  "code_expired": "Code expired, will send new code",
+  "enter_6_digts": "Please enter 6 digits"
 }

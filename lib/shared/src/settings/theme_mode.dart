@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
+import 'package:sanai3i/shared/theme/helper.dart';
 
 class KThemeData {
   BuildContext? context;
@@ -26,7 +27,7 @@ class KThemeData {
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowL,
-      inputDecorationTheme: _inputDecorationTheme.copyWith(prefixIconColor: KColors.accentL),
+      inputDecorationTheme: _inputDecorationTheme(color: KColors.scaffoldL),
       iconTheme: const IconThemeData(color: KColors.accentL),
       textSelectionTheme: const TextSelectionThemeData(cursorColor: KColors.accentL),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -52,7 +53,7 @@ class KThemeData {
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowD,
-      inputDecorationTheme: _inputDecorationTheme.copyWith(prefixIconColor: KColors.accentD),
+      inputDecorationTheme: _inputDecorationTheme(color: KColors.scaffoldD),
       textSelectionTheme: const TextSelectionThemeData(cursorColor: KColors.accentD),
       iconTheme: const IconThemeData(color: KColors.accentD),
       buttonTheme: const ButtonThemeData(buttonColor: KColors.accentD),
@@ -65,14 +66,21 @@ class KThemeData {
     );
   }
 
-  static const InputDecorationTheme _inputDecorationTheme = InputDecorationTheme(
-    enabledBorder: InputBorder.none,
-    border: InputBorder.none,
-    disabledBorder: InputBorder.none,
-    errorBorder: InputBorder.none,
-    focusedBorder: InputBorder.none,
-    focusedErrorBorder: InputBorder.none,
-  );
+  static InputDecorationTheme _inputDecorationTheme({required Color color}) {
+    return InputDecorationTheme(
+      border: outlineInputBorder(color: color),
+      disabledBorder: outlineInputBorder(color: color),
+      errorBorder: outlineInputBorder(color: color),
+      focusedErrorBorder: outlineInputBorder(color: color),
+      enabledBorder: outlineInputBorder(color: color),
+      focusedBorder: outlineInputBorder(color: color),
+    );
+  }
+
+  static OutlineInputBorder outlineInputBorder({required Color color}) => OutlineInputBorder(
+        borderSide: BorderSide(width: .75, color: color),
+        borderRadius: BorderRadius.circular(KHelper.btnRadius),
+      );
 
   static const SystemUiOverlayStyle _darkOverLay = SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,

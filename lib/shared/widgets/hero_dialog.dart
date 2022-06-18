@@ -4,16 +4,17 @@ import 'package:flutter/material.dart';
 
 class HeroDialog extends PageRoute {
   final WidgetBuilder builder;
+  final bool? isDismissible;
+  HeroDialog({required this.builder, required this.settings ,this.isDismissible = true});
+
   @override
   final RouteSettings settings;
-
-  HeroDialog({required this.builder, required this.settings});
 
   @override
   bool get opaque => false;
 
   @override
-  bool get barrierDismissible => true;
+  bool get barrierDismissible => isDismissible!;
 
   @override
   bool get maintainState => true;
@@ -39,10 +40,7 @@ class HeroDialog extends PageRoute {
 }
 
 class HeroTween extends RectTween {
-  HeroTween({
-    required Rect? begin,
-    required Rect? end,
-  }) : super(begin: begin, end: end);
+  HeroTween({required Rect? begin, required Rect? end}) : super(begin: begin, end: end);
 
   @override
   Rect lerp(double t) {

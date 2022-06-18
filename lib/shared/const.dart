@@ -7,12 +7,12 @@ import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 
-showSnackBar(String msg) {
+showSnackBar(String msg, {bool? isTop}) {
   Get.closeAllSnackbars();
   Get.snackbar(
     '',
     '',
-    snackPosition: SnackPosition.TOP,
+    snackPosition: isTop ?? false ? SnackPosition.TOP : SnackPosition.BOTTOM,
     barBlur: 10.0,
     backgroundColor: Colors.black.withOpacity(.6),
     margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
@@ -64,11 +64,12 @@ class KIconButton extends StatelessWidget {
 }
 
 class KButton extends StatelessWidget {
-  const KButton({super.key, required this.title, required this.onPressed, this.width});
+  const KButton({super.key, required this.title, required this.onPressed, this.width, this.isSecondary});
 
   final String title;
   final Function() onPressed;
   final double? width;
+  final bool? isSecondary;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +80,7 @@ class KButton extends StatelessWidget {
         height: 50,
         child: RawMaterialButton(
           onPressed: onPressed,
-          fillColor: KColors.of(context).rawMatBtn,
+          fillColor: isSecondary ?? false ? KColors.of(context).rawMatBtn2 : KColors.of(context).rawMatBtn,
           shape: KHelper.btnShape,
           elevation: 0,
           child: Text(
