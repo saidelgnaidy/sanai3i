@@ -28,7 +28,7 @@ dependencies:
   dartz:
   lottie:
   pinput: ^2.2.11
-
+  animated_bottom_navigation_bar:
 
 
 dev_dependencies:

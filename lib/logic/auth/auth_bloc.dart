@@ -15,14 +15,13 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   FirebaseAuth auth = FirebaseAuth.instance;
-  String _verificationId = '', _phone = '';
+  String _verificationId = '';
   int? _forceResendCode = 0;
   bool codeSentFlag = false;
 
   FutureOr<void> validatePhone(String phone) async {
     try {
       emit(const AuthState.loading());
-      _phone = phone;
       codeSentFlag = false;
 
       await auth.verifyPhoneNumber(

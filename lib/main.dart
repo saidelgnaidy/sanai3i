@@ -5,12 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/auth/auth_bloc.dart';
+import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
 import 'package:sanai3i/shared/notifications/notifications_api.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
-import 'package:sanai3i/shared/src/settings/settings_view.dart';
-import 'package:sanai3i/shared/src/settings/theme_mode.dart';
-import 'package:sanai3i/shared/widgets/appbar.dart';
+import 'package:sanai3i/view/main_view/main_navigation.dart';
+import 'package:sanai3i/shared/src/settings/theme_data.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:sanai3i/view/auth/landing.dart';
 import 'shared/firebase/firebase_options.dart';
@@ -20,7 +20,6 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
   FirebaseAuth.instance.setLanguageCode('ar');
-  FirebaseAuth.instance.signOut();
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
 
@@ -42,6 +41,7 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider<SettingsBloc>(create: (context) => SettingsBloc()..loadSettings()),
           BlocProvider<AuthCubit>(create: (context) => AuthCubit()),
+          BlocProvider<KNavigatorBloc>(create: (context) => KNavigatorBloc()),
         ],
         child: BlocBuilder<SettingsBloc, SettingsState>(
           builder: (context, state) {
@@ -56,13 +56,9 @@ class MyApp extends StatelessWidget {
               theme: KThemeData.light,
               darkTheme: KThemeData.dark,
               themeMode: SettingsBloc.of(context).themeMode,
-              home: Builder(
-                builder: (context) {
-                  return AnnotatedRegion<SystemUiOverlayStyle>(
-                    value: KThemeData.of(context).overlayStyle,
-                    child: const Wrapper(),
-                  );
-                },
+              home: AnnotatedRegion<SystemUiOverlayStyle>(
+                value: KThemeData.of(context).overlayStyle,
+                child: const Wrapper(),
               ),
             );
           },
@@ -80,10 +76,7 @@ class Wrapper extends StatelessWidget {
     return StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        return Scaffold(
-          appBar: const KAppBar(),
-          body: !snapshot.hasData ? const LandingView() : const HomeView(),
-        );
+        return !snapshot.hasData ? const LandingView() : const MainNavigation();
       },
     );
   }

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
+import 'package:sanai3i/shared/widgets/appbar.dart';
 import 'package:sanai3i/shared/widgets/custom_drop.dart';
 import 'package:sanai3i/view/auth/auth_view.dart';
 
@@ -12,6 +13,7 @@ class LandingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const KAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

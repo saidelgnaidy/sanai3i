@@ -20,5 +20,11 @@
   "validate": "تحقق",
   "wrong_code": "رمز التحقق غير صحيح",
   "code_expired": " رمز التحقق منتهي تم ارسال رمز جديد",
-  "enter_6_digts": "ادخل 6 ارقام"
+  "enter_6_digts": "ادخل 6 ارقام",
+  "home" : "الرئيسية",
+  "profile" : "الملف الشخصي",
+  "favorites" : "المفضلة",
+  "notifications" : "التنبيهات",
+  "settings" : "الاعدادات"
+  
 }

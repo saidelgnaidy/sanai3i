@@ -20,5 +20,11 @@
   "validate": "Validate",
   "wrong_code": "Wrong code",
   "code_expired": "Code expired, will send new code",
-  "enter_6_digts": "Please enter 6 digits"
+  "enter_6_digts": "Please enter 6 digits",
+  "home": "Home",
+  "profile": "Profile",
+  "favorites": "Favorites",
+  "notifications": "Notifications",
+  "settings": "Settings"
+  
 }

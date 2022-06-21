@@ -26,7 +26,7 @@ class LoadingOverlay extends StatelessWidget {
                 'assets/animations/${Theme.of(context).brightness == Brightness.dark ? "loadD" : "loadL"}.json',
                 width: 150,
                 height: 150,
-                frameRate: FrameRate(60),
+                frameRate: FrameRate(120),
               ),
             ),
           ),
