@@ -5,7 +5,9 @@ import 'package:lottie/lottie.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
 import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
+import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/widgets/appbar.dart';
+import 'package:sanai3i/view/auth/profile/profile.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({Key? key}) : super(key: key);
@@ -18,11 +20,12 @@ class _MainNavigationState extends State<MainNavigation> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<KNavigatorBloc, KNavigatorState>(
+      buildWhen: (previous, current) => previous.index != current.index,
       builder: (context, state) {
         return Scaffold(
           appBar: const KAppBar(),
           body: IndexedStack(
-            index: KNavigatorBloc.of(context).currentIndex,
+            index: state.index,
             children: [
               Padding(
                 padding: const EdgeInsets.all(16),
@@ -43,7 +46,7 @@ class _MainNavigationState extends State<MainNavigation> {
               ),
               const SizedBox(),
               const SizedBox(),
-              const SizedBox(),
+              const Profile(),
             ],
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -51,12 +54,12 @@ class _MainNavigationState extends State<MainNavigation> {
             onPressed: () {},
             backgroundColor: KColors.of(context).fabBackground,
             elevation: 20,
-            child: Icon(Icons.search, color: KColors.of(context).reIcon),
+            child: Icon(KHelper.search(state.index), color: KColors.of(context).reIcon),
           ),
           bottomNavigationBar: AnimatedBottomNavigationBar(
-            icons: const [Icons.home, Icons.notifications, Icons.chat, Icons.account_circle],
-            activeIndex: KNavigatorBloc.of(context).currentIndex,
-            shadow: Shadow(color: KColors.of(context).shadow, blurRadius: 60),
+            icons:  KNavigatorBloc.of(context).nav_Items,
+            activeIndex: state.index,
+            shadow: Shadow(color: KColors.of(context).shadow, blurRadius: 10),
             backgroundColor: KColors.of(context).background,
             gapLocation: GapLocation.center,
             notchSmoothness: NotchSmoothness.smoothEdge,
@@ -64,8 +67,6 @@ class _MainNavigationState extends State<MainNavigation> {
             onTap: KNavigatorBloc.of(context).nav_taped,
             activeColor: KColors.of(context).activeIcons,
             inactiveColor: KColors.of(context).inactiveIcons,
-            leftCornerRadius: 20,
-            rightCornerRadius: 20,
             splashColor: KColors.of(context).activeIcons,
           ),
         );

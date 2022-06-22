@@ -15,13 +15,13 @@ class KTextStyle {
   static const String fontFamily = 'font';
 
   //Light
-  static const Color mainL = Colors.black;
+  static const Color mainL = Color(0xff555555);
   static const Color accentL = Colors.red;
   static const Color shadowL = Color(0x60000000);
   static const Color scaffoldL = Color(0xFFF5F5F5);
 
   //Dark
-  static const Color mainD = Colors.white;
+  static const Color mainD = Color(0xffd5d5d5);
   static const Color accentD = Color(0xFF3b3941);
   static const Color accentD2 = Color(0xFF807c8d);
   static const Color shadowD = Color(0x80000000);
@@ -52,17 +52,29 @@ class KTextStyle {
     );
   }
 
+  TextStyle get body2 {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.light ? mainL : mainD,
+      fontSize: 12.5,
+      fontFamily: fontFamily,
+    );
+  }
+
+  TextStyle get body3 {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.light ? mainL : mainD,
+      fontSize: 10,
+      fontFamily: fontFamily,
+    );
+  }
+
   TextStyle get error {
     return const TextStyle(color: Colors.red, fontSize: 15, fontFamily: fontFamily);
   }
 
   TextStyle get rawBtn {
     return TextStyle(
-      color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
-      fontSize: 16,
-      fontFamily: fontFamily,
-      fontWeight: FontWeight.bold
-    );
+        color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD, fontSize: 16, fontFamily: fontFamily, fontWeight: FontWeight.bold);
   }
 
   TextStyle get hint {

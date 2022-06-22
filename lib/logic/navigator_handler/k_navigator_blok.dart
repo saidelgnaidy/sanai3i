@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sanai3i/shared/theme/helper.dart';
 
 @immutable
 class KNavigatorState {
-  const KNavigatorState();
+  final int index;
+  const KNavigatorState({required this.index});
 }
 
 class KNavigatorBloc extends Cubit<KNavigatorState> {
-  KNavigatorBloc() : super(const KNavigatorState());
+  KNavigatorBloc() : super(const KNavigatorState(index: 0));
 
   static KNavigatorBloc of(BuildContext context) {
     return BlocProvider.of<KNavigatorBloc>(context);
   }
 
-  int currentIndex = 0;
-
   nav_taped(int index) {
-    currentIndex = index;
-    emit(KNavigatorState());
+    emit(KNavigatorState(index: index));
   }
+
+  List<IconData> nav_Items = [KHelper.home, KHelper.notifications, KHelper.chat, KHelper.person];
 }
