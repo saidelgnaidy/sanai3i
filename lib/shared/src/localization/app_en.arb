@@ -25,6 +25,7 @@
   "profile": "Profile",
   "favorites": "Favorites",
   "notifications": "Notifications",
-  "settings": "Settings"
+  "settings": "Settings",
+    "qr_used_for": "Ask the Client to select ( Write a Review ) and scan Your Code"
   
 }

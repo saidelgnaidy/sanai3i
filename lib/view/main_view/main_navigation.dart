@@ -6,8 +6,8 @@ import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
 import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
-import 'package:sanai3i/shared/widgets/appbar.dart';
-import 'package:sanai3i/view/auth/profile/profile.dart';
+import 'package:sanai3i/view/profile/profile.dart';
+import 'package:sanai3i/view/widgets/appbar.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({Key? key}) : super(key: key);
@@ -24,6 +24,7 @@ class _MainNavigationState extends State<MainNavigation> {
       builder: (context, state) {
         return Scaffold(
           appBar: const KAppBar(),
+          extendBody: true,
           body: IndexedStack(
             index: state.index,
             children: [
@@ -46,7 +47,7 @@ class _MainNavigationState extends State<MainNavigation> {
               ),
               const SizedBox(),
               const SizedBox(),
-              const Profile(),
+               Profile(),
             ],
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -54,20 +55,22 @@ class _MainNavigationState extends State<MainNavigation> {
             onPressed: () {},
             backgroundColor: KColors.of(context).fabBackground,
             elevation: 20,
-            child: Icon(KHelper.search(state.index), color: KColors.of(context).reIcon),
+            child: Icon(KHelper.fabIcon(state.index), color: KColors.of(context).reIcon),
           ),
           bottomNavigationBar: AnimatedBottomNavigationBar(
-            icons:  KNavigatorBloc.of(context).nav_Items,
+            icons: KNavigatorBloc.of(context).nav_Items,
             activeIndex: state.index,
             shadow: Shadow(color: KColors.of(context).shadow, blurRadius: 10),
             backgroundColor: KColors.of(context).background,
             gapLocation: GapLocation.center,
             notchSmoothness: NotchSmoothness.smoothEdge,
-            blurEffect: true,
             onTap: KNavigatorBloc.of(context).nav_taped,
             activeColor: KColors.of(context).activeIcons,
             inactiveColor: KColors.of(context).inactiveIcons,
             splashColor: KColors.of(context).activeIcons,
+
+            /// borderColor: KColors.of(context).reBackground,
+            /// borderWidth: 3,
           ),
         );
       },

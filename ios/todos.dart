@@ -1,1 +1,2 @@
-///ToDo emplement phone auth
+///TODO emplement phone auth
+/// TODO QR code 

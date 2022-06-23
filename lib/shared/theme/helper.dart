@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 
 class KHelper {
@@ -6,6 +7,32 @@ class KHelper {
   KHelper(this.context);
   static KHelper of(BuildContext context) {
     return KHelper(context);
+  }
+
+  showSnackBar(String msg, {bool? isTop}) {
+    Get.closeAllSnackbars();
+    Get.snackbar(
+      '',
+      '',
+      snackPosition: isTop ?? false ? SnackPosition.TOP : SnackPosition.BOTTOM,
+      barBlur: 10.0,
+      backgroundColor: Colors.black.withOpacity(.6),
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+      duration: const Duration(seconds: 3),
+      padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15, top: 8),
+      forwardAnimationCurve: Curves.decelerate,
+      reverseAnimationCurve: Curves.decelerate,
+      dismissDirection: DismissDirection.horizontal,
+      colorText: Colors.white,
+      messageText: Text(
+        msg,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 15,
+        ),
+      ),
+    );
   }
 
   /// Icons data *****************************
@@ -16,7 +43,11 @@ class KHelper {
   static const IconData whatsapp = Icons.whatsapp;
   static const IconData home = Icons.home;
   static const IconData notifications = Icons.notifications;
-  static IconData search(index) {
+  static const IconData edit = Icons.edit;
+  static const IconData delete = Icons.delete;
+  static const IconData qrCode = Icons.qr_code;
+
+  static IconData fabIcon(index) {
     if (index == 3) return Icons.add;
     return Icons.search;
   }
@@ -51,8 +82,16 @@ class KHelper {
 
   BoxDecoration get outlined {
     return BoxDecoration(
-      border: Border.all(color: KColors.of(context!).reBackground.withOpacity(.1), width: 1),
+      border: Border.all(color: KColors.of(context!).border, width: .5),
       borderRadius: BorderRadius.circular(cornerRadius),
+    );
+  }
+
+  BoxDecoration get outlinedCircle {
+    return BoxDecoration(
+      border: Border.all(color: KColors.of(context!).border, width: .5),
+      shape: BoxShape.circle,
+      color: KColors.of(context!).background,
     );
   }
 }

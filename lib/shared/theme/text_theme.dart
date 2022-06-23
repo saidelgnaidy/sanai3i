@@ -51,6 +51,13 @@ class KTextStyle {
       fontFamily: fontFamily,
     );
   }
+    TextStyle get reBody {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
+      fontSize: 15,
+      fontFamily: fontFamily,
+    );
+  }
 
   TextStyle get body2 {
     return TextStyle(

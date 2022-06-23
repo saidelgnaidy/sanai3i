@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sanai3i/shared/const.dart';
-import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
+import 'package:sanai3i/view/widgets/theme_toggle_btn.dart';
 
 class KAppBar extends StatelessWidget implements PreferredSizeWidget {
   const KAppBar({Key? key}) : super(key: key);
@@ -16,14 +15,7 @@ class KAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text('صنايعي'),
       centerTitle: true,
       titleTextStyle: KTextStyle.of(context).appBar,
-      leading: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) {
-          return KIconButton(
-            icon: Theme.of(context).brightness == Brightness.dark ? Icons.light_mode : Icons.dark_mode,
-            onPressed: SettingsBloc.of(context).updateThemeMode,
-          );
-        },
-      ),
+      leading: ThemeToggleBtn(),
       actions: const [
         LangSwitch(),
       ],

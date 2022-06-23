@@ -8,7 +8,7 @@ import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
-import 'package:sanai3i/shared/widgets/loading_overlay.dart';
+import 'package:sanai3i/view/widgets/loading_overlay.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({super.key});

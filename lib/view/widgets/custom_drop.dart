@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sanai3i/shared/const.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
@@ -116,6 +117,41 @@ class ButtonToDialog extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class KIconToDialog extends StatelessWidget {
+  final Widget dialog;
+  final String tag, title;
+  final double? dialogHeight;
+
+  const KIconToDialog({super.key, required this.tag, required this.dialog, this.dialogHeight, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Hero(
+      tag: tag,
+      createRectTween: (begin, end) {
+        return HeroTween(begin: begin, end: end);
+      },
+      child: KIconButton(
+        child: const Icon(KHelper.qrCode),
+        onPressed: () {
+          Navigator.push(
+            context,
+            HeroDialog(
+              builder: (context) => KPopupDialg(
+                tag: tag,
+                title: title,
+                height: dialogHeight,
+                child: dialog,
+              ),
+              settings: RouteSettings(name: tag),
+            ),
+          );
+        },
+      ),
     );
   }
 }

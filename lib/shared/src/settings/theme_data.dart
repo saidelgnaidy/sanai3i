@@ -23,21 +23,12 @@ class KThemeData {
         color: KColors.appbarL,
         systemOverlayStyle: _lightOverLay,
         elevation: 0,
-        actionsIconTheme: IconThemeData(color: KColors.accentD),
+        actionsIconTheme: IconThemeData(color: KColors.activeIconsL),
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowL,
       inputDecorationTheme: _inputDecorationTheme(color: KColors.scaffoldL),
-      iconTheme: const IconThemeData(color: KColors.accentL),
-      textSelectionTheme: const TextSelectionThemeData(cursorColor: KColors.accentL),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(KColors.accentL),
-          shape: MaterialStateProperty.all<OutlinedBorder>(
-            const StadiumBorder(),
-          ),
-        ),
-      ),
+      iconTheme: const IconThemeData(color: KColors.activeIconsD),
     );
   }
 
@@ -49,20 +40,12 @@ class KThemeData {
         color: KColors.appbarD,
         systemOverlayStyle: _darkOverLay,
         elevation: 0,
-        actionsIconTheme: IconThemeData(color: KColors.accentL),
+        actionsIconTheme: IconThemeData(color: KColors.activeIconsD),
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowD,
       inputDecorationTheme: _inputDecorationTheme(color: KColors.scaffoldD),
-      textSelectionTheme: const TextSelectionThemeData(cursorColor: KColors.accentD),
-      iconTheme: const IconThemeData(color: KColors.accentD),
-      buttonTheme: const ButtonThemeData(buttonColor: KColors.accentD),
-      popupMenuTheme: const PopupMenuThemeData(elevation: 0),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(KColors.accentD),
-        ),
-      ),
+      iconTheme: const IconThemeData(color: KColors.activeIconsL),
     );
   }
 

@@ -7,31 +7,7 @@ import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 
-showSnackBar(String msg, {bool? isTop}) {
-  Get.closeAllSnackbars();
-  Get.snackbar(
-    '',
-    '',
-    snackPosition: isTop ?? false ? SnackPosition.TOP : SnackPosition.BOTTOM,
-    barBlur: 10.0,
-    backgroundColor: Colors.black.withOpacity(.6),
-    margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-    duration: const Duration(seconds: 3),
-    padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15, top: 8),
-    forwardAnimationCurve: Curves.decelerate,
-    reverseAnimationCurve: Curves.decelerate,
-    dismissDirection: DismissDirection.horizontal,
-    colorText: Colors.white,
-    messageText: Text(
-      msg,
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-        color: Colors.white,
-        fontSize: 15,
-      ),
-    ),
-  );
-}
+
 
 class LangSwitch extends StatelessWidget {
   const LangSwitch({Key? key}) : super(key: key);
@@ -49,16 +25,43 @@ class LangSwitch extends StatelessWidget {
 }
 
 class KIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function()? onPressed;
-
-  const KIconButton({super.key, required this.icon, this.onPressed});
+  const KIconButton({
+    Key? key,
+    this.onPressed, required this.child,
+  }) : super(key: key);
+  final void Function()? onPressed;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: onPressed,
-      icon: Icon(icon, color: KColors.of(context).icon),
+    return SizedBox(
+      width: 30,
+      height: 30,
+      child: RawMaterialButton(
+        onPressed: onPressed,
+        shape: const StadiumBorder(),
+        child: child,
+      ),
+    );
+  }
+}
+
+class KMainContainer extends StatelessWidget {
+  final Widget? child;
+  final double? height, width;
+  final EdgeInsetsGeometry? margin, padding;
+
+  const KMainContainer({super.key, this.height, this.width, this.margin, this.padding, this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: KHelper.of(context).elevatedBox,
+      height: height,
+      width: width,
+      margin: margin,
+      padding: padding,
+      child: child,
     );
   }
 }

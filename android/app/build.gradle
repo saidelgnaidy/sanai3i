@@ -51,7 +51,7 @@ android {
 
     defaultConfig {
         applicationId "com.masritech.sanai3i"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

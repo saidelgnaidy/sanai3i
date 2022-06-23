@@ -29,6 +29,9 @@ dependencies:
   lottie:
   pinput: ^2.2.11
   animated_bottom_navigation_bar:
+  animate_icons: ^2.0.0
+  qr_code_scanner: ^1.0.0
+  qr_flutter: ^4.0.0
 
 
 dev_dependencies:

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
-import 'package:sanai3i/shared/widgets/appbar.dart';
-import 'package:sanai3i/shared/widgets/custom_drop.dart';
 import 'package:sanai3i/view/auth/auth_view.dart';
+import 'package:sanai3i/view/widgets/appbar.dart';
+import 'package:sanai3i/view/widgets/custom_drop.dart';
 
 class LandingView extends StatelessWidget {
   const LandingView({Key? key}) : super(key: key);
