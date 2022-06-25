@@ -27,7 +27,7 @@ class KThemeData {
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowL,
-      inputDecorationTheme: _inputDecorationTheme(color: KColors.scaffoldL),
+      inputDecorationTheme: inputDecorationTheme(color: KColors.scaffoldD),
       iconTheme: const IconThemeData(color: KColors.activeIconsD),
     );
   }
@@ -44,12 +44,12 @@ class KThemeData {
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowD,
-      inputDecorationTheme: _inputDecorationTheme(color: KColors.scaffoldD),
+      inputDecorationTheme: inputDecorationTheme(color: KColors.scaffoldL),
       iconTheme: const IconThemeData(color: KColors.activeIconsL),
     );
   }
 
-  static InputDecorationTheme _inputDecorationTheme({required Color color}) {
+  static InputDecorationTheme inputDecorationTheme({required Color color}) {
     return InputDecorationTheme(
       border: outlineInputBorder(color: color),
       disabledBorder: outlineInputBorder(color: color),
@@ -59,6 +59,19 @@ class KThemeData {
       focusedBorder: outlineInputBorder(color: color),
     );
   }
+
+  InputDecoration get inputBorderDecoration {
+    return Theme.of(context!).brightness == Brightness.light ? inputDecoration(color: KColors.scaffoldL) : inputDecoration(color: KColors.scaffoldD);
+  }
+
+  static InputDecoration inputDecoration({required Color color}) => InputDecoration(
+        border: outlineInputBorder(color: color),
+        disabledBorder: outlineInputBorder(color: color),
+        errorBorder: outlineInputBorder(color: color),
+        focusedErrorBorder: outlineInputBorder(color: color),
+        enabledBorder: outlineInputBorder(color: color),
+        focusedBorder: outlineInputBorder(color: color),
+      );
 
   static OutlineInputBorder outlineInputBorder({required Color color}) => OutlineInputBorder(
         borderSide: BorderSide(width: .75, color: color),

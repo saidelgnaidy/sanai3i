@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:sanai3i/logic/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
-import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
-
-
 
 class LangSwitch extends StatelessWidget {
   const LangSwitch({Key? key}) : super(key: key);
@@ -27,7 +25,8 @@ class LangSwitch extends StatelessWidget {
 class KIconButton extends StatelessWidget {
   const KIconButton({
     Key? key,
-    this.onPressed, required this.child,
+    this.onPressed,
+    required this.child,
   }) : super(key: key);
   final void Function()? onPressed;
   final Widget child;
@@ -76,20 +75,17 @@ class KButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: SizedBox(
-        width: width ?? Get.width,
-        height: 50,
-        child: RawMaterialButton(
-          onPressed: onPressed,
-          fillColor: isSecondary ?? false ? KColors.of(context).rawMatBtn2 : KColors.of(context).rawMatBtn,
-          shape: KHelper.btnShape,
-          elevation: 0,
-          child: Text(
-            title,
-            style: KTextStyle.of(context).title,
-          ),
+    return SizedBox(
+      width: width ?? Get.width,
+      height: 55,
+      child: RawMaterialButton(
+        onPressed: onPressed,
+        fillColor: isSecondary ?? false ? KColors.of(context).rawMatBtn2 : KColors.of(context).rawMatBtn,
+        shape: KHelper.btnShape,
+        elevation: 0,
+        child: Text(
+          title,
+          style: isSecondary ?? false ? KTextStyle.of(context).reTitle : KTextStyle.of(context).reTitle,
         ),
       ),
     );

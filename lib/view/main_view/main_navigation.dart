@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
-import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
+import 'package:sanai3i/logic/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/view/profile/profile.dart';
@@ -21,12 +21,12 @@ class _MainNavigationState extends State<MainNavigation> {
   Widget build(BuildContext context) {
     return BlocBuilder<KNavigatorBloc, KNavigatorState>(
       buildWhen: (previous, current) => previous.index != current.index,
-      builder: (context, state) {
+      builder: (context, nav) {
         return Scaffold(
           appBar: const KAppBar(),
           extendBody: true,
           body: IndexedStack(
-            index: state.index,
+            index: nav.index,
             children: [
               Padding(
                 padding: const EdgeInsets.all(16),
@@ -47,7 +47,7 @@ class _MainNavigationState extends State<MainNavigation> {
               ),
               const SizedBox(),
               const SizedBox(),
-               Profile(),
+              const Profile(),
             ],
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -55,11 +55,11 @@ class _MainNavigationState extends State<MainNavigation> {
             onPressed: () {},
             backgroundColor: KColors.of(context).fabBackground,
             elevation: 20,
-            child: Icon(KHelper.fabIcon(state.index), color: KColors.of(context).reIcon),
+            child: Icon(KHelper.fabIcon(nav.index), color: KColors.of(context).reIcon),
           ),
           bottomNavigationBar: AnimatedBottomNavigationBar(
             icons: KNavigatorBloc.of(context).nav_Items,
-            activeIndex: state.index,
+            activeIndex: nav.index,
             shadow: Shadow(color: KColors.of(context).shadow, blurRadius: 10),
             backgroundColor: KColors.of(context).background,
             gapLocation: GapLocation.center,
@@ -68,9 +68,6 @@ class _MainNavigationState extends State<MainNavigation> {
             activeColor: KColors.of(context).activeIcons,
             inactiveColor: KColors.of(context).inactiveIcons,
             splashColor: KColors.of(context).activeIcons,
-
-            /// borderColor: KColors.of(context).reBackground,
-            /// borderWidth: 3,
           ),
         );
       },

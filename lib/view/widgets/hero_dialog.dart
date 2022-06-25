@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class HeroDialog extends PageRoute {
   final WidgetBuilder builder;
   final bool? isDismissible;
-  HeroDialog({required this.builder, required this.settings ,this.isDismissible = true});
+  HeroDialog({required this.builder, required this.settings, this.isDismissible = true});
 
   @override
   final RouteSettings settings;
@@ -20,10 +20,10 @@ class HeroDialog extends PageRoute {
   bool get maintainState => true;
 
   @override
-  Color get barrierColor => Colors.black.withOpacity(.3);
+  Color get barrierColor => Colors.black.withOpacity(.4);
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 450);
+  Duration get transitionDuration => const Duration(milliseconds: 600);
 
   @override
   String get barrierLabel => 'popup';
@@ -44,12 +44,12 @@ class HeroTween extends RectTween {
 
   @override
   Rect lerp(double t) {
-    final elasticCurveValue = Curves.decelerate.transform(t);
+    final curveValue = Curves.easeInOutBack.transform(t);
     return Rect.fromLTRB(
-      lerpDouble(begin!.left, end!.left, elasticCurveValue)!,
-      lerpDouble(begin!.top, end!.top, elasticCurveValue)!,
-      lerpDouble(begin!.right, end!.right, elasticCurveValue)!,
-      lerpDouble(begin!.bottom, end!.bottom, elasticCurveValue)!,
+      lerpDouble(begin!.left, end!.left, curveValue)!,
+      lerpDouble(begin!.top, end!.top, curveValue)!,
+      lerpDouble(begin!.right, end!.right, curveValue)!,
+      lerpDouble(begin!.bottom, end!.bottom, curveValue)!,
     );
   }
 }

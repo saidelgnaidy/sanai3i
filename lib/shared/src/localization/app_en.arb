@@ -19,13 +19,20 @@
   "send_code": "Send",
   "validate": "Validate",
   "wrong_code": "Wrong code",
-  "code_expired": "Code expired, will send new code",
+  "code_expired": "Code expired,  send another code",
   "enter_6_digts": "Please enter 6 digits",
   "home": "Home",
   "profile": "Profile",
   "favorites": "Favorites",
   "notifications": "Notifications",
   "settings": "Settings",
-    "qr_used_for": "Ask the Client to select ( Write a Review ) and scan Your Code"
-  
+  "qr_used_for": "Ask the Client to select ( Write a Review ) and scan Your Code",
+  "try_later":"Oops! Something went wrong, Please try again later!",
+  "complete_reg":"Please Complete your personal information!",
+  "no_connection":"Oops! Looks like you don't have an internet connection",
+    "name": "Full Name",
+    "job":"Jop",
+    "select_location":"Select Location",
+    "auto_detect":"auto detect",
+    "manual_detect":"Manual"
 }

@@ -9,7 +9,7 @@ class KHelper {
     return KHelper(context);
   }
 
-  showSnackBar(String msg, {bool? isTop}) {
+  static showSnackBar(String msg, {bool? isTop}) {
     Get.closeAllSnackbars();
     Get.snackbar(
       '',

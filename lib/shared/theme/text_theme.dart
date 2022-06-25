@@ -15,16 +15,10 @@ class KTextStyle {
   static const String fontFamily = 'font';
 
   //Light
-  static const Color mainL = Color(0xff555555);
-  static const Color accentL = Colors.red;
-  static const Color shadowL = Color(0x60000000);
-  static const Color scaffoldL = Color(0xFFF5F5F5);
+  static const Color mainL = Color(0xFF555555);
 
   //Dark
   static const Color mainD = Color(0xffd5d5d5);
-  static const Color accentD = Color(0xFF3b3941);
-  static const Color accentD2 = Color(0xFF807c8d);
-  static const Color shadowD = Color(0x80000000);
 
   //Getters
   TextStyle get appBar {
@@ -51,7 +45,8 @@ class KTextStyle {
       fontFamily: fontFamily,
     );
   }
-    TextStyle get reBody {
+
+  TextStyle get reBody {
     return TextStyle(
       color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
       fontSize: 15,
@@ -86,7 +81,15 @@ class KTextStyle {
 
   TextStyle get hint {
     return TextStyle(
-      color: Theme.of(context!).brightness == Brightness.dark ? mainL.withOpacity(.5) : mainD.withOpacity(.5),
+      color: Theme.of(context!).brightness == Brightness.light ? mainL.withOpacity(.5) : mainD.withOpacity(.5),
+      fontSize: 16,
+      fontFamily: fontFamily,
+    );
+  }
+
+  TextStyle get rehint {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.dark ? mainL.withOpacity(.7) : mainD.withOpacity(.6),
       fontSize: 16,
       fontFamily: fontFamily,
     );
@@ -94,8 +97,26 @@ class KTextStyle {
 
   TextStyle get title {
     return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.light ? mainL : mainD,
+      fontSize: 16,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  TextStyle get reTitle {
+    return TextStyle(
       color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
       fontSize: 16,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  TextStyle get textBtn {
+    return const TextStyle(
+      color: Colors.blue,
+      fontSize: 18,
       fontFamily: fontFamily,
       fontWeight: FontWeight.bold,
     );

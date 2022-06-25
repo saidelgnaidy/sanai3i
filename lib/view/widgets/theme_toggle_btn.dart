@@ -1,6 +1,6 @@
 import 'package:animate_icons/animate_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:sanai3i/shared/src/settings/settings_cubit.dart';
+import 'package:sanai3i/logic/settings/settings_cubit.dart';
 
 class ThemeToggleBtn extends StatelessWidget {
   ThemeToggleBtn({Key? key}) : super(key: key);

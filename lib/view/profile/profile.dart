@@ -1,16 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import 'package:sanai3i/shared/const.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'package:sanai3i/view/profile/iconed_text.dart';
 import 'package:sanai3i/view/profile/profile_pic.dart';
-import 'package:sanai3i/view/widgets/custom_drop.dart';
+import 'package:sanai3i/view/qr_code/qr_code.dart';
+import 'package:sanai3i/view/widgets/button_to_dialog.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -48,28 +45,13 @@ class Profile extends StatelessWidget {
                   onPressed: () {},
                 ),
               ),
-              Positioned(
+              const Positioned(
                 top: KHelper.profilePicRadius + 8,
                 left: 8,
                 child: KIconToDialog(
                   title: '',
                   tag: 'QR',
-                  dialog: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-                    child: Column(
-                      children: [
-                        Text(
-                          Tr.get.qr_used_for,
-                          style: KTextStyle.of(context).reBody,
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 20),
-                        QrImage(
-                          data: FirebaseAuth.instance.currentUser!.uid,
-                        ),
-                      ],
-                    ),
-                  ),
+                  dialog: QRCodeView(),
                 ),
               ),
               const Positioned(
@@ -117,45 +99,6 @@ class Profile extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class QRScaner extends StatefulWidget {
-  const QRScaner({Key? key}) : super(key: key);
-
-  @override
-  State<QRScaner> createState() => _QRScanerState();
-}
-
-class _QRScanerState extends State<QRScaner> {
-  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  Barcode? result;
-  QRViewController? controller;
-
-  void _onQRViewCreated(QRViewController controller) {
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {});
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Expanded(
-          flex: 5,
-          child: QRView(
-            key: qrKey,
-            onQRViewCreated: _onQRViewCreated,
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: Center(
-            child: (result != null) ? Text('Barcode Type: }   Data: ${result!.code}') : const Text('Scan a code'),
-          ),
-        )
-      ],
     );
   }
 }
