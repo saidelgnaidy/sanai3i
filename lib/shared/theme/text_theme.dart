@@ -100,7 +100,6 @@ class KTextStyle {
       color: Theme.of(context!).brightness == Brightness.light ? mainL : mainD,
       fontSize: 16,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
     );
   }
 
@@ -109,7 +108,6 @@ class KTextStyle {
       color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
       fontSize: 16,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
     );
   }
 
@@ -118,7 +116,6 @@ class KTextStyle {
       color: Colors.blue,
       fontSize: 18,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
     );
   }
 }

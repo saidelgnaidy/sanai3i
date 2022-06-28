@@ -17,7 +17,6 @@ dependencies:
   get:
   get_storage:
   flutter_bloc:
-  rive:
   firebase_core: ^1.17.1
   firebase_messaging: ^11.4.1
   firebase_auth: ^3.3.19
@@ -25,13 +24,16 @@ dependencies:
   flutter_local_notifications: 9.5.3+1
   connectivity_plus: ^2.3.3
   country_code_picker:
-  dartz:
   lottie:
   pinput: ^2.2.11
   animated_bottom_navigation_bar:
   animate_icons: ^2.0.0
   qr_code_scanner: ^1.0.0
   qr_flutter: ^4.0.0
+  google_maps_flutter:
+  geolocator:
+  geoflutterfire:
+
 
 
 dev_dependencies:

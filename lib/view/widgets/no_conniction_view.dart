@@ -15,21 +15,23 @@ class KOfflineView extends StatelessWidget {
       appBar: const KAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              Tr.get.no_connection,
-              style: KTextStyle.of(context).body,
-            ),
-            Lottie.asset('assets/animations/no_connection.json', width: Get.width * .6),
-            const SizedBox(height: 25),
-            if (onTryAgain != null)
-              TextButton(
-                onPressed: onTryAgain,
-                child: Text('try again', style: KTextStyle.of(context).textBtn),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                Tr.get.no_connection,
+                style: KTextStyle.of(context).body,
               ),
-          ],
+              Lottie.asset('assets/animations/no_connection.json', width: Get.width * .6),
+              const SizedBox(height: 25),
+              if (onTryAgain != null)
+                TextButton(
+                  onPressed: onTryAgain,
+                  child: Text(Tr.get.try_again, style: KTextStyle.of(context).textBtn),
+                ),
+            ],
+          ),
         ),
       ),
     );

@@ -8,9 +8,9 @@ import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
-import 'package:sanai3i/shared/theme/theme_data.dart';
 import 'package:sanai3i/view/auth/country_code.dart';
 import 'package:sanai3i/view/widgets/loading_overlay.dart';
+import 'package:sanai3i/view/widgets/text_field.dart';
 
 class AuthDialog extends StatefulWidget {
   const AuthDialog({Key? key}) : super(key: key);
@@ -29,12 +29,10 @@ class _AuthDialogState extends State<AuthDialog> {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
-        return LoadingOverlay(
-          isLoading: state.maybeWhen(loading: () => true, orElse: () => false),
-          reverseTheme: true,
-          child: Container(
-            width: Get.width,
-            color: KColors.of(context).rawMatBtn,
+        return SizedBox(
+          width: Get.width,
+          child: LoadingOverlay(
+            isLoading: state.maybeWhen(loading: () => true, orElse: () => false),
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
               child: Form(
@@ -42,15 +40,13 @@ class _AuthDialogState extends State<AuthDialog> {
                 child: Directionality(
                   textDirection: TextDirection.ltr,
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const SizedBox(height: 20),
-                      TextFormField(
+                      KTextFormField(
                         keyboardType: TextInputType.phone,
                         autofocus: true,
                         controller: _phoneController,
-                        style: KTextStyle.of(context).reTitle,
-                        textAlign: TextAlign.center,
-                        cursorColor: KColors.of(context).cursor,
                         enabled: state.maybeWhen(codeSent: () => false, orElse: () => true),
                         validator: (value) {
                           RegExp regExp = RegExp(pattern);
@@ -61,28 +57,24 @@ class _AuthDialogState extends State<AuthDialog> {
                           }
                           return null;
                         },
-                        decoration: KThemeData.of(context).inputBorderDecoration.copyWith(
-                              hintText: Tr.get.phone,
-                              hintStyle: KTextStyle.of(context).rehint,
-                              suffixIcon: TextButton(
-                                onPressed: () {
-                                  if (formKey.currentState!.validate()) {
-                                    AuthCubit.of(context).validatePhone(countryCode + _phoneController.text);
-                                  }
-                                },
-                                child: Text(Tr.get.send_code, style: KTextStyle.of(context).reTitle),
-                              ),
-                              errorStyle: KTextStyle.of(context).error,
-                              errorText: state.whenOrNull(error: (error) => error),
-                              prefixIcon: CountryCodeWidget(
-                                onChanged: (code) {
-                                  countryCode = code?.dialCode ?? '+20';
-                                },
-                                onInit: (code) {
-                                  countryCode = code?.dialCode ?? '+20';
-                                },
-                              ),
-                            ),
+                        hintText: Tr.get.phone,
+                        errorText: state.whenOrNull(error: (error) => error),
+                        prefixIcon: CountryCodeWidget(
+                          onChanged: (code) {
+                            countryCode = code?.dialCode ?? '+20';
+                          },
+                          onInit: (code) {
+                            countryCode = code?.dialCode ?? '+20';
+                          },
+                        ),
+                        suffixIcon: TextButton(
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              AuthCubit.of(context).validatePhone(countryCode + _phoneController.text);
+                            }
+                          },
+                          child: Text(Tr.get.send_code, style: KTextStyle.of(context).title),
+                        ),
                       ),
                       const SizedBox(height: 20),
                       if (AuthCubit.of(context).codeSentFlag)
@@ -92,7 +84,7 @@ class _AuthDialogState extends State<AuthDialog> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Expanded(child: Divider(color: KColors.of(context).divider, thickness: .5)),
-                                Text(Tr.get.enter_6_digts, style: KTextStyle.of(context).reBody),
+                                Text(Tr.get.enter_6_digts, style: KTextStyle.of(context).body),
                                 Expanded(child: Divider(color: KColors.of(context).divider, thickness: .5)),
                               ],
                             ),
@@ -104,9 +96,9 @@ class _AuthDialogState extends State<AuthDialog> {
                               defaultPinTheme: PinTheme(
                                 width: 56,
                                 height: 56,
-                                textStyle: KTextStyle.of(context).reTitle,
+                                textStyle: KTextStyle.of(context).title,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: KColors.of(context).background),
+                                  border: Border.all(color: KColors.of(context).reBackground),
                                   borderRadius: BorderRadius.circular(KHelper.btnRadius),
                                 ),
                               ),

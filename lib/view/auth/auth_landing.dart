@@ -33,8 +33,7 @@ class LandingView extends StatelessWidget {
             const SizedBox(height: 35),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: ButtonToDialog(
-                tag: 'login',
+              child: KButtonToDialog(
                 title: Tr.get.login_register,
                 dialog: const AuthDialog(),
               ),

@@ -1,36 +1,119 @@
-
-// ignore_for_file: depend_on_referenced_packages
-
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
-part 'register_model.freezed.dart';
-part 'register_model.g.dart';
 
-RegisterModel registerModelFromJson(String str) => RegisterModel.fromJson(json.decode(str));
+import 'package:flutter/cupertino.dart';
 
-String registerModelToJson(RegisterModel data) => json.encode(data.toJson());
+class RegisterModel {
+  String? name;
+  String? phone;
+  String? accType;
+  String? serviceId;
+  dynamic location;
+  RegisterModel({
+    this.name,
+    this.phone,
+    this.accType,
+    this.serviceId,
+    this.location,
+  });
 
-@freezed
-abstract class RegisterModel with _$RegisterModel {
-  const factory RegisterModel({
-    required String name,
-    required String phone,
-    required AccountType accountType,
-    required String jop,
-  }) = _RegisterModel;
+  RegisterModel copyWith({
+    String? name,
+    String? phone,
+    String? accType,
+    String? serviceId,
+    dynamic location,
+  }) {
+    return RegisterModel(
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      accType: accType ?? this.accType,
+      serviceId: serviceId ?? this.serviceId,
+      location: location ?? this.location,
+    );
+  }
 
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{};
 
-  factory RegisterModel.fromJson(Map<String, dynamic> json) => _$RegisterModelFromJson(json);
+    if (name != null) {
+      result.addAll({'name': name});
+    }
+    if (phone != null) {
+      result.addAll({'phone': phone});
+    }
+    if (accType != null) {
+      result.addAll({'accType': accType});
+    }
+    if (serviceId != null) {
+      result.addAll({'serviceId': serviceId});
+    }
+    if (location != null) {
+      result.addAll({'location': location});
+    }
+
+    return result;
+  }
+
+  factory RegisterModel.fromMap(Map<String, dynamic> map) {
+    return RegisterModel(
+      name: map['name'],
+      phone: map['phone'],
+      accType: map['accType'],
+      serviceId: map['serviceId'],
+      location: map['location'],
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory RegisterModel.fromJson(String source) => RegisterModel.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'RegisterModel(name: $name, phone: $phone, accType: $accType, serviceId: $serviceId, location: $location)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is RegisterModel &&
+        other.name == name &&
+        other.phone == phone &&
+        other.accType == accType &&
+        other.serviceId == serviceId &&
+        other.location == location;
+  }
+
+  @override
+  int get hashCode {
+    return name.hashCode ^ phone.hashCode ^ accType.hashCode ^ serviceId.hashCode ^ location.hashCode;
+  }
 }
 
-@freezed
-abstract class AccountType with _$AccountType{
-  const factory AccountType.client() = AccountTypeClient;
-  const factory AccountType.worker() = AccountTypeWorker;
-  const factory AccountType.shop() = AccountTypeShop;
-  factory AccountType.fromJson(Map<String, dynamic> json) => _$AccountTypeFromJson(json);
+@immutable
+abstract class AccType {
+  static AccType client = _ClientAccType();
+  static AccType serviceProvider = _ServiceProviderAccType();
+  const AccType();
 
+  factory AccType.fromStr(String str) {
+    return str == _ServiceProviderAccType().toString() ? _ServiceProviderAccType() : _ClientAccType();
+  }
 }
-// flutter pub run build_runner watch --delete-conflicting-outputs 
 
+@immutable
+class _ClientAccType extends AccType {
+  @override
+  String toString() {
+    return 'Client';
+  }
+}
 
+@immutable
+class _ServiceProviderAccType extends AccType {
+  @override
+  String toString() {
+    return 'ServiceProvider';
+  }
+}

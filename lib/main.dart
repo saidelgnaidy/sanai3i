@@ -5,10 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/auth/auth_bloc.dart';
-import 'package:sanai3i/logic/complete_register/complete_regester.dart';
-import 'package:sanai3i/logic/complete_register/complete_register_state.dart';
+import 'package:sanai3i/logic/complete_register/complete_regster.dart';
+import 'package:sanai3i/logic/maps_ctrl/pick_location_bloc.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
+import 'package:sanai3i/logic/services_getter/services_getter_bloc.dart';
 import 'package:sanai3i/logic/settings/settings_cubit.dart';
+import 'package:sanai3i/logic/user_existace/user_existace.dart';
+import 'package:sanai3i/logic/user_existace/user_existace_state.dart';
 import 'package:sanai3i/shared/notifications/notifications_api.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/view/main_view/main_navigation.dart';
@@ -25,11 +28,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
+  await GetStorage().erase();
   FirebaseAuth.instance.setLanguageCode('ar');
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
-  await FirebaseAuth.instance.signOut();
-
   runApp(const MyApp());
 }
 
@@ -43,7 +45,10 @@ class MyApp extends StatelessWidget {
         BlocProvider<SettingsBloc>(create: (context) => SettingsBloc()..loadSettings()),
         BlocProvider<AuthCubit>(create: (context) => AuthCubit()),
         BlocProvider<KNavigatorBloc>(create: (context) => KNavigatorBloc()),
-        BlocProvider<CompleteRegisterBloc>(create: (context) => CompleteRegisterBloc()..registerCompleted()),
+        BlocProvider<UserExistenceBloc>(create: (context) => UserExistenceBloc()..call()),
+        BlocProvider<LocationPickerBloc>(create: (context) => LocationPickerBloc()..init),
+        BlocProvider<CompleteRegisterBloc>(create: (context) => CompleteRegisterBloc()),
+        BlocProvider<ServicesGetterBloc>(create: (context) => ServicesGetterBloc()..getServices()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
@@ -84,13 +89,13 @@ class Wrapper extends StatelessWidget {
           if (!snapshot.hasData) {
             return const LandingView();
           }
-          return BlocBuilder<CompleteRegisterBloc, CompleteRegisterState>(
+          return BlocBuilder<UserExistenceBloc, UserExistenceState>(
             builder: (context, state) {
               return state.when(
                 loading: () => const LoadingOverlay(isLoading: true, child: Scaffold()),
                 completed: () => const MainNavigation(),
-                offline: () => KOfflineView(onTryAgain: () => CompleteRegisterBloc.of(context).registerCompleted()),
-                error: () => KErrorView(onTryAgain: () => CompleteRegisterBloc.of(context).registerCompleted()),
+                offline: () => KOfflineView(onTryAgain: () => UserExistenceBloc.of(context).call()),
+                error: () => KErrorView(onTryAgain: () => UserExistenceBloc.of(context).call()),
                 missing: () => const CompleteInfoView(),
               );
             },

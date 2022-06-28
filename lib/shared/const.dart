@@ -66,18 +66,18 @@ class KMainContainer extends StatelessWidget {
 }
 
 class KButton extends StatelessWidget {
-  const KButton({super.key, required this.title, required this.onPressed, this.width, this.isSecondary});
+  const KButton({super.key, required this.title, required this.onPressed, this.width, this.isSecondary, this.hieght});
 
   final String title;
   final Function() onPressed;
-  final double? width;
+  final double? width, hieght;
   final bool? isSecondary;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? Get.width,
-      height: 55,
+      height: hieght ?? 55,
       child: RawMaterialButton(
         onPressed: onPressed,
         fillColor: isSecondary ?? false ? KColors.of(context).rawMatBtn2 : KColors.of(context).rawMatBtn,
@@ -85,7 +85,7 @@ class KButton extends StatelessWidget {
         elevation: 0,
         child: Text(
           title,
-          style: isSecondary ?? false ? KTextStyle.of(context).reTitle : KTextStyle.of(context).reTitle,
+          style: isSecondary ?? false ? KTextStyle.of(context).title : KTextStyle.of(context).title,
         ),
       ),
     );

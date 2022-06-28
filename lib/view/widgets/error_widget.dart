@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
-import 'package:sanai3i/view/widgets/appbar.dart';
 
-class KErrorView extends StatelessWidget {
+class KErrorWidget extends StatelessWidget {
   final void Function()? onTryAgain;
   final String? error;
+  final Widget? widget;
 
-  const KErrorView({Key? key, this.onTryAgain, this.error}) : super(key: key);
+  const KErrorWidget({Key? key, this.onTryAgain, this.error, this.widget}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const KAppBar(),
-      body: Center(
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            if (widget != null) widget!,
             Text(
               error ?? Tr.get.try_later,
-              style: KTextStyle.of(context).body,
+              style: KTextStyle.of(context).error,
+              textAlign: TextAlign.center,
             ),
-            Lottie.asset('assets/animations/error.json'),
             const SizedBox(height: 25),
-            if (onTryAgain != null)
+            if (onTryAgain != null && error != Tr.get.location_denaid_permanently)
               TextButton(
                 onPressed: onTryAgain,
-                child: Text('try again', style: KTextStyle.of(context).textBtn),
+                child: Text(Tr.get.try_again, style: KTextStyle.of(context).textBtn),
               ),
           ],
         ),

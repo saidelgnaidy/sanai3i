@@ -27,7 +27,7 @@ class KColors {
   static const Color shadowD = Color(0x17000000);
   static const Color scaffoldD = Color(0xFF191720);
   static const Color codePickerD = Color(0xFF282631);
-  static const Color rawMatBtnD = Color(0xFF3b3941);
+  static const Color rawMatBtnD = Color(0xFF302E35);
   static const Color rawMatBtnD2 = Color(0xFFBDBDBD);
   static const Color cursorD = Color(0xFFFFFFFF);
   static const Color inactiveIconsD = Color(0xFFBDBDBD);
@@ -55,20 +55,16 @@ class KColors {
     return Theme.of(context!).brightness == Brightness.light ? reBackD : reBackL;
   }
 
-  Color get icon {
-    return Theme.of(context!).brightness == Brightness.dark ? activeIconsL : activeIconsD;
-  }
-
   Color get rawMatBtn {
-    return Theme.of(context!).brightness == Brightness.dark ? rawMatBtnL : rawMatBtnD;
-  }
-
-  Color get codePicker {
-    return Theme.of(context!).brightness == Brightness.dark ? codePickerD : codePickerL;
+    return Theme.of(context!).brightness == Brightness.light ? rawMatBtnL : rawMatBtnD;
   }
 
   Color get rawMatBtn2 {
     return Theme.of(context!).brightness == Brightness.dark ? rawMatBtnL2 : rawMatBtnD2;
+  }
+
+  Color get codePicker {
+    return Theme.of(context!).brightness == Brightness.dark ? codePickerD : codePickerL;
   }
 
   Color get cursor {
@@ -80,7 +76,7 @@ class KColors {
   }
 
   Color get divider {
-    return Theme.of(context!).brightness == Brightness.light ? cursorD : cursorL;
+    return Theme.of(context!).brightness == Brightness.dark ? cursorD : cursorL;
   }
 
   Color get shadow {

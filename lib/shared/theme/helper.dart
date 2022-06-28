@@ -56,6 +56,7 @@ class KHelper {
 
   static const double btnRadius = 12.0;
   static const double cornerRadius = 8.0;
+  static const double hPading = 12.0;
   static const double profilePicRadius = 60;
   static const double profilePicWidth = 100;
   static ShapeBorder btnShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(btnRadius));

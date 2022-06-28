@@ -1,3 +1,4 @@
 class StorageKeys {
-  static String user = 'user_modlel';
+  static const String userExist = 'userExist';
+  static const String services = 'services';
 }

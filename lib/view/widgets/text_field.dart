@@ -7,9 +7,9 @@ class KTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final Function(String)? onChanged;
   final TextInputType? keyboardType;
-  final Widget? suffixIcon;
+  final Widget? suffixIcon, prefixIcon;
   final String? hintText, errorText;
-  final bool autofocus;
+  final bool autofocus, enabled;
   const KTextFormField({
     super.key,
     this.controller,
@@ -20,17 +20,20 @@ class KTextFormField extends StatelessWidget {
     this.keyboardType,
     this.onChanged,
     this.autofocus = false,
+    this.prefixIcon,
+    this.enabled = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
+    return SizedBox(
       child: TextFormField(
+        keyboardAppearance: Theme.of(context).brightness,
+        textAlignVertical: TextAlignVertical.bottom,
         keyboardType: keyboardType,
         controller: controller,
         autofocus: autofocus,
-        style: KTextStyle.of(context).title,
+        enabled: enabled,
         textAlign: TextAlign.center,
         cursorColor: KColors.of(context).reCursor,
         validator: validator,
@@ -40,6 +43,8 @@ class KTextFormField extends StatelessWidget {
           hintStyle: KTextStyle.of(context).hint,
           errorStyle: KTextStyle.of(context).error,
           errorText: errorText,
+          suffixIcon: SizedBox(width: 65, child: suffixIcon),
+          prefixIcon: SizedBox(width: 75, child: prefixIcon),
         ),
       ),
     );

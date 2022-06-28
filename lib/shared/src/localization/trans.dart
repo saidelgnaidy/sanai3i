@@ -3,13 +3,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
- class Tr  {
+class Tr {
   static final BuildContext _context = Get.context!;
 
   static AppLocalizations get get {
     return AppLocalizations.of(_context)!;
   }
 
+  static bool get isAr => get.localeName == 'ar';
 
   AppLocalizations? localizations = AppLocalizations.of(_context)!;
 
