@@ -5,10 +5,10 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 
-class LoadingOverlay extends StatelessWidget {
+class KLoadingOverlay extends StatelessWidget {
   final Widget? child;
   final bool isLoading, reverseTheme;
-  const LoadingOverlay({Key? key, this.child, this.isLoading = false, this.reverseTheme = false}) : super(key: key);
+  const KLoadingOverlay({Key? key, this.child, this.isLoading = false, this.reverseTheme = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

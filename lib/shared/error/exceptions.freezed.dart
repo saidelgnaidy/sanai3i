@@ -21,6 +21,7 @@ mixin _$KException {
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -31,6 +32,7 @@ mixin _$KException {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -41,6 +43,7 @@ mixin _$KException {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -52,6 +55,7 @@ mixin _$KException {
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -63,6 +67,7 @@ mixin _$KException {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -74,6 +79,7 @@ mixin _$KException {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -143,6 +149,7 @@ class _$KExceptionOffline implements KExceptionOffline {
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -156,6 +163,7 @@ class _$KExceptionOffline implements KExceptionOffline {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -169,6 +177,7 @@ class _$KExceptionOffline implements KExceptionOffline {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -186,6 +195,7 @@ class _$KExceptionOffline implements KExceptionOffline {
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -200,6 +210,7 @@ class _$KExceptionOffline implements KExceptionOffline {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -214,6 +225,7 @@ class _$KExceptionOffline implements KExceptionOffline {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -275,6 +287,7 @@ class _$KExceptionServer implements KExceptionServer {
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -288,6 +301,7 @@ class _$KExceptionServer implements KExceptionServer {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -301,6 +315,7 @@ class _$KExceptionServer implements KExceptionServer {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -318,6 +333,7 @@ class _$KExceptionServer implements KExceptionServer {
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -332,6 +348,7 @@ class _$KExceptionServer implements KExceptionServer {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -346,6 +363,7 @@ class _$KExceptionServer implements KExceptionServer {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -407,6 +425,7 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -420,6 +439,7 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -433,6 +453,7 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -450,6 +471,7 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -464,6 +486,7 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -478,6 +501,7 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -493,6 +517,145 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
 
 abstract class KExceptionEmptyCache implements KException {
   const factory KExceptionEmptyCache() = _$KExceptionEmptyCache;
+}
+
+/// @nodoc
+abstract class _$$KExceptionUserNotFoundCopyWith<$Res> {
+  factory _$$KExceptionUserNotFoundCopyWith(_$KExceptionUserNotFound value,
+          $Res Function(_$KExceptionUserNotFound) then) =
+      __$$KExceptionUserNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$KExceptionUserNotFoundCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionUserNotFoundCopyWith<$Res> {
+  __$$KExceptionUserNotFoundCopyWithImpl(_$KExceptionUserNotFound _value,
+      $Res Function(_$KExceptionUserNotFound) _then)
+      : super(_value, (v) => _then(v as _$KExceptionUserNotFound));
+
+  @override
+  _$KExceptionUserNotFound get _value =>
+      super._value as _$KExceptionUserNotFound;
+}
+
+/// @nodoc
+
+class _$KExceptionUserNotFound implements KExceptionUserNotFound {
+  const _$KExceptionUserNotFound();
+
+  @override
+  String toString() {
+    return 'KException.userNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$KExceptionUserNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() offline,
+    required TResult Function() server,
+    required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
+    required TResult Function() locationDenaid,
+    required TResult Function() locationDiabled,
+    required TResult Function() locationDenaidPermenetl,
+  }) {
+    return userNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? offline,
+    TResult Function()? server,
+    TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
+    TResult Function()? locationDenaid,
+    TResult Function()? locationDiabled,
+    TResult Function()? locationDenaidPermenetl,
+  }) {
+    return userNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? offline,
+    TResult Function()? server,
+    TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
+    TResult Function()? locationDenaid,
+    TResult Function()? locationDiabled,
+    TResult Function()? locationDenaidPermenetl,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(KExceptionOffline value) offline,
+    required TResult Function(KExceptionServer value) server,
+    required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
+    required TResult Function(KExceptionLocationDenaid value) locationDenaid,
+    required TResult Function(KExceptionLocationDiabled value) locationDiabled,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
+  }) {
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(KExceptionOffline value)? offline,
+    TResult Function(KExceptionServer value)? server,
+    TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
+    TResult Function(KExceptionLocationDenaid value)? locationDenaid,
+    TResult Function(KExceptionLocationDiabled value)? locationDiabled,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
+  }) {
+    return userNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(KExceptionOffline value)? offline,
+    TResult Function(KExceptionServer value)? server,
+    TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
+    TResult Function(KExceptionLocationDenaid value)? locationDenaid,
+    TResult Function(KExceptionLocationDiabled value)? locationDiabled,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class KExceptionUserNotFound implements KException {
+  const factory KExceptionUserNotFound() = _$KExceptionUserNotFound;
 }
 
 /// @nodoc
@@ -541,6 +704,7 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -554,6 +718,7 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -567,6 +732,7 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -584,6 +750,7 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -598,6 +765,7 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -612,6 +780,7 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -676,6 +845,7 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -689,6 +859,7 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -702,6 +873,7 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -719,6 +891,7 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -733,6 +906,7 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -747,6 +921,7 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -813,6 +988,7 @@ class _$KExceptionLocationDenaidPermenetl
     required TResult Function() offline,
     required TResult Function() server,
     required TResult Function() emptyCache,
+    required TResult Function() userNotFound,
     required TResult Function() locationDenaid,
     required TResult Function() locationDiabled,
     required TResult Function() locationDenaidPermenetl,
@@ -826,6 +1002,7 @@ class _$KExceptionLocationDenaidPermenetl
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -839,6 +1016,7 @@ class _$KExceptionLocationDenaidPermenetl
     TResult Function()? offline,
     TResult Function()? server,
     TResult Function()? emptyCache,
+    TResult Function()? userNotFound,
     TResult Function()? locationDenaid,
     TResult Function()? locationDiabled,
     TResult Function()? locationDenaidPermenetl,
@@ -856,6 +1034,7 @@ class _$KExceptionLocationDenaidPermenetl
     required TResult Function(KExceptionOffline value) offline,
     required TResult Function(KExceptionServer value) server,
     required TResult Function(KExceptionEmptyCache value) emptyCache,
+    required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
     required TResult Function(KExceptionLocationDenaidPermenetl value)
@@ -870,6 +1049,7 @@ class _$KExceptionLocationDenaidPermenetl
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?
@@ -884,6 +1064,7 @@ class _$KExceptionLocationDenaidPermenetl
     TResult Function(KExceptionOffline value)? offline,
     TResult Function(KExceptionServer value)? server,
     TResult Function(KExceptionEmptyCache value)? emptyCache,
+    TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
     TResult Function(KExceptionLocationDenaidPermenetl value)?

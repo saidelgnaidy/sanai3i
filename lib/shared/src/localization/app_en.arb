@@ -48,5 +48,7 @@
   "pls_select_acc_type": "Please Select Account Type",
   "workers": "Workers",
   "shops": "Shops",
-  "transport": "Transport"
+  "transport": "Transport",
+  "available": "Available",
+  "unAvailable": "UnAvailable"
 }

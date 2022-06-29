@@ -12,6 +12,7 @@ import 'package:sanai3i/logic/services_getter/services_getter_bloc.dart';
 import 'package:sanai3i/logic/settings/settings_cubit.dart';
 import 'package:sanai3i/logic/user_existace/user_existace.dart';
 import 'package:sanai3i/logic/user_existace/user_existace_state.dart';
+import 'package:sanai3i/logic/user_info/user_info_bloc.dart';
 import 'package:sanai3i/shared/notifications/notifications_api.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
 import 'package:sanai3i/view/main_view/main_navigation.dart';
@@ -28,7 +29,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
-  await GetStorage().erase();
+  //await GetStorage().erase();
   FirebaseAuth.instance.setLanguageCode('ar');
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<LocationPickerBloc>(create: (context) => LocationPickerBloc()..init),
         BlocProvider<CompleteRegisterBloc>(create: (context) => CompleteRegisterBloc()),
         BlocProvider<ServicesGetterBloc>(create: (context) => ServicesGetterBloc()..getServices()),
+        BlocProvider<UserInfoBloc>(create: (context) => UserInfoBloc()..getUser()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
@@ -92,7 +94,7 @@ class Wrapper extends StatelessWidget {
           return BlocBuilder<UserExistenceBloc, UserExistenceState>(
             builder: (context, state) {
               return state.when(
-                loading: () => const LoadingOverlay(isLoading: true, child: Scaffold()),
+                loading: () => const KLoadingOverlay(isLoading: true, child: Scaffold()),
                 completed: () => const MainNavigation(),
                 offline: () => KOfflineView(onTryAgain: () => UserExistenceBloc.of(context).call()),
                 error: () => KErrorView(onTryAgain: () => UserExistenceBloc.of(context).call()),

@@ -24,7 +24,8 @@ class CompleteRegisterBloc extends Cubit<CompleteRegisterState> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AccType? accType;
   ServiceModel? serviceModel;
-  RegisterModel model = RegisterModel(accType: null, name: null, phone: FirebaseAuth.instance.currentUser!.phoneNumber, serviceId: null);
+  RegisterModel model =
+      RegisterModel(accType: null, name: null, phone: FirebaseAuth.instance.currentUser!.phoneNumber, serviceId: null, available: true, location: null);
 
   openMapDialog() {
     Get.dialog(
@@ -74,6 +75,7 @@ class CompleteRegisterBloc extends Cubit<CompleteRegisterState> {
         await CompleteRegisterService.call(model.copyWith(
           name: nameCtrll.text,
           serviceId: serviceModel!.id,
+          service: serviceModel,
           location: GeoFirePoint(
             marker!.position.latitude,
             marker.position.longitude,

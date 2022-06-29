@@ -36,7 +36,7 @@ class CompleteInfoView extends StatelessWidget {
             state.mapOrNull(success: (value) => UserExistenceBloc.of(context).call());
           },
           builder: (context, state) {
-            return LoadingOverlay(
+            return KLoadingOverlay(
               isLoading: state.maybeWhen(orElse: () => false, loading: () => true),
               child: Form(
                 key: CompleteRegisterBloc.of(context).formKey,
@@ -135,7 +135,7 @@ class KSelectService extends StatelessWidget {
           height: Get.height * .9,
           child: state.map(
             error: (value) => KErrorWidget(error: value.error),
-            loading: (value) => const LoadingOverlay(isLoading: true),
+            loading: (value) => const KLoadingOverlay(isLoading: true),
             success: (value) => SingleChildScrollView(
               padding: const EdgeInsets.symmetric(vertical: 60),
               child: Column(

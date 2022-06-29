@@ -35,7 +35,7 @@ class LocationPicker extends StatelessWidget {
               },
             ),
           ),
-          loading: (_) => const LoadingOverlay(isLoading: true, reverseTheme: true),
+          loading: (_) => const KLoadingOverlay(isLoading: true, reverseTheme: true),
           error: (error) => KErrorWidget(
             error: error.error,
             onTryAgain: () => LocationPickerBloc.of(context).init,

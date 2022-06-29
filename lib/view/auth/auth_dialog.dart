@@ -31,7 +31,7 @@ class _AuthDialogState extends State<AuthDialog> {
       builder: (context, state) {
         return SizedBox(
           width: Get.width,
-          child: LoadingOverlay(
+          child: KLoadingOverlay(
             isLoading: state.maybeWhen(loading: () => true, orElse: () => false),
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),

@@ -48,5 +48,7 @@
   "pls_select_acc_type":"يرجي تحديد نوع الحساب",
   "workers":"صنايعية",
   "shops":"محلات",
-  "transport":"نقل"
+  "transport":"نقل",
+  "available":"متاح",
+  "unAvailable":"غير متاح"
 }

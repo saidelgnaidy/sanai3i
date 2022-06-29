@@ -119,9 +119,9 @@ class KButtonToDialog extends StatelessWidget {
 
 class KIconToDialog extends StatelessWidget {
   final Widget dialog;
-  final String tag, title;
+  final String tag;
 
-  const KIconToDialog({super.key, required this.tag, required this.dialog, required this.title});
+  const KIconToDialog({super.key, required this.tag, required this.dialog, });
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +136,7 @@ class KIconToDialog extends StatelessWidget {
           Navigator.push(
             context,
             HeroDialog(
-              builder: (context) => KPopupDialg(tag: tag, title: title, child: dialog),
+              builder: (context) => KPopupDialg(tag: tag, title: tag, child: dialog),
             ),
           );
         },

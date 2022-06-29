@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
@@ -11,21 +12,24 @@ class QRCodeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+    return SizedBox(
+      width: Get.width,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
+          const SizedBox(height: 55),
           Text(
             Tr.get.qr_used_for,
-            style: KTextStyle.of(context).reBody,
+            style: KTextStyle.of(context).title,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
           QrImage(
             data: FirebaseAuth.instance.currentUser!.uid,
             backgroundColor: KColors.of(context).background.withOpacity(.0),
-            foregroundColor: KColors.of(context).rebANDw,
+            foregroundColor: KColors.of(context).reBackground,
           ),
+          const SizedBox(height: 20),
         ],
       ),
     );

@@ -25,4 +25,8 @@ class Tr {
     Locale('ar'),
     Locale('en'),
   ];
+
+  static String isAvailable(bool value) {
+   return value ? get.available : get.unAvailable;
+  }
 }

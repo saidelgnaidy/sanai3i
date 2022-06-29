@@ -2,18 +2,24 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 
+import 'package:sanai3i/models/service_model/service_model.dart';
+
 class RegisterModel {
   String? name;
   String? phone;
   String? accType;
   String? serviceId;
   dynamic location;
+  bool? available;
+  ServiceModel? service;
   RegisterModel({
     this.name,
     this.phone,
     this.accType,
     this.serviceId,
     this.location,
+    this.available = true,
+    this.service,
   });
 
   RegisterModel copyWith({
@@ -22,6 +28,8 @@ class RegisterModel {
     String? accType,
     String? serviceId,
     dynamic location,
+    bool? available,
+    ServiceModel? service,
   }) {
     return RegisterModel(
       name: name ?? this.name,
@@ -29,6 +37,8 @@ class RegisterModel {
       accType: accType ?? this.accType,
       serviceId: serviceId ?? this.serviceId,
       location: location ?? this.location,
+      available: available ?? this.available,
+      service: service ?? this.service,
     );
   }
 
@@ -47,8 +57,12 @@ class RegisterModel {
     if (serviceId != null) {
       result.addAll({'serviceId': serviceId});
     }
-    if (location != null) {
-      result.addAll({'location': location});
+    result.addAll({'location': location});
+    if (available != null) {
+      result.addAll({'available': available});
+    }
+    if (service != null) {
+      result.addAll({'service': service!.toMap()});
     }
 
     return result;
@@ -61,6 +75,8 @@ class RegisterModel {
       accType: map['accType'],
       serviceId: map['serviceId'],
       location: map['location'],
+      available: map['available'],
+      service: map['service'] != null ? ServiceModel.fromMap(map['service']) : null,
     );
   }
 
@@ -70,7 +86,7 @@ class RegisterModel {
 
   @override
   String toString() {
-    return 'RegisterModel(name: $name, phone: $phone, accType: $accType, serviceId: $serviceId, location: $location)';
+    return 'RegisterModel(name: $name, phone: $phone, accType: $accType, serviceId: $serviceId, location: $location, available: $available, service: $service)';
   }
 
   @override
@@ -82,12 +98,14 @@ class RegisterModel {
         other.phone == phone &&
         other.accType == accType &&
         other.serviceId == serviceId &&
-        other.location == location;
+        other.location == location &&
+        other.available == available &&
+        other.service == service;
   }
 
   @override
   int get hashCode {
-    return name.hashCode ^ phone.hashCode ^ accType.hashCode ^ serviceId.hashCode ^ location.hashCode;
+    return name.hashCode ^ phone.hashCode ^ accType.hashCode ^ serviceId.hashCode ^ location.hashCode ^ available.hashCode ^ service.hashCode;
   }
 }
 

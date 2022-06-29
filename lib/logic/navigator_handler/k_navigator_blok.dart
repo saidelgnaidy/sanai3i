@@ -9,7 +9,7 @@ class KNavigatorState {
 }
 
 class KNavigatorBloc extends Cubit<KNavigatorState> {
-  KNavigatorBloc() : super(const KNavigatorState(index: 0));
+  KNavigatorBloc() : super(const KNavigatorState(index: 3));
 
   static KNavigatorBloc of(BuildContext context) {
     return BlocProvider.of<KNavigatorBloc>(context);
