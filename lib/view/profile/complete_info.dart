@@ -5,21 +5,17 @@ import 'package:sanai3i/logic/complete_register/complete_reg_state.dart';
 import 'package:sanai3i/logic/complete_register/complete_regster.dart';
 import 'package:sanai3i/logic/maps_ctrl/pick_location_bloc.dart';
 import 'package:sanai3i/logic/maps_ctrl/picker_states.dart';
-import 'package:sanai3i/logic/services_getter/serv_get_states.dart';
-import 'package:sanai3i/logic/services_getter/services_getter_bloc.dart';
 import 'package:sanai3i/logic/user_existace/user_existace.dart';
 import 'package:sanai3i/models/auth/register_model.dart';
-import 'package:sanai3i/models/service_model/service_model.dart';
 import 'package:sanai3i/shared/const.dart';
 import 'package:sanai3i/shared/src/localization/trans.dart';
-import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'package:sanai3i/view/profile/components.dart';
 import 'package:sanai3i/view/widgets/appbar.dart';
 import 'package:sanai3i/view/widgets/button_to_dialog.dart';
-import 'package:sanai3i/view/widgets/error_widget.dart';
 import 'package:sanai3i/view/widgets/loading_overlay.dart';
+import 'package:sanai3i/view/widgets/selecte_service_view.dart';
 import 'package:sanai3i/view/widgets/text_field.dart';
 
 class CompleteInfoView extends StatelessWidget {
@@ -89,7 +85,7 @@ class CompleteInfoView extends StatelessWidget {
                                           ? CompleteRegisterBloc.of(context).serviceModel!.nameAr
                                           : CompleteRegisterBloc.of(context).serviceModel!.nameEn
                                       : Tr.get.service,
-                                  dialog: const KSelectService(),
+                                  dialog: KSelectService(onSelect: CompleteRegisterBloc.of(context).setService),
                                 ),
                               ),
                             ],
@@ -116,95 +112,6 @@ class CompleteInfoView extends StatelessWidget {
             );
           },
         ),
-      ),
-    );
-  }
-}
-
-class KSelectService extends StatelessWidget {
-  const KSelectService({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<ServicesGetterBloc, ServicesGetterState>(
-      builder: (context, state) {
-        return SizedBox(
-          width: Get.width,
-          height: Get.height * .9,
-          child: state.map(
-            error: (value) => KErrorWidget(error: value.error),
-            loading: (value) => const KLoadingOverlay(isLoading: true),
-            success: (value) => SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 60),
-              child: Column(
-                children: [
-                  SizedBox(width: Get.width, child: Divider(color: KColors.of(context).divider, height: 2)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Text(Tr.get.workers, style: KTextStyle.of(context).title),
-                  ),
-                  Wrap(
-                    children: [
-                      ...ServicesGetterBloc.of(context).jobs.map((service) {
-                        return KServiceBtn(service: service);
-                      })
-                    ],
-                  ),
-                  SizedBox(width: Get.width, child: Divider(color: KColors.of(context).divider, height: 2)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Text(Tr.get.shops, style: KTextStyle.of(context).title),
-                  ),
-                  Wrap(
-                    children: [
-                      ...ServicesGetterBloc.of(context).shops.map((service) {
-                        return KServiceBtn(service: service);
-                      })
-                    ],
-                  ),
-                  SizedBox(width: Get.width, child: Divider(color: KColors.of(context).divider, height: 2)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Text(Tr.get.transport, style: KTextStyle.of(context).title),
-                  ),
-                  Wrap(
-                    children: [
-                      ...ServicesGetterBloc.of(context).transport.map((service) {
-                        return KServiceBtn(service: service);
-                      })
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class KServiceBtn extends StatelessWidget {
-  final ServiceModel service;
-  const KServiceBtn({
-    Key? key,
-    required this.service,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 3),
-      child: RawMaterialButton(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2).copyWith(top: 8),
-        onPressed: () {
-          CompleteRegisterBloc.of(context).setService(service);
-        },
-        shape: const StadiumBorder(),
-        fillColor: KColors.of(context).background,
-        child: Text(Tr.isAr ? service.nameAr : service.nameEn, style: KTextStyle.of(context).textBtn),
       ),
     );
   }

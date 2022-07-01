@@ -34,7 +34,7 @@ class _AuthDialogState extends State<AuthDialog> {
           child: KLoadingOverlay(
             isLoading: state.maybeWhen(loading: () => true, orElse: () => false),
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Form(
                 key: formKey,
                 child: Directionality(
@@ -42,7 +42,16 @@ class _AuthDialogState extends State<AuthDialog> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const SizedBox(height: 20),
+                      SizedBox(
+                        height: 60,
+                        child: Center(
+                          child: Text(
+                            Tr.get.login_register,
+                            style: KTextStyle.of(context).title,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                       KTextFormField(
                         keyboardType: TextInputType.phone,
                         autofocus: true,
@@ -76,10 +85,10 @@ class _AuthDialogState extends State<AuthDialog> {
                           child: Text(Tr.get.send_code, style: KTextStyle.of(context).title),
                         ),
                       ),
-                      const SizedBox(height: 20),
                       if (AuthCubit.of(context).codeSentFlag)
                         Column(
                           children: [
+                            const SizedBox(height: 20),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -104,7 +113,8 @@ class _AuthDialogState extends State<AuthDialog> {
                               ),
                             ),
                           ],
-                        )
+                        ),
+                      const SizedBox(height: 60),
                     ],
                   ),
                 ),

@@ -44,11 +44,11 @@
   "acc_type": "نوع الحساب",
   "client": "عميل",
   "service_provider": "مقدم خدمة",
-  "pls_select_service":"يرجي تحديد الخدمة",
-  "pls_select_acc_type":"يرجي تحديد نوع الحساب",
-  "workers":"صنايعية",
-  "shops":"محلات",
-  "transport":"نقل",
-  "available":"متاح",
-  "unAvailable":"غير متاح"
+  "pls_select_service": "يرجي تحديد الخدمة",
+  "pls_select_acc_type": "يرجي تحديد نوع الحساب",
+  "workers": "عمال",
+  "shops": "محلات",
+  "transport": "نقل",
+  "available": "متاح",
+  "unAvailable": "غير متاح"
 }

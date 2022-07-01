@@ -33,6 +33,9 @@ dependencies:
   google_maps_flutter:
   geolocator:
   geoflutterfire:
+  cached_network_image: ^3.2.1
+  carousel_slider:
+  flutter_staggered_grid_view:
 
 
 

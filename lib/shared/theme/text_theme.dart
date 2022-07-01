@@ -103,6 +103,15 @@ class KTextStyle {
     );
   }
 
+  TextStyle get title2 {
+    return TextStyle(
+      color: Theme.of(context!).brightness == Brightness.light ? mainL : mainD,
+      fontSize: 16,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.bold,
+    );
+  }
+
   TextStyle get reTitle {
     return TextStyle(
       color: Theme.of(context!).brightness == Brightness.dark ? mainL : mainD,
@@ -113,8 +122,8 @@ class KTextStyle {
 
   TextStyle get textBtn {
     return const TextStyle(
-      color: Colors.blue,
-      fontSize: 18,
+      color: Color(0xFF629CFF),
+      fontSize: 16,
       fontFamily: fontFamily,
     );
   }

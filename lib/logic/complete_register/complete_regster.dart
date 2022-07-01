@@ -30,8 +30,8 @@ class CompleteRegisterBloc extends Cubit<CompleteRegisterState> {
   openMapDialog() {
     Get.dialog(
       KPopupDialg(
-        title: Tr.get.select_location,
-        child: SizedBox(height: Get.height * .8, child: const LocationPicker()),
+        tag: Tr.get.select_location,
+        child: const LocationPicker(),
       ),
     );
   }

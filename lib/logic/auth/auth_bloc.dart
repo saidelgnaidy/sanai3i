@@ -43,6 +43,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(AuthState.error(Tr.get.no_connection));
       }
     } catch (e) {
+      debugPrint("Auth Error : $e");
       emit(AuthState.error(Tr.get.something_went_wrong));
     }
   }
@@ -56,7 +57,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   validateCode(String code) async {
-    debugPrint('*** Validait With Code ***');
+    debugPrint('*** Validate With Code ***');
     emit(const AuthState.loading());
     try {
       PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: _verificationId, smsCode: code);
@@ -107,6 +108,7 @@ class AuthCubit extends Cubit<AuthState> {
       } else if (e.toString().contains('phone auth credential is invalid')) {
         emit(AuthState.error(Tr.get.wrong_code));
       } else {
+        debugPrint("Auth Error : $e");
         emit(AuthState.error(Tr.get.something_went_wrong));
       }
     } else {

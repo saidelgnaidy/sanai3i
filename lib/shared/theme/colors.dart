@@ -9,10 +9,10 @@ class KColors {
   }
 
   //Light
-  static const Color appbarL = Color(0xFFF5F5F5);
+  static const Color backgrounL = Color(0xFFF5F5F5);
+  static const Color elevatedBoxL = Color(0xFFFDF9FF);
   static const Color reBackL = Color(0xFF5a585e);
   static const Color shadowL = Color(0x35000000);
-  static const Color scaffoldL = Color(0xFFF5F5F5);
   static const Color codePickerL = Color(0xFFF5F5F5);
   static const Color rawMatBtnL = Colors.white;
   static const Color rawMatBtnL2 = Color(0xFF5a585e);
@@ -22,10 +22,10 @@ class KColors {
   static const Color bANDwL = Color(0xFF000000);
 
   //Dark
-  static const Color appbarD = Color(0xFF191720);
+  static const Color backgroundD = Color(0xFF191720);
+  static const Color elevatedBoxD = Color(0xFF1D1C25);
   static const Color reBackD = Color(0xFFBDBDBD);
-  static const Color shadowD = Color(0x17000000);
-  static const Color scaffoldD = Color(0xFF191720);
+  static const Color shadowD = Color(0x15000000);
   static const Color codePickerD = Color(0xFF282631);
   static const Color rawMatBtnD = Color(0xFF302E35);
   static const Color rawMatBtnD2 = Color(0xFFBDBDBD);
@@ -36,19 +36,23 @@ class KColors {
 
   //Getters
   Color get appbar {
-    return Theme.of(context!).brightness == Brightness.dark ? appbarD : appbarL;
+    return Theme.of(context!).brightness == Brightness.dark ? backgroundD : backgrounL;
   }
 
   Color get background {
-    return Theme.of(context!).brightness == Brightness.dark ? appbarD : appbarL;
+    return Theme.of(context!).brightness == Brightness.dark ? backgroundD : backgrounL;
+  }
+
+  Color get elevatedBox {
+    return Theme.of(context!).brightness == Brightness.light ? elevatedBoxL : elevatedBoxD;
   }
 
   Color get reBackground {
-    return Theme.of(context!).brightness == Brightness.light ? appbarD : appbarL;
+    return Theme.of(context!).brightness == Brightness.light ? backgroundD : backgrounL;
   }
 
   Color get border {
-    return Theme.of(context!).brightness == Brightness.light ? appbarD.withOpacity(.2) : appbarL.withOpacity(.2);
+    return Theme.of(context!).brightness == Brightness.light ? backgroundD.withOpacity(.2) : backgrounL.withOpacity(.2);
   }
 
   Color get fabBackground {
@@ -76,7 +80,7 @@ class KColors {
   }
 
   Color get divider {
-    return Theme.of(context!).brightness == Brightness.dark ? cursorD : cursorL;
+    return Theme.of(context!).brightness == Brightness.dark ? cursorD.withOpacity(.5) : cursorL.withOpacity(.5);
   }
 
   Color get shadow {

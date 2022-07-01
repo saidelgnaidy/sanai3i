@@ -27,7 +27,16 @@ class ServicesGetterBloc extends Cubit<ServicesGetterState> {
     }
   }
 
-  List<ServiceModel> get jobs => _services.where((element) => element.type == ServiceType.job).toList();
-  List<ServiceModel> get shops => _services.where((element) => element.type == ServiceType.shop).toList();
-  List<ServiceModel> get transport => _services.where((element) => element.type == ServiceType.transport).toList();
+  List<ServiceModel> get jobs => _services.where((element) => element.type == ServiceType.job).toList()
+    ..sort(
+      (a, b) => a.nameAr.length.compareTo(b.nameAr.length),
+    );
+  List<ServiceModel> get shops => _services.where((element) => element.type == ServiceType.shop).toList()
+    ..sort(
+      (a, b) => a.nameAr.length.compareTo(b.nameAr.length),
+    );
+  List<ServiceModel> get transport => _services.where((element) => element.type == ServiceType.transport).toList()
+    ..sort(
+      (a, b) => a.nameAr.length.compareTo(b.nameAr.length),
+    );
 }

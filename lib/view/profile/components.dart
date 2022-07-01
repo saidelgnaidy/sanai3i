@@ -49,8 +49,17 @@ class KSelectAccType extends StatelessWidget {
           builder: (context, state) {
             return Column(
               children: [
-                const SizedBox(height: 55),
-                SizedBox(width: Get.width * .6, child: Divider(color: KColors.of(context).divider, height: 2)),
+                SizedBox(
+                  height: 60,
+                  child: Center(
+                    child: Text(
+                      Tr.get.acc_type,
+                      style: KTextStyle.of(context).title,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                Divider(color: KColors.of(context).divider, height: 1),
                 const SizedBox(height: 10),
                 RadioListTile(
                   value: AccType.client,

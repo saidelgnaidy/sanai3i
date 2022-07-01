@@ -1,11 +1,10 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lottie/lottie.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
-import 'package:sanai3i/logic/settings/settings_cubit.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
+import 'package:sanai3i/view/home/home_view.dart';
 import 'package:sanai3i/view/profile/profile.dart';
 import 'package:sanai3i/view/widgets/appbar.dart';
 
@@ -27,27 +26,11 @@ class _MainNavigationState extends State<MainNavigation> {
           extendBody: true,
           body: IndexedStack(
             index: nav.index,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: BlocBuilder<SettingsBloc, SettingsState>(
-                  builder: (context, state) {
-                    return Center(
-                      child: Column(
-                        children: [
-                          Lottie.asset(
-                            'assets/animations/working.json',
-                            frameRate: FrameRate(60),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(),
-              const SizedBox(),
-              const Profile(),
+            children: const [
+              HomeView(),
+              SizedBox(),
+              SizedBox(),
+              Profile(),
             ],
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

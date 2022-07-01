@@ -66,12 +66,12 @@ class KMainContainer extends StatelessWidget {
 }
 
 class KButton extends StatelessWidget {
-  const KButton({super.key, required this.title, required this.onPressed, this.width, this.isSecondary, this.hieght});
+  const KButton({super.key, required this.title, required this.onPressed, this.width, this.isSecondary, this.hieght, this.isRounded = true});
 
   final String title;
   final Function() onPressed;
   final double? width, hieght;
-  final bool? isSecondary;
+  final bool? isSecondary, isRounded;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class KButton extends StatelessWidget {
       child: RawMaterialButton(
         onPressed: onPressed,
         fillColor: isSecondary ?? false ? KColors.of(context).rawMatBtn2 : KColors.of(context).rawMatBtn,
-        shape: KHelper.btnShape,
+        shape: isRounded! ? KHelper.btnShape : const RoundedRectangleBorder(),
         elevation: 0,
         child: Text(
           title,

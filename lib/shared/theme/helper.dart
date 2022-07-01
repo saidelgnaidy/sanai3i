@@ -63,17 +63,17 @@ class KHelper {
 
   BoxDecoration get elevatedBox {
     return BoxDecoration(
-      color: KColors.of(context!).background,
+      color: KColors.of(context!).elevatedBox,
       borderRadius: BorderRadius.circular(cornerRadius),
       boxShadow: [
-        BoxShadow(color: KColors.of(context!).shadow, blurRadius: 5, offset: const Offset(0, 5), spreadRadius: 2),
+        BoxShadow(color: KColors.of(context!).shadow, blurRadius: 4, offset: const Offset(0, 4)),
       ],
     );
   }
 
   BoxDecoration get elevatedCircle {
     return BoxDecoration(
-      color: KColors.of(context!).background,
+      color: KColors.of(context!).elevatedBox,
       shape: BoxShape.circle,
       boxShadow: [
         BoxShadow(color: KColors.of(context!).shadow, blurRadius: 10, offset: const Offset(5, 5), spreadRadius: 5),

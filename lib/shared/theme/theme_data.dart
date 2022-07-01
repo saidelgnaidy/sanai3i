@@ -18,34 +18,52 @@ class KThemeData {
   static ThemeData get light {
     return ThemeData(
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      scaffoldBackgroundColor: KColors.scaffoldL,
+      scaffoldBackgroundColor: KColors.backgrounL,
       appBarTheme: const AppBarTheme(
-        color: KColors.appbarL,
+        color: KColors.backgrounL,
         systemOverlayStyle: _lightOverLay,
         elevation: 0,
         actionsIconTheme: IconThemeData(color: KColors.activeIconsL),
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowL,
-      inputDecorationTheme: inputDecorationTheme(color: KColors.scaffoldD),
+      inputDecorationTheme: inputDecorationTheme(color: KColors.backgroundD),
       iconTheme: const IconThemeData(color: KColors.activeIconsD),
+      elevatedButtonTheme: elevatedBtnTheme(shadow: KColors.shadowL, background: KColors.elevatedBoxL),
     );
   }
 
   static ThemeData get dark {
     return ThemeData.dark().copyWith(
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      scaffoldBackgroundColor: KColors.scaffoldD,
+      scaffoldBackgroundColor: KColors.backgroundD,
       appBarTheme: const AppBarTheme(
-        color: KColors.appbarD,
+        color: KColors.backgroundD,
         systemOverlayStyle: _darkOverLay,
         elevation: 0,
         actionsIconTheme: IconThemeData(color: KColors.activeIconsD),
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowD,
-      inputDecorationTheme: inputDecorationTheme(color: KColors.scaffoldL),
+      inputDecorationTheme: inputDecorationTheme(color: KColors.backgrounL),
       iconTheme: const IconThemeData(color: KColors.activeIconsL),
+      elevatedButtonTheme: elevatedBtnTheme(shadow: KColors.shadowD, background: KColors.elevatedBoxD),
+    );
+  }
+
+  static ElevatedButtonThemeData elevatedBtnTheme({required Color shadow, required Color background}) {
+    return ElevatedButtonThemeData(
+      style: ButtonStyle(
+        alignment: Alignment.center,
+        shadowColor: MaterialStateProperty.all<Color>(shadow),
+        elevation: MaterialStateProperty.all<double>(5.0),
+        backgroundColor: MaterialStateProperty.all<Color>(background),
+        shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(KHelper.btnRadius),
+          ),
+        ),
+      ),
     );
   }
 
@@ -61,7 +79,7 @@ class KThemeData {
   }
 
   InputDecoration get inputBorderDecoration {
-    return Theme.of(context!).brightness == Brightness.light ? inputDecoration(color: KColors.scaffoldL) : inputDecoration(color: KColors.scaffoldD);
+    return Theme.of(context!).brightness == Brightness.light ? inputDecoration(color: KColors.backgrounL) : inputDecoration(color: KColors.backgroundD);
   }
 
   static InputDecoration inputDecoration({required Color color}) => InputDecoration(

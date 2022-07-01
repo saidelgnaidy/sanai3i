@@ -4,15 +4,13 @@ import 'package:get/get.dart';
 import 'package:sanai3i/shared/const.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
-import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'hero_dialog.dart';
 
 class KPopupDialg extends StatelessWidget {
   final Widget child;
-  final String title;
-  final String? tag;
+  final String tag;
 
-  const KPopupDialg({super.key, required this.child, required this.title, this.tag});
+  const KPopupDialg({super.key, required this.child, required this.tag});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,7 @@ class KPopupDialg extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: KHelper.hPading),
               child: Hero(
-                tag: tag ?? title,
+                tag: tag,
                 createRectTween: (begin, end) => HeroTween(begin: begin, end: end),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(KHelper.btnRadius),
@@ -41,21 +39,6 @@ class KPopupDialg extends StatelessWidget {
                     elevation: 0,
                     color: KColors.of(context).rawMatBtn,
                     child: FittedBox(child: child),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 20,
-              child: Hero(
-                tag: '${title}title',
-                child: Material(
-                  elevation: 0,
-                  color: Colors.transparent,
-                  child: Text(
-                    title,
-                    style: KTextStyle.of(context).title,
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -77,42 +60,27 @@ class KButtonToDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        SizedBox(
-          width: Get.width,
-          height: 50,
-          child: Hero(
-            tag: tag ?? title,
-            createRectTween: (begin, end) {
-              return HeroTween(begin: begin, end: end);
-            },
-            child: KButton(
-              title: '',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  HeroDialog(
-                    builder: (context) => KPopupDialg(title: title, tag: tag, child: dialog),
-                    isDismissible: isDismissible,
-                  ),
-                );
-              },
-            ),
-          ),
+    return SizedBox(
+      width: Get.width,
+      height: 50,
+      child: Hero(
+        tag: tag ?? title,
+        createRectTween: (begin, end) {
+          return HeroTween(begin: begin, end: end);
+        },
+        child: KButton(
+          title: title,
+          onPressed: () {
+            Navigator.push(
+              context,
+              HeroDialog(
+                builder: (context) => KPopupDialg(tag: tag ?? title, child: dialog),
+                isDismissible: isDismissible,
+              ),
+            );
+          },
         ),
-        IgnorePointer(
-          child: Hero(
-            tag: '${title}title',
-            child: Material(
-              elevation: 0,
-              color: Colors.transparent,
-              child: Text(title, style: KTextStyle.of(context).title),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
@@ -121,7 +89,11 @@ class KIconToDialog extends StatelessWidget {
   final Widget dialog;
   final String tag;
 
-  const KIconToDialog({super.key, required this.tag, required this.dialog, });
+  const KIconToDialog({
+    super.key,
+    required this.tag,
+    required this.dialog,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +108,7 @@ class KIconToDialog extends StatelessWidget {
           Navigator.push(
             context,
             HeroDialog(
-              builder: (context) => KPopupDialg(tag: tag, title: tag, child: dialog),
+              builder: (context) => KPopupDialg(tag: tag, child: dialog),
             ),
           );
         },
