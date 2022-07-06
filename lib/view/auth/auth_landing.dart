@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'package:sanai3i/view/auth/auth_dialog.dart';
 import 'package:sanai3i/view/widgets/appbar.dart';

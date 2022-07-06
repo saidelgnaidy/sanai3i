@@ -17,25 +17,27 @@ dependencies:
   get:
   get_storage:
   flutter_bloc:
-  firebase_core: ^1.17.1
-  firebase_messaging: ^11.4.1
-  firebase_auth: ^3.3.19
-  cloud_firestore: ^3.1.17
-  flutter_local_notifications: 9.5.3+1
-  connectivity_plus: ^2.3.3
+  firebase_core: 
+  firebase_messaging: 
+  firebase_auth: 
+  cloud_firestore: 
+  flutter_local_notifications: 
+  connectivity_plus:
   country_code_picker:
   lottie:
-  pinput: ^2.2.11
+  pinput:
   animated_bottom_navigation_bar:
-  animate_icons: ^2.0.0
-  qr_code_scanner: ^1.0.0
-  qr_flutter: ^4.0.0
+  animate_icons: 
+  qr_code_scanner: 
+  qr_flutter: 
   google_maps_flutter:
   geolocator:
-  geoflutterfire:
-  cached_network_image: ^3.2.1
+  geoflutterfire: ^3.0.3
+  cached_network_image: 
   carousel_slider:
   flutter_staggered_grid_view:
+  shimmer:
+  rxdart:
 
 
 
@@ -73,6 +75,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/images
     - assets/launcher/
     - assets/fonts/
     - assets/animations/

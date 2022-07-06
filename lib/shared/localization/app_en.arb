@@ -50,5 +50,6 @@
   "shops": "Shops",
   "transport": "Transport",
   "available": "Available",
-  "unAvailable": "UnAvailable"
+  "unAvailable": "UnAvailable",
+  "expand_search_rad": "Expand Search Radius"
 }

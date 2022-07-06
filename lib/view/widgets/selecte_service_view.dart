@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:sanai3i/logic/services_getter/serv_get_states.dart';
 import 'package:sanai3i/logic/services_getter/services_getter_bloc.dart';
 import 'package:sanai3i/models/service_model/service_model.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'package:sanai3i/view/widgets/error_widget.dart';

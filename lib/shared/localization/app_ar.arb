@@ -50,5 +50,6 @@
   "shops": "محلات",
   "transport": "نقل",
   "available": "متاح",
-  "unAvailable": "غير متاح"
+  "unAvailable": "غير متاح",
+  "expand_search_rad":"توسعة نطاق البحث"
 }

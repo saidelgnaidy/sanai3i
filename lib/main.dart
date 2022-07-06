@@ -8,13 +8,14 @@ import 'package:sanai3i/logic/auth/auth_bloc.dart';
 import 'package:sanai3i/logic/complete_register/complete_regster.dart';
 import 'package:sanai3i/logic/maps_ctrl/pick_location_bloc.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
+import 'package:sanai3i/logic/service_provider/service_provicer_bloc.dart';
 import 'package:sanai3i/logic/services_getter/services_getter_bloc.dart';
 import 'package:sanai3i/logic/settings/settings_cubit.dart';
 import 'package:sanai3i/logic/user_existace/user_existace.dart';
 import 'package:sanai3i/logic/user_existace/user_existace_state.dart';
 import 'package:sanai3i/logic/user_info/user_info_bloc.dart';
 import 'package:sanai3i/shared/notifications/notifications_api.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/view/main/main_navigation.dart';
 import 'package:sanai3i/shared/theme/theme_data.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -29,8 +30,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
-  //await GetStorage().erase();
-  FirebaseAuth.instance.setLanguageCode('ar');
+  /// await GetStorage().erase();
+  /// await FirebaseAuth.instance.signOut();
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
   runApp(const MyApp());
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<CompleteRegisterBloc>(create: (context) => CompleteRegisterBloc()),
         BlocProvider<ServicesGetterBloc>(create: (context) => ServicesGetterBloc()..getServices()),
         BlocProvider<UserInfoBloc>(create: (context) => UserInfoBloc()..getUser()),
+        BlocProvider<ServiceProvidersBloc>(create: (context) => ServiceProvidersBloc()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {

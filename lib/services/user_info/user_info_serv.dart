@@ -21,7 +21,7 @@ class UserInfoService {
         final doc = await FBCR.me.get();
         if (doc.exists) {
           final user = KUser.fromMap(doc.data() as Map<String, dynamic>);
-          GetStorage().write(StorageKeys.user, user.toMap());
+          GetStorage().write(StorageKeys.user, user.toCache());
           return user;
         } else {
           throw const KExceptionUserNotFound();

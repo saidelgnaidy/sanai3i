@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanai3i/shared/const.dart';
+import 'package:sanai3i/view/widgets/shared_components.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 import 'package:sanai3i/view/widgets/theme_toggle_btn.dart';
 

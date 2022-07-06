@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sanai3i/shared/const.dart';
+import 'package:sanai3i/view/widgets/shared_components.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'hero_dialog.dart';

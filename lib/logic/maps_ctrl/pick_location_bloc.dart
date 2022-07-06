@@ -6,7 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sanai3i/logic/maps_ctrl/picker_states.dart';
 import 'package:sanai3i/services/loacation/location_serv.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 
 class LocationPickerBloc extends Cubit<LocationPickerState> {
   LocationPickerBloc() : super(const LocationPickerState.loading());

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 

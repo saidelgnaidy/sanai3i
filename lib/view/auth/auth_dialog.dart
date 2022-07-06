@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 import 'package:sanai3i/logic/auth/auth_bloc.dart';
 import 'package:sanai3i/logic/auth/auth_state_event.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
+import 'package:sanai3i/models/user/my_geo_point.dart';
 
 import 'package:sanai3i/models/service_model/service_model.dart';
 
@@ -9,7 +10,7 @@ class RegisterModel {
   String? phone;
   String? accType;
   String? serviceId;
-  dynamic location;
+  KGeoFirePoint? location;
   bool? available;
   ServiceModel? service;
   RegisterModel({
@@ -27,7 +28,7 @@ class RegisterModel {
     String? phone,
     String? accType,
     String? serviceId,
-    dynamic location,
+    KGeoFirePoint? location,
     bool? available,
     ServiceModel? service,
   }) {
@@ -57,7 +58,9 @@ class RegisterModel {
     if (serviceId != null) {
       result.addAll({'serviceId': serviceId});
     }
-    result.addAll({'location': location});
+    if (location != null) {
+      result.addAll({'location': location!.toMap()});
+    }
     if (available != null) {
       result.addAll({'available': available});
     }
@@ -74,7 +77,7 @@ class RegisterModel {
       phone: map['phone'],
       accType: map['accType'],
       serviceId: map['serviceId'],
-      location: map['location'],
+      location: map['location'] != null ? KGeoFirePoint.fromMap(map) : null,
       available: map['available'],
       service: map['service'] != null ? ServiceModel.fromMap(map['service']) : null,
     );
@@ -118,6 +121,8 @@ abstract class AccType {
   factory AccType.fromStr(String str) {
     return str == _ServiceProviderAccType().toString() ? _ServiceProviderAccType() : _ClientAccType();
   }
+
+  String toMap();
 }
 
 @immutable
@@ -126,6 +131,11 @@ class _ClientAccType extends AccType {
   String toString() {
     return 'Client';
   }
+
+  @override
+  String toMap() {
+    return "Client";
+  }
 }
 
 @immutable
@@ -133,5 +143,10 @@ class _ServiceProviderAccType extends AccType {
   @override
   String toString() {
     return 'ServiceProvider';
+  }
+
+  @override
+  String toMap() {
+    return "ServiceProvider";
   }
 }

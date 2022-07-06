@@ -37,7 +37,7 @@ class KHelper {
 
   /// Icons data *****************************
   static const IconData person = Icons.person;
-  static const IconData phone = Icons.phone;
+  static const IconData phone = Icons.phone_rounded;
   static const IconData services = Icons.home_repair_service;
   static const IconData available = Icons.timelapse;
   static const IconData whatsapp = Icons.whatsapp;
@@ -46,13 +46,13 @@ class KHelper {
   static const IconData edit = Icons.edit;
   static const IconData delete = Icons.delete;
   static const IconData qrCode = Icons.qr_code;
+  static const IconData favorite = Icons.favorite_rounded;
+  static const IconData chat = Icons.chat_bubble_rounded;
 
   static IconData fabIcon(index) {
     if (index == 3) return Icons.add;
     return Icons.search;
   }
-
-  static const IconData chat = Icons.chat_bubble;
 
   static const double btnRadius = 12.0;
   static const double cornerRadius = 8.0;
@@ -69,6 +69,20 @@ class KHelper {
         BoxShadow(color: KColors.of(context!).shadow, blurRadius: 4, offset: const Offset(0, 4)),
       ],
     );
+  }
+
+  BoxDecoration get shimmerBox {
+    return BoxDecoration(
+      color: KColors.of(context!).elevatedBox.withOpacity(.2),
+      borderRadius: BorderRadius.circular(cornerRadius),
+    );
+  }
+
+  Gradient get shimmerGradiant {
+    return LinearGradient(colors: [
+      KColors.of(context!).shadow.withOpacity(.2),
+      KColors.of(context!).shadow.withOpacity(.5),
+    ]);
   }
 
   BoxDecoration get elevatedCircle {

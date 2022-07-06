@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
-import 'package:sanai3i/view/widgets/appbar.dart';
 
 class KOfflineView extends StatelessWidget {
   final void Function()? onTryAgain;
@@ -12,7 +11,6 @@ class KOfflineView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const KAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(

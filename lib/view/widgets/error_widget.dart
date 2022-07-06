@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/text_theme.dart';
 
 class KErrorWidget extends StatelessWidget {

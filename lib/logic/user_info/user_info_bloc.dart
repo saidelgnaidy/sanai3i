@@ -5,7 +5,7 @@ import 'package:sanai3i/models/auth/register_model.dart';
 import 'package:sanai3i/models/user/user_model.dart';
 import 'package:sanai3i/services/user_info/user_info_serv.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 
 class UserInfoBloc extends Cubit<UserInfoState> {
   UserInfoBloc() : super(const UserInfoState.loading());

@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sanai3i/logic/complete_register/complete_reg_state.dart';
 import 'package:sanai3i/models/auth/register_model.dart';
 import 'package:sanai3i/models/service_model/service_model.dart';
+import 'package:sanai3i/models/user/my_geo_point.dart';
 import 'package:sanai3i/services/complete_register/complete_register_serv.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/view/maps/pick_location_view.dart';
 import 'package:sanai3i/view/widgets/button_to_dialog.dart';
 
@@ -76,10 +76,7 @@ class CompleteRegisterBloc extends Cubit<CompleteRegisterState> {
           name: nameCtrll.text,
           serviceId: serviceModel!.id,
           service: serviceModel,
-          location: GeoFirePoint(
-            marker!.position.latitude,
-            marker.position.longitude,
-          ).data,
+          location: KGeoFirePoint(marker!.position.latitude, marker.position.longitude),
         ));
         emit(const CompleteRegisterState.success());
       } on KExceptionOffline {

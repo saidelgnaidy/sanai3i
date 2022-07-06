@@ -4,7 +4,7 @@ import 'package:sanai3i/logic/services_getter/serv_get_states.dart';
 import 'package:sanai3i/models/service_model/service_model.dart';
 import 'package:sanai3i/services/services_getter/service_get_sev.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
-import 'package:sanai3i/shared/src/localization/trans.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 
 class ServicesGetterBloc extends Cubit<ServicesGetterState> {
   ServicesGetterBloc() : super(const ServicesGetterState.loading());
