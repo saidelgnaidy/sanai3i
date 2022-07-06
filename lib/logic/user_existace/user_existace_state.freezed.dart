@@ -76,14 +76,11 @@ mixin _$UserExistenceState {
 
 /// @nodoc
 abstract class $UserExistenceStateCopyWith<$Res> {
-  factory $UserExistenceStateCopyWith(
-          UserExistenceState value, $Res Function(UserExistenceState) then) =
-      _$UserExistenceStateCopyWithImpl<$Res>;
+  factory $UserExistenceStateCopyWith(UserExistenceState value, $Res Function(UserExistenceState) then) = _$UserExistenceStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserExistenceStateCopyWithImpl<$Res>
-    implements $UserExistenceStateCopyWith<$Res> {
+class _$UserExistenceStateCopyWithImpl<$Res> implements $UserExistenceStateCopyWith<$Res> {
   _$UserExistenceStateCopyWithImpl(this._value, this._then);
 
   final UserExistenceState _value;
@@ -93,17 +90,13 @@ class _$UserExistenceStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$$UserExistenceLoadingCopyWith<$Res> {
-  factory _$$UserExistenceLoadingCopyWith(_$UserExistenceLoading value,
-          $Res Function(_$UserExistenceLoading) then) =
+  factory _$$UserExistenceLoadingCopyWith(_$UserExistenceLoading value, $Res Function(_$UserExistenceLoading) then) =
       __$$UserExistenceLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserExistenceLoadingCopyWithImpl<$Res>
-    extends _$UserExistenceStateCopyWithImpl<$Res>
-    implements _$$UserExistenceLoadingCopyWith<$Res> {
-  __$$UserExistenceLoadingCopyWithImpl(_$UserExistenceLoading _value,
-      $Res Function(_$UserExistenceLoading) _then)
+class __$$UserExistenceLoadingCopyWithImpl<$Res> extends _$UserExistenceStateCopyWithImpl<$Res> implements _$$UserExistenceLoadingCopyWith<$Res> {
+  __$$UserExistenceLoadingCopyWithImpl(_$UserExistenceLoading _value, $Res Function(_$UserExistenceLoading) _then)
       : super(_value, (v) => _then(v as _$UserExistenceLoading));
 
   @override
@@ -122,8 +115,7 @@ class _$UserExistenceLoading implements UserExistenceLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserExistenceLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserExistenceLoading);
   }
 
   @override
@@ -216,22 +208,17 @@ abstract class UserExistenceLoading implements UserExistenceState {
 
 /// @nodoc
 abstract class _$$UserExistenceCompletedCopyWith<$Res> {
-  factory _$$UserExistenceCompletedCopyWith(_$UserExistenceCompleted value,
-          $Res Function(_$UserExistenceCompleted) then) =
+  factory _$$UserExistenceCompletedCopyWith(_$UserExistenceCompleted value, $Res Function(_$UserExistenceCompleted) then) =
       __$$UserExistenceCompletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserExistenceCompletedCopyWithImpl<$Res>
-    extends _$UserExistenceStateCopyWithImpl<$Res>
-    implements _$$UserExistenceCompletedCopyWith<$Res> {
-  __$$UserExistenceCompletedCopyWithImpl(_$UserExistenceCompleted _value,
-      $Res Function(_$UserExistenceCompleted) _then)
+class __$$UserExistenceCompletedCopyWithImpl<$Res> extends _$UserExistenceStateCopyWithImpl<$Res> implements _$$UserExistenceCompletedCopyWith<$Res> {
+  __$$UserExistenceCompletedCopyWithImpl(_$UserExistenceCompleted _value, $Res Function(_$UserExistenceCompleted) _then)
       : super(_value, (v) => _then(v as _$UserExistenceCompleted));
 
   @override
-  _$UserExistenceCompleted get _value =>
-      super._value as _$UserExistenceCompleted;
+  _$UserExistenceCompleted get _value => super._value as _$UserExistenceCompleted;
 }
 
 /// @nodoc
@@ -246,8 +233,7 @@ class _$UserExistenceCompleted implements UserExistenceCompleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserExistenceCompleted);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserExistenceCompleted);
   }
 
   @override
@@ -340,17 +326,13 @@ abstract class UserExistenceCompleted implements UserExistenceState {
 
 /// @nodoc
 abstract class _$$UserExistenceMissingCopyWith<$Res> {
-  factory _$$UserExistenceMissingCopyWith(_$UserExistenceMissing value,
-          $Res Function(_$UserExistenceMissing) then) =
+  factory _$$UserExistenceMissingCopyWith(_$UserExistenceMissing value, $Res Function(_$UserExistenceMissing) then) =
       __$$UserExistenceMissingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserExistenceMissingCopyWithImpl<$Res>
-    extends _$UserExistenceStateCopyWithImpl<$Res>
-    implements _$$UserExistenceMissingCopyWith<$Res> {
-  __$$UserExistenceMissingCopyWithImpl(_$UserExistenceMissing _value,
-      $Res Function(_$UserExistenceMissing) _then)
+class __$$UserExistenceMissingCopyWithImpl<$Res> extends _$UserExistenceStateCopyWithImpl<$Res> implements _$$UserExistenceMissingCopyWith<$Res> {
+  __$$UserExistenceMissingCopyWithImpl(_$UserExistenceMissing _value, $Res Function(_$UserExistenceMissing) _then)
       : super(_value, (v) => _then(v as _$UserExistenceMissing));
 
   @override
@@ -369,8 +351,7 @@ class _$UserExistenceMissing implements UserExistenceMissing {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserExistenceMissing);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserExistenceMissing);
   }
 
   @override
@@ -463,17 +444,13 @@ abstract class UserExistenceMissing implements UserExistenceState {
 
 /// @nodoc
 abstract class _$$UserExistenceOfflineCopyWith<$Res> {
-  factory _$$UserExistenceOfflineCopyWith(_$UserExistenceOffline value,
-          $Res Function(_$UserExistenceOffline) then) =
+  factory _$$UserExistenceOfflineCopyWith(_$UserExistenceOffline value, $Res Function(_$UserExistenceOffline) then) =
       __$$UserExistenceOfflineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserExistenceOfflineCopyWithImpl<$Res>
-    extends _$UserExistenceStateCopyWithImpl<$Res>
-    implements _$$UserExistenceOfflineCopyWith<$Res> {
-  __$$UserExistenceOfflineCopyWithImpl(_$UserExistenceOffline _value,
-      $Res Function(_$UserExistenceOffline) _then)
+class __$$UserExistenceOfflineCopyWithImpl<$Res> extends _$UserExistenceStateCopyWithImpl<$Res> implements _$$UserExistenceOfflineCopyWith<$Res> {
+  __$$UserExistenceOfflineCopyWithImpl(_$UserExistenceOffline _value, $Res Function(_$UserExistenceOffline) _then)
       : super(_value, (v) => _then(v as _$UserExistenceOffline));
 
   @override
@@ -492,8 +469,7 @@ class _$UserExistenceOffline implements UserExistenceOffline {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserExistenceOffline);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserExistenceOffline);
   }
 
   @override
@@ -586,17 +562,12 @@ abstract class UserExistenceOffline implements UserExistenceState {
 
 /// @nodoc
 abstract class _$$UserExistenceErrorCopyWith<$Res> {
-  factory _$$UserExistenceErrorCopyWith(_$UserExistenceError value,
-          $Res Function(_$UserExistenceError) then) =
-      __$$UserExistenceErrorCopyWithImpl<$Res>;
+  factory _$$UserExistenceErrorCopyWith(_$UserExistenceError value, $Res Function(_$UserExistenceError) then) = __$$UserExistenceErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserExistenceErrorCopyWithImpl<$Res>
-    extends _$UserExistenceStateCopyWithImpl<$Res>
-    implements _$$UserExistenceErrorCopyWith<$Res> {
-  __$$UserExistenceErrorCopyWithImpl(
-      _$UserExistenceError _value, $Res Function(_$UserExistenceError) _then)
+class __$$UserExistenceErrorCopyWithImpl<$Res> extends _$UserExistenceStateCopyWithImpl<$Res> implements _$$UserExistenceErrorCopyWith<$Res> {
+  __$$UserExistenceErrorCopyWithImpl(_$UserExistenceError _value, $Res Function(_$UserExistenceError) _then)
       : super(_value, (v) => _then(v as _$UserExistenceError));
 
   @override
@@ -615,8 +586,7 @@ class _$UserExistenceError implements UserExistenceError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserExistenceError);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserExistenceError);
   }
 
   @override

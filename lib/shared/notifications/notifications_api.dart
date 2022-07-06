@@ -53,7 +53,7 @@ class NotificationCtrl {
       sound: true,
     );
 
-    messaging.getToken().then((value) => debugPrint('MSG Token: $value'));
+    messaging.getToken().then((value) => debugPrint('**************************** Messaging GetToken'));
 
     FirebaseMessaging.onMessage.listen(
       (RemoteMessage message) {

@@ -32,9 +32,10 @@ class ResultsInMaps extends StatelessWidget {
         appBar: const KAppBar(),
         body: BlocConsumer<ServiceProvidersBloc, ServiceProvidersState>(
           listener: (context, state) {
-            state.maybeWhen(orElse: () => null, markertabed: (user) => KUsersTilesBloc.of(context).add(user));
+            state.maybeMap(orElse: () => null, markertabed: (state) => KUsersTilesBloc.of(context).add(state.user));
+            debugPrint('******************************************** Marker Taped');
           },
-          buildWhen: (p, c) => c.maybeWhen(orElse: () => true, markertabed: (val) => false),
+          buildWhen: (p, c) => c.maybeMap(orElse: () => true, markertabed: (state) => false),
           builder: (context, state) {
             return state.map(
               markertabed: (value) => const SizedBox(),
@@ -58,7 +59,7 @@ class ResultsInMaps extends StatelessWidget {
                     zoomControlsEnabled: false,
                   ),
                   const Positioned(
-                    bottom: 60,
+                    bottom: 55,
                     child: UsersTileListView(),
                   ),
                   Positioned(
@@ -113,17 +114,14 @@ class UsersTileListView extends StatelessWidget {
     return BlocBuilder<KUsersTilesBloc, KUsersTilesState>(
       builder: (context, users) {
         return SizedBox(
-          height: 75,
+          height: 80,
           width: Get.width,
           child: PageView.builder(
             controller: KUsersTilesBloc.of(context).ctrl,
             itemCount: users.users.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: KUserTileWidget(user: users.users[index]),
-              );
+              return KUserTileWidget(user: users.users[index]);
             },
           ),
         );

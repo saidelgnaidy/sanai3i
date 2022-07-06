@@ -15,9 +15,15 @@ class KNavigatorBloc extends Cubit<KNavigatorState> {
     return BlocProvider.of<KNavigatorBloc>(context);
   }
 
-  nav_taped(int index) {
-    emit(KNavigatorState(index: index));
+  PageController pageCtrl = PageController();
+
+  ///  0  , 1 , 2 , 3
+
+  nav_taped(int page) {
+    pageCtrl.jumpToPage((pageCtrl.page ?? 0) < page ? page - 1 : page + 1);
+    pageCtrl.animateToPage(page, duration: const Duration(milliseconds: 450), curve: Curves.easeOutCubic);
+    emit(KNavigatorState(index: page));
   }
 
-  List<IconData> nav_Items = [KHelper.home, KHelper.notifications, KHelper.chat, KHelper.person];
+  List<IconData> nav_Items = [KHelper.home, KHelper.favorite, KHelper.chat, KHelper.person];
 }

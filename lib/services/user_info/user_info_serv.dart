@@ -7,12 +7,12 @@ import 'package:sanai3i/shared/error/exceptions.dart';
 import 'package:sanai3i/shared/storage_key.dart';
 
 class UserInfoService {
-  static Future<KUser> call() async {
+  static Future<KUser> getUser() async {
     var cached_user = GetStorage().read(StorageKeys.user);
-    debugPrint("*** User Model from  Cache: $cached_user***");
-
     if (cached_user != null) {
-      return KUser.fromMap(cached_user);
+      final user = KUser.fromMap(cached_user);
+      debugPrint('**************************** User from  Cache : ${user.name} ');
+      return user;
     }
 
     bool connected = await ConnectivityCheck.call();
@@ -20,7 +20,7 @@ class UserInfoService {
       try {
         final doc = await FBCR.me.get();
         if (doc.exists) {
-          final user = KUser.fromMap(doc.data() as Map<String, dynamic>);
+          final user = KUser.fromDoc(doc);
           GetStorage().write(StorageKeys.user, user.toCache());
           return user;
         } else {

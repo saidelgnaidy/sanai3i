@@ -76,8 +76,7 @@ mixin _$AuthState {
 
 /// @nodoc
 abstract class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res>;
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) = _$AuthStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -91,17 +90,12 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$_AuthStateInitialCopyWith<$Res> {
-  factory _$$_AuthStateInitialCopyWith(
-          _$_AuthStateInitial value, $Res Function(_$_AuthStateInitial) then) =
-      __$$_AuthStateInitialCopyWithImpl<$Res>;
+  factory _$$_AuthStateInitialCopyWith(_$_AuthStateInitial value, $Res Function(_$_AuthStateInitial) then) = __$$_AuthStateInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthStateInitialCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthStateInitialCopyWith<$Res> {
-  __$$_AuthStateInitialCopyWithImpl(
-      _$_AuthStateInitial _value, $Res Function(_$_AuthStateInitial) _then)
+class __$$_AuthStateInitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res> implements _$$_AuthStateInitialCopyWith<$Res> {
+  __$$_AuthStateInitialCopyWithImpl(_$_AuthStateInitial _value, $Res Function(_$_AuthStateInitial) _then)
       : super(_value, (v) => _then(v as _$_AuthStateInitial));
 
   @override
@@ -120,8 +114,7 @@ class _$_AuthStateInitial implements _AuthStateInitial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AuthStateInitial);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_AuthStateInitial);
   }
 
   @override
@@ -214,17 +207,12 @@ abstract class _AuthStateInitial implements AuthState {
 
 /// @nodoc
 abstract class _$$_AuthStateLoadingCopyWith<$Res> {
-  factory _$$_AuthStateLoadingCopyWith(
-          _$_AuthStateLoading value, $Res Function(_$_AuthStateLoading) then) =
-      __$$_AuthStateLoadingCopyWithImpl<$Res>;
+  factory _$$_AuthStateLoadingCopyWith(_$_AuthStateLoading value, $Res Function(_$_AuthStateLoading) then) = __$$_AuthStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthStateLoadingCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthStateLoadingCopyWith<$Res> {
-  __$$_AuthStateLoadingCopyWithImpl(
-      _$_AuthStateLoading _value, $Res Function(_$_AuthStateLoading) _then)
+class __$$_AuthStateLoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res> implements _$$_AuthStateLoadingCopyWith<$Res> {
+  __$$_AuthStateLoadingCopyWithImpl(_$_AuthStateLoading _value, $Res Function(_$_AuthStateLoading) _then)
       : super(_value, (v) => _then(v as _$_AuthStateLoading));
 
   @override
@@ -243,8 +231,7 @@ class _$_AuthStateLoading implements _AuthStateLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AuthStateLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_AuthStateLoading);
   }
 
   @override
@@ -337,17 +324,12 @@ abstract class _AuthStateLoading implements AuthState {
 
 /// @nodoc
 abstract class _$$_AuthStateLoadedCopyWith<$Res> {
-  factory _$$_AuthStateLoadedCopyWith(
-          _$_AuthStateLoaded value, $Res Function(_$_AuthStateLoaded) then) =
-      __$$_AuthStateLoadedCopyWithImpl<$Res>;
+  factory _$$_AuthStateLoadedCopyWith(_$_AuthStateLoaded value, $Res Function(_$_AuthStateLoaded) then) = __$$_AuthStateLoadedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthStateLoadedCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthStateLoadedCopyWith<$Res> {
-  __$$_AuthStateLoadedCopyWithImpl(
-      _$_AuthStateLoaded _value, $Res Function(_$_AuthStateLoaded) _then)
+class __$$_AuthStateLoadedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res> implements _$$_AuthStateLoadedCopyWith<$Res> {
+  __$$_AuthStateLoadedCopyWithImpl(_$_AuthStateLoaded _value, $Res Function(_$_AuthStateLoaded) _then)
       : super(_value, (v) => _then(v as _$_AuthStateLoaded));
 
   @override
@@ -366,8 +348,7 @@ class _$_AuthStateLoaded implements _AuthStateLoaded {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AuthStateLoaded);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_AuthStateLoaded);
   }
 
   @override
@@ -460,17 +441,12 @@ abstract class _AuthStateLoaded implements AuthState {
 
 /// @nodoc
 abstract class _$$_AuthStateCodeSentCopyWith<$Res> {
-  factory _$$_AuthStateCodeSentCopyWith(_$_AuthStateCodeSent value,
-          $Res Function(_$_AuthStateCodeSent) then) =
-      __$$_AuthStateCodeSentCopyWithImpl<$Res>;
+  factory _$$_AuthStateCodeSentCopyWith(_$_AuthStateCodeSent value, $Res Function(_$_AuthStateCodeSent) then) = __$$_AuthStateCodeSentCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthStateCodeSentCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthStateCodeSentCopyWith<$Res> {
-  __$$_AuthStateCodeSentCopyWithImpl(
-      _$_AuthStateCodeSent _value, $Res Function(_$_AuthStateCodeSent) _then)
+class __$$_AuthStateCodeSentCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res> implements _$$_AuthStateCodeSentCopyWith<$Res> {
+  __$$_AuthStateCodeSentCopyWithImpl(_$_AuthStateCodeSent _value, $Res Function(_$_AuthStateCodeSent) _then)
       : super(_value, (v) => _then(v as _$_AuthStateCodeSent));
 
   @override
@@ -489,8 +465,7 @@ class _$_AuthStateCodeSent implements _AuthStateCodeSent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AuthStateCodeSent);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_AuthStateCodeSent);
   }
 
   @override
@@ -583,18 +558,14 @@ abstract class _AuthStateCodeSent implements AuthState {
 
 /// @nodoc
 abstract class _$$_AuthStatePhoneErrorCopyWith<$Res> {
-  factory _$$_AuthStatePhoneErrorCopyWith(_$_AuthStatePhoneError value,
-          $Res Function(_$_AuthStatePhoneError) then) =
+  factory _$$_AuthStatePhoneErrorCopyWith(_$_AuthStatePhoneError value, $Res Function(_$_AuthStatePhoneError) then) =
       __$$_AuthStatePhoneErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$_AuthStatePhoneErrorCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthStatePhoneErrorCopyWith<$Res> {
-  __$$_AuthStatePhoneErrorCopyWithImpl(_$_AuthStatePhoneError _value,
-      $Res Function(_$_AuthStatePhoneError) _then)
+class __$$_AuthStatePhoneErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res> implements _$$_AuthStatePhoneErrorCopyWith<$Res> {
+  __$$_AuthStatePhoneErrorCopyWithImpl(_$_AuthStatePhoneError _value, $Res Function(_$_AuthStatePhoneError) _then)
       : super(_value, (v) => _then(v as _$_AuthStatePhoneError));
 
   @override
@@ -629,20 +600,15 @@ class _$_AuthStatePhoneError implements _AuthStatePhoneError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_AuthStatePhoneError &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is _$_AuthStatePhoneError && const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$$_AuthStatePhoneErrorCopyWith<_$_AuthStatePhoneError> get copyWith =>
-      __$$_AuthStatePhoneErrorCopyWithImpl<_$_AuthStatePhoneError>(
-          this, _$identity);
+  _$$_AuthStatePhoneErrorCopyWith<_$_AuthStatePhoneError> get copyWith => __$$_AuthStatePhoneErrorCopyWithImpl<_$_AuthStatePhoneError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -726,11 +692,9 @@ class _$_AuthStatePhoneError implements _AuthStatePhoneError {
 }
 
 abstract class _AuthStatePhoneError implements AuthState {
-  const factory _AuthStatePhoneError(final String error) =
-      _$_AuthStatePhoneError;
+  const factory _AuthStatePhoneError(final String error) = _$_AuthStatePhoneError;
 
   String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_AuthStatePhoneErrorCopyWith<_$_AuthStatePhoneError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_AuthStatePhoneErrorCopyWith<_$_AuthStatePhoneError> get copyWith => throw _privateConstructorUsedError;
 }

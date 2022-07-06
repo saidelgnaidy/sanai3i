@@ -23,7 +23,7 @@ mixin _$ServiceProvidersState {
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) =>
@@ -34,7 +34,7 @@ mixin _$ServiceProvidersState {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) =>
@@ -45,7 +45,7 @@ mixin _$ServiceProvidersState {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),
@@ -154,7 +154,7 @@ class _$ServiceProvidersStateLoading implements ServiceProvidersStateLoading {
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
@@ -168,7 +168,7 @@ class _$ServiceProvidersStateLoading implements ServiceProvidersStateLoading {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
@@ -182,7 +182,7 @@ class _$ServiceProvidersStateLoading implements ServiceProvidersStateLoading {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),
@@ -347,7 +347,7 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
@@ -361,7 +361,7 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
@@ -375,7 +375,7 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),
@@ -521,7 +521,7 @@ class _$ServiceProvidersStateError implements ServiceProvidersStateError {
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
@@ -535,7 +535,7 @@ class _$ServiceProvidersStateError implements ServiceProvidersStateError {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
@@ -549,7 +549,7 @@ class _$ServiceProvidersStateError implements ServiceProvidersStateError {
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),
@@ -623,7 +623,7 @@ abstract class _$$ServiceProvidersStateMarkertabedCopyWith<$Res> {
           _$ServiceProvidersStateMarkertabed value,
           $Res Function(_$ServiceProvidersStateMarkertabed) then) =
       __$$ServiceProvidersStateMarkertabedCopyWithImpl<$Res>;
-  $Res call({KUser user});
+  $Res call({KUser user, Timestamp? stamp});
 }
 
 /// @nodoc
@@ -642,12 +642,17 @@ class __$$ServiceProvidersStateMarkertabedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
+    Object? stamp = freezed,
   }) {
     return _then(_$ServiceProvidersStateMarkertabed(
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as KUser,
+      stamp: stamp == freezed
+          ? _value.stamp
+          : stamp // ignore: cast_nullable_to_non_nullable
+              as Timestamp?,
     ));
   }
 }
@@ -656,14 +661,16 @@ class __$$ServiceProvidersStateMarkertabedCopyWithImpl<$Res>
 
 class _$ServiceProvidersStateMarkertabed
     implements ServiceProvidersStateMarkertabed {
-  const _$ServiceProvidersStateMarkertabed({required this.user});
+  const _$ServiceProvidersStateMarkertabed({required this.user, this.stamp});
 
   @override
   final KUser user;
+  @override
+  final Timestamp? stamp;
 
   @override
   String toString() {
-    return 'ServiceProvidersState.markertabed(user: $user)';
+    return 'ServiceProvidersState.markertabed(user: $user, stamp: $stamp)';
   }
 
   @override
@@ -671,12 +678,15 @@ class _$ServiceProvidersStateMarkertabed
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServiceProvidersStateMarkertabed &&
-            const DeepCollectionEquality().equals(other.user, user));
+            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality().equals(other.stamp, stamp));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(stamp));
 
   @JsonKey(ignore: true)
   @override
@@ -693,11 +703,11 @@ class _$ServiceProvidersStateMarkertabed
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
-    return markertabed(user);
+    return markertabed(user, stamp);
   }
 
   @override
@@ -707,11 +717,11 @@ class _$ServiceProvidersStateMarkertabed
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
-    return markertabed?.call(user);
+    return markertabed?.call(user, stamp);
   }
 
   @override
@@ -721,13 +731,13 @@ class _$ServiceProvidersStateMarkertabed
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),
   }) {
     if (markertabed != null) {
-      return markertabed(user);
+      return markertabed(user, stamp);
     }
     return orElse();
   }
@@ -781,10 +791,12 @@ class _$ServiceProvidersStateMarkertabed
 
 abstract class ServiceProvidersStateMarkertabed
     implements ServiceProvidersState {
-  const factory ServiceProvidersStateMarkertabed({required final KUser user}) =
-      _$ServiceProvidersStateMarkertabed;
+  const factory ServiceProvidersStateMarkertabed(
+      {required final KUser user,
+      final Timestamp? stamp}) = _$ServiceProvidersStateMarkertabed;
 
   KUser get user => throw _privateConstructorUsedError;
+  Timestamp? get stamp => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$ServiceProvidersStateMarkertabedCopyWith<
           _$ServiceProvidersStateMarkertabed>
@@ -867,7 +879,7 @@ class _$ServiceProvidersStateLocationError
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
@@ -881,7 +893,7 @@ class _$ServiceProvidersStateLocationError
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
@@ -895,7 +907,7 @@ class _$ServiceProvidersStateLocationError
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),
@@ -1016,7 +1028,7 @@ class _$ServiceProvidersStateOfflineError
             List<Marker> allMarkers, double rad, double sliderPos)
         success,
     required TResult Function(String error) error,
-    required TResult Function(KUser user) markertabed,
+    required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
@@ -1030,7 +1042,7 @@ class _$ServiceProvidersStateOfflineError
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
@@ -1044,7 +1056,7 @@ class _$ServiceProvidersStateOfflineError
     TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
         success,
     TResult Function(String error)? error,
-    TResult Function(KUser user)? markertabed,
+    TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
     required TResult orElse(),

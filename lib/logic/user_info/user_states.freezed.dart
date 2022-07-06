@@ -64,14 +64,11 @@ mixin _$UserInfoState {
 
 /// @nodoc
 abstract class $UserInfoStateCopyWith<$Res> {
-  factory $UserInfoStateCopyWith(
-          UserInfoState value, $Res Function(UserInfoState) then) =
-      _$UserInfoStateCopyWithImpl<$Res>;
+  factory $UserInfoStateCopyWith(UserInfoState value, $Res Function(UserInfoState) then) = _$UserInfoStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserInfoStateCopyWithImpl<$Res>
-    implements $UserInfoStateCopyWith<$Res> {
+class _$UserInfoStateCopyWithImpl<$Res> implements $UserInfoStateCopyWith<$Res> {
   _$UserInfoStateCopyWithImpl(this._value, this._then);
 
   final UserInfoState _value;
@@ -81,17 +78,13 @@ class _$UserInfoStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$$UserInfoStateLoadingCopyWith<$Res> {
-  factory _$$UserInfoStateLoadingCopyWith(_$UserInfoStateLoading value,
-          $Res Function(_$UserInfoStateLoading) then) =
+  factory _$$UserInfoStateLoadingCopyWith(_$UserInfoStateLoading value, $Res Function(_$UserInfoStateLoading) then) =
       __$$UserInfoStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserInfoStateLoadingCopyWithImpl<$Res>
-    extends _$UserInfoStateCopyWithImpl<$Res>
-    implements _$$UserInfoStateLoadingCopyWith<$Res> {
-  __$$UserInfoStateLoadingCopyWithImpl(_$UserInfoStateLoading _value,
-      $Res Function(_$UserInfoStateLoading) _then)
+class __$$UserInfoStateLoadingCopyWithImpl<$Res> extends _$UserInfoStateCopyWithImpl<$Res> implements _$$UserInfoStateLoadingCopyWith<$Res> {
+  __$$UserInfoStateLoadingCopyWithImpl(_$UserInfoStateLoading _value, $Res Function(_$UserInfoStateLoading) _then)
       : super(_value, (v) => _then(v as _$UserInfoStateLoading));
 
   @override
@@ -110,8 +103,7 @@ class _$UserInfoStateLoading implements UserInfoStateLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserInfoStateLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserInfoStateLoading);
   }
 
   @override
@@ -192,17 +184,13 @@ abstract class UserInfoStateLoading implements UserInfoState {
 
 /// @nodoc
 abstract class _$$UserInfoStateSuccessCopyWith<$Res> {
-  factory _$$UserInfoStateSuccessCopyWith(_$UserInfoStateSuccess value,
-          $Res Function(_$UserInfoStateSuccess) then) =
+  factory _$$UserInfoStateSuccessCopyWith(_$UserInfoStateSuccess value, $Res Function(_$UserInfoStateSuccess) then) =
       __$$UserInfoStateSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserInfoStateSuccessCopyWithImpl<$Res>
-    extends _$UserInfoStateCopyWithImpl<$Res>
-    implements _$$UserInfoStateSuccessCopyWith<$Res> {
-  __$$UserInfoStateSuccessCopyWithImpl(_$UserInfoStateSuccess _value,
-      $Res Function(_$UserInfoStateSuccess) _then)
+class __$$UserInfoStateSuccessCopyWithImpl<$Res> extends _$UserInfoStateCopyWithImpl<$Res> implements _$$UserInfoStateSuccessCopyWith<$Res> {
+  __$$UserInfoStateSuccessCopyWithImpl(_$UserInfoStateSuccess _value, $Res Function(_$UserInfoStateSuccess) _then)
       : super(_value, (v) => _then(v as _$UserInfoStateSuccess));
 
   @override
@@ -221,8 +209,7 @@ class _$UserInfoStateSuccess implements UserInfoStateSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserInfoStateSuccess);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UserInfoStateSuccess);
   }
 
   @override
@@ -303,18 +290,13 @@ abstract class UserInfoStateSuccess implements UserInfoState {
 
 /// @nodoc
 abstract class _$$UserInfoStateErrorCopyWith<$Res> {
-  factory _$$UserInfoStateErrorCopyWith(_$UserInfoStateError value,
-          $Res Function(_$UserInfoStateError) then) =
-      __$$UserInfoStateErrorCopyWithImpl<$Res>;
+  factory _$$UserInfoStateErrorCopyWith(_$UserInfoStateError value, $Res Function(_$UserInfoStateError) then) = __$$UserInfoStateErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$UserInfoStateErrorCopyWithImpl<$Res>
-    extends _$UserInfoStateCopyWithImpl<$Res>
-    implements _$$UserInfoStateErrorCopyWith<$Res> {
-  __$$UserInfoStateErrorCopyWithImpl(
-      _$UserInfoStateError _value, $Res Function(_$UserInfoStateError) _then)
+class __$$UserInfoStateErrorCopyWithImpl<$Res> extends _$UserInfoStateCopyWithImpl<$Res> implements _$$UserInfoStateErrorCopyWith<$Res> {
+  __$$UserInfoStateErrorCopyWithImpl(_$UserInfoStateError _value, $Res Function(_$UserInfoStateError) _then)
       : super(_value, (v) => _then(v as _$UserInfoStateError));
 
   @override
@@ -349,20 +331,15 @@ class _$UserInfoStateError implements UserInfoStateError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserInfoStateError &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is _$UserInfoStateError && const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$$UserInfoStateErrorCopyWith<_$UserInfoStateError> get copyWith =>
-      __$$UserInfoStateErrorCopyWithImpl<_$UserInfoStateError>(
-          this, _$identity);
+  _$$UserInfoStateErrorCopyWith<_$UserInfoStateError> get copyWith => __$$UserInfoStateErrorCopyWithImpl<_$UserInfoStateError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -434,11 +411,9 @@ class _$UserInfoStateError implements UserInfoStateError {
 }
 
 abstract class UserInfoStateError implements UserInfoState {
-  const factory UserInfoStateError({required final String error}) =
-      _$UserInfoStateError;
+  const factory UserInfoStateError({required final String error}) = _$UserInfoStateError;
 
   String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$UserInfoStateErrorCopyWith<_$UserInfoStateError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserInfoStateErrorCopyWith<_$UserInfoStateError> get copyWith => throw _privateConstructorUsedError;
 }

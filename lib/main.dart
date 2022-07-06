@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/auth/auth_bloc.dart';
+import 'package:sanai3i/logic/bookmarks/bookmarks_bloc.dart';
 import 'package:sanai3i/logic/complete_register/complete_regster.dart';
 import 'package:sanai3i/logic/maps_ctrl/pick_location_bloc.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
@@ -30,10 +31,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
-  /// await GetStorage().erase();
-  /// await FirebaseAuth.instance.signOut();
+  //await GetStorage().erase();
+  // await FirebaseAuth.instance.signOut();
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
+  debugPrint('**************************** My UID is  : ${FirebaseAuth.instance.currentUser?.uid} ');
   runApp(const MyApp());
 }
 
@@ -53,6 +55,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<ServicesGetterBloc>(create: (context) => ServicesGetterBloc()..getServices()),
         BlocProvider<UserInfoBloc>(create: (context) => UserInfoBloc()..getUser()),
         BlocProvider<ServiceProvidersBloc>(create: (context) => ServiceProvidersBloc()),
+        BlocProvider<BookmarksBloc>(create: (context) => BookmarksBloc()..getBookmark()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {

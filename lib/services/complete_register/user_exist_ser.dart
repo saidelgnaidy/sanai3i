@@ -8,7 +8,7 @@ import 'package:sanai3i/shared/storage_key.dart';
 class UserExistaceService {
   static Future<bool> call() async {
     var userExist = GetStorage().read(StorageKeys.userExist);
-    debugPrint("*** User Existance: $userExist ***");
+    debugPrint("**************************** User Existance: $userExist ");
 
     if (userExist != null) {
       return true;

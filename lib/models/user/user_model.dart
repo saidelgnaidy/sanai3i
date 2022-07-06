@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:sanai3i/models/auth/register_model.dart';
 import 'package:sanai3i/models/user/my_geo_point.dart';
@@ -136,7 +137,24 @@ class KUser {
     return result;
   }
 
-  factory KUser.fromMap(Map<String, dynamic> map) {
+  factory KUser.fromDoc(DocumentSnapshot doc) {
+    final map = doc.data() as Map<String, dynamic>;
+    return KUser(
+      name: map['name'],
+      phone: map['phone'],
+      accType: map['accType'] != null ? AccType.fromStr(map['accType']) : null,
+      serviceId: map['serviceId'],
+      service: map['service'] != null ? ServiceModel.fromMap(map['service']) : null,
+      available: map['available'],
+      location: map['location'] != null ? KGeoFirePoint.fromMap(map) : null,
+      bookmark: map['bookmark'] != null ? List<String>.from(map['bookmark']) : [],
+      picURL: map['picURL'],
+      rate: map['rate'],
+      uid: doc.id,
+    );
+  }
+
+    factory KUser.fromMap(Map<String, dynamic> map) {
     return KUser(
       name: map['name'],
       phone: map['phone'],
@@ -154,7 +172,7 @@ class KUser {
 
   String toJson() => json.encode(toMap());
 
-  factory KUser.fromJson(String source) => KUser.fromMap(json.decode(source));
+  factory KUser.fromJson(String source) => KUser.fromDoc(json.decode(source));
 
   @override
   String toString() {

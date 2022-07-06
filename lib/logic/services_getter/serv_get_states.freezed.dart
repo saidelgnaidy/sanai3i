@@ -64,14 +64,11 @@ mixin _$ServicesGetterState {
 
 /// @nodoc
 abstract class $ServicesGetterStateCopyWith<$Res> {
-  factory $ServicesGetterStateCopyWith(
-          ServicesGetterState value, $Res Function(ServicesGetterState) then) =
-      _$ServicesGetterStateCopyWithImpl<$Res>;
+  factory $ServicesGetterStateCopyWith(ServicesGetterState value, $Res Function(ServicesGetterState) then) = _$ServicesGetterStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServicesGetterStateCopyWithImpl<$Res>
-    implements $ServicesGetterStateCopyWith<$Res> {
+class _$ServicesGetterStateCopyWithImpl<$Res> implements $ServicesGetterStateCopyWith<$Res> {
   _$ServicesGetterStateCopyWithImpl(this._value, this._then);
 
   final ServicesGetterState _value;
@@ -81,24 +78,18 @@ class _$ServicesGetterStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$$_ServicesGetterStateLoadingCopyWith<$Res> {
-  factory _$$_ServicesGetterStateLoadingCopyWith(
-          _$_ServicesGetterStateLoading value,
-          $Res Function(_$_ServicesGetterStateLoading) then) =
+  factory _$$_ServicesGetterStateLoadingCopyWith(_$_ServicesGetterStateLoading value, $Res Function(_$_ServicesGetterStateLoading) then) =
       __$$_ServicesGetterStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ServicesGetterStateLoadingCopyWithImpl<$Res>
-    extends _$ServicesGetterStateCopyWithImpl<$Res>
+class __$$_ServicesGetterStateLoadingCopyWithImpl<$Res> extends _$ServicesGetterStateCopyWithImpl<$Res>
     implements _$$_ServicesGetterStateLoadingCopyWith<$Res> {
-  __$$_ServicesGetterStateLoadingCopyWithImpl(
-      _$_ServicesGetterStateLoading _value,
-      $Res Function(_$_ServicesGetterStateLoading) _then)
+  __$$_ServicesGetterStateLoadingCopyWithImpl(_$_ServicesGetterStateLoading _value, $Res Function(_$_ServicesGetterStateLoading) _then)
       : super(_value, (v) => _then(v as _$_ServicesGetterStateLoading));
 
   @override
-  _$_ServicesGetterStateLoading get _value =>
-      super._value as _$_ServicesGetterStateLoading;
+  _$_ServicesGetterStateLoading get _value => super._value as _$_ServicesGetterStateLoading;
 }
 
 /// @nodoc
@@ -113,9 +104,7 @@ class _$_ServicesGetterStateLoading implements _ServicesGetterStateLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ServicesGetterStateLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_ServicesGetterStateLoading);
   }
 
   @override
@@ -196,25 +185,19 @@ abstract class _ServicesGetterStateLoading implements ServicesGetterState {
 
 /// @nodoc
 abstract class _$$_ServicesGetterStateSuccessCopyWith<$Res> {
-  factory _$$_ServicesGetterStateSuccessCopyWith(
-          _$_ServicesGetterStateSuccess value,
-          $Res Function(_$_ServicesGetterStateSuccess) then) =
+  factory _$$_ServicesGetterStateSuccessCopyWith(_$_ServicesGetterStateSuccess value, $Res Function(_$_ServicesGetterStateSuccess) then) =
       __$$_ServicesGetterStateSuccessCopyWithImpl<$Res>;
   $Res call({List<ServiceModel> services});
 }
 
 /// @nodoc
-class __$$_ServicesGetterStateSuccessCopyWithImpl<$Res>
-    extends _$ServicesGetterStateCopyWithImpl<$Res>
+class __$$_ServicesGetterStateSuccessCopyWithImpl<$Res> extends _$ServicesGetterStateCopyWithImpl<$Res>
     implements _$$_ServicesGetterStateSuccessCopyWith<$Res> {
-  __$$_ServicesGetterStateSuccessCopyWithImpl(
-      _$_ServicesGetterStateSuccess _value,
-      $Res Function(_$_ServicesGetterStateSuccess) _then)
+  __$$_ServicesGetterStateSuccessCopyWithImpl(_$_ServicesGetterStateSuccess _value, $Res Function(_$_ServicesGetterStateSuccess) _then)
       : super(_value, (v) => _then(v as _$_ServicesGetterStateSuccess));
 
   @override
-  _$_ServicesGetterStateSuccess get _value =>
-      super._value as _$_ServicesGetterStateSuccess;
+  _$_ServicesGetterStateSuccess get _value => super._value as _$_ServicesGetterStateSuccess;
 
   @override
   $Res call({
@@ -232,9 +215,7 @@ class __$$_ServicesGetterStateSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ServicesGetterStateSuccess implements _ServicesGetterStateSuccess {
-  const _$_ServicesGetterStateSuccess(
-      {required final List<ServiceModel> services})
-      : _services = services;
+  const _$_ServicesGetterStateSuccess({required final List<ServiceModel> services}) : _services = services;
 
   final List<ServiceModel> _services;
   @override
@@ -251,20 +232,16 @@ class _$_ServicesGetterStateSuccess implements _ServicesGetterStateSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ServicesGetterStateSuccess &&
-            const DeepCollectionEquality().equals(other._services, _services));
+        (other.runtimeType == runtimeType && other is _$_ServicesGetterStateSuccess && const DeepCollectionEquality().equals(other._services, _services));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_services));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_services));
 
   @JsonKey(ignore: true)
   @override
-  _$$_ServicesGetterStateSuccessCopyWith<_$_ServicesGetterStateSuccess>
-      get copyWith => __$$_ServicesGetterStateSuccessCopyWithImpl<
-          _$_ServicesGetterStateSuccess>(this, _$identity);
+  _$$_ServicesGetterStateSuccessCopyWith<_$_ServicesGetterStateSuccess> get copyWith =>
+      __$$_ServicesGetterStateSuccessCopyWithImpl<_$_ServicesGetterStateSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -336,36 +313,28 @@ class _$_ServicesGetterStateSuccess implements _ServicesGetterStateSuccess {
 }
 
 abstract class _ServicesGetterStateSuccess implements ServicesGetterState {
-  const factory _ServicesGetterStateSuccess(
-          {required final List<ServiceModel> services}) =
-      _$_ServicesGetterStateSuccess;
+  const factory _ServicesGetterStateSuccess({required final List<ServiceModel> services}) = _$_ServicesGetterStateSuccess;
 
   List<ServiceModel> get services => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_ServicesGetterStateSuccessCopyWith<_$_ServicesGetterStateSuccess>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_ServicesGetterStateSuccessCopyWith<_$_ServicesGetterStateSuccess> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_ServicesGetterStateErrorCopyWith<$Res> {
-  factory _$$_ServicesGetterStateErrorCopyWith(
-          _$_ServicesGetterStateError value,
-          $Res Function(_$_ServicesGetterStateError) then) =
+  factory _$$_ServicesGetterStateErrorCopyWith(_$_ServicesGetterStateError value, $Res Function(_$_ServicesGetterStateError) then) =
       __$$_ServicesGetterStateErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$_ServicesGetterStateErrorCopyWithImpl<$Res>
-    extends _$ServicesGetterStateCopyWithImpl<$Res>
+class __$$_ServicesGetterStateErrorCopyWithImpl<$Res> extends _$ServicesGetterStateCopyWithImpl<$Res>
     implements _$$_ServicesGetterStateErrorCopyWith<$Res> {
-  __$$_ServicesGetterStateErrorCopyWithImpl(_$_ServicesGetterStateError _value,
-      $Res Function(_$_ServicesGetterStateError) _then)
+  __$$_ServicesGetterStateErrorCopyWithImpl(_$_ServicesGetterStateError _value, $Res Function(_$_ServicesGetterStateError) _then)
       : super(_value, (v) => _then(v as _$_ServicesGetterStateError));
 
   @override
-  _$_ServicesGetterStateError get _value =>
-      super._value as _$_ServicesGetterStateError;
+  _$_ServicesGetterStateError get _value => super._value as _$_ServicesGetterStateError;
 
   @override
   $Res call({
@@ -396,20 +365,16 @@ class _$_ServicesGetterStateError implements _ServicesGetterStateError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ServicesGetterStateError &&
-            const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType && other is _$_ServicesGetterStateError && const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$$_ServicesGetterStateErrorCopyWith<_$_ServicesGetterStateError>
-      get copyWith => __$$_ServicesGetterStateErrorCopyWithImpl<
-          _$_ServicesGetterStateError>(this, _$identity);
+  _$$_ServicesGetterStateErrorCopyWith<_$_ServicesGetterStateError> get copyWith =>
+      __$$_ServicesGetterStateErrorCopyWithImpl<_$_ServicesGetterStateError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -481,11 +446,9 @@ class _$_ServicesGetterStateError implements _ServicesGetterStateError {
 }
 
 abstract class _ServicesGetterStateError implements ServicesGetterState {
-  const factory _ServicesGetterStateError({required final String error}) =
-      _$_ServicesGetterStateError;
+  const factory _ServicesGetterStateError({required final String error}) = _$_ServicesGetterStateError;
 
   String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_ServicesGetterStateErrorCopyWith<_$_ServicesGetterStateError>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_ServicesGetterStateErrorCopyWith<_$_ServicesGetterStateError> get copyWith => throw _privateConstructorUsedError;
 }

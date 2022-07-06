@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class KHelper {
   BuildContext? context;
@@ -33,6 +35,14 @@ class KHelper {
         ),
       ),
     );
+  }
+
+  static void launchCaller(numper) async {
+    try {
+      launchUrlString('tel:$numper');
+    } catch (e) {
+      showSnackBar(Tr.get.something_went_wrong);
+    }
   }
 
   /// Icons data *****************************

@@ -18,7 +18,7 @@ class UserInfoBloc extends Cubit<UserInfoState> {
 
   getUser() async {
     try {
-      user = await UserInfoService.call();
+      user = await UserInfoService.getUser();
       emit(const UserInfoState.success());
     } on KExceptionOffline {
       debugPrint('*** User info Error : No Connection');
@@ -33,4 +33,11 @@ class UserInfoBloc extends Cubit<UserInfoState> {
       emit(UserInfoState.error(error: Tr.get.something_went_wrong));
     }
   }
+
+
+
+
+
+
+
 }

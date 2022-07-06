@@ -38,6 +38,7 @@ dependencies:
   flutter_staggered_grid_view:
   shimmer:
   rxdart:
+  url_launcher:
 
 
 
@@ -75,7 +76,6 @@ flutter:
 
   assets:
     - assets/
-    - assets/images
     - assets/launcher/
     - assets/fonts/
     - assets/animations/

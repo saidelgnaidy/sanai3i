@@ -54,7 +54,7 @@ class ServiceProvidersBloc extends Cubit<ServiceProvidersState> {
   void _updateMarkers(List<DocumentSnapshot<Map<String, dynamic>?>> docList) async {
     allMarkers = [];
     for (var doc in docList) {
-      final KUser user = KUser.fromMap(doc.data() as Map<String, dynamic>).copyWith(uid: doc.id);
+      final KUser user = KUser.fromDoc(doc);
       GeoPoint geoPoint = user.location!.geoPoint;
       var marker = Marker(
         position: LatLng(geoPoint.latitude, geoPoint.longitude),
@@ -62,7 +62,7 @@ class ServiceProvidersBloc extends Cubit<ServiceProvidersState> {
         icon: BitmapDescriptor.defaultMarker,
         infoWindow: InfoWindow(title: user.name),
         onTap: () {
-          emit(ServiceProvidersState.markertabed(user: user));
+          emit(ServiceProvidersState.markertabed(user: user, stamp: Timestamp.now()));
         },
       );
       allMarkers.add(marker);
