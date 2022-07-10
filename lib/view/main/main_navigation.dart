@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
-import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/view/bookmarks/bookmarks_view.dart';
 import 'package:sanai3i/view/home/home_view.dart';
 import 'package:sanai3i/view/profile/profile.dart';
@@ -27,6 +26,7 @@ class _MainNavigationState extends State<MainNavigation> {
           extendBody: true,
           body: PageView(
             controller: KNavigatorBloc.of(context).pageCtrl,
+            physics: const NeverScrollableScrollPhysics(),
             children: const [
               HomeView(),
               BookmarksView(),
@@ -34,19 +34,12 @@ class _MainNavigationState extends State<MainNavigation> {
               Profile(),
             ],
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: KColors.of(context).fabBackground,
-            elevation: 20,
-            child: Icon(KHelper.fabIcon(nav.index), color: KColors.of(context).reIcon),
-          ),
           bottomNavigationBar: AnimatedBottomNavigationBar(
             icons: KNavigatorBloc.of(context).nav_Items,
             activeIndex: nav.index,
             shadow: Shadow(color: KColors.of(context).shadow, blurRadius: 10),
             backgroundColor: KColors.of(context).background,
-            gapLocation: GapLocation.center,
+            gapLocation: GapLocation.none,
             notchSmoothness: NotchSmoothness.smoothEdge,
             onTap: KNavigatorBloc.of(context).nav_taped,
             activeColor: KColors.of(context).activeIcons,

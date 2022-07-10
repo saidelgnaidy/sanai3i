@@ -58,11 +58,10 @@ class KHelper {
   static const IconData qrCode = Icons.qr_code;
   static const IconData favorite = Icons.favorite_rounded;
   static const IconData chat = Icons.chat_bubble_rounded;
+  static const IconData add = Icons.add;
+  static const IconData search = Icons.search;
 
-  static IconData fabIcon(index) {
-    if (index == 3) return Icons.add;
-    return Icons.search;
-  }
+
 
   static const double btnRadius = 12.0;
   static const double cornerRadius = 8.0;

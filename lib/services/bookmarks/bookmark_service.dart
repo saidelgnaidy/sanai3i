@@ -3,13 +3,11 @@ import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
 import 'package:sanai3i/logic/connection_ckecker.dart';
 import 'package:sanai3i/models/user/user_model.dart';
-import 'package:sanai3i/services/user_info/user_info_serv.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
 import 'package:sanai3i/shared/storage_key.dart';
 
 class BookmarksService {
-  static List<KUser> bookedUsers = [];
-  static List bookedUsersToCache = [];
+
 
   static Future toogleOnServer(String uid) async {
     bool connected = await ConnectivityCheck.call();
@@ -33,73 +31,77 @@ class BookmarksService {
     }
   }
 
-  static List<KUser> addToCache(KUser newUser) {
-    bookedUsers = [];
-    bookedUsersToCache = [];
-    List cached_books = List.from(GetStorage().read(StorageKeys.bookmark) ?? []);
+  static List<KUser> toogleOnCache({required KUser newUser, required List<KUser> bookedUsers}) {
+    List bookedUsersToCache = [];
+    List<KUser> _bookedUsers = bookedUsers;
 
-    for (var element in cached_books) {
-      KUser user = KUser.fromMap(element);
-      bookedUsers.add(user);
+    if (bookedUsers.where((element) => element.uid == newUser.uid).isNotEmpty) {
+      _bookedUsers = bookedUsers
+        ..removeWhere((element) {
+          return element.uid == newUser.uid;
+        });
+    } else {
+      _bookedUsers.insert(0, newUser);
+    }
+
+    for (var user in _bookedUsers) {
       bookedUsersToCache.add(user.toCache());
     }
-    if (bookedUsers.where((element) => element.uid == newUser.uid).isNotEmpty) {
-      bookedUsers = bookedUsers..removeWhere((element) => element.uid == newUser.uid);
-      bookedUsersToCache = bookedUsersToCache..removeWhere((element) => element['uid'] == newUser.uid);
-    } else {
-      bookedUsers.add(newUser);
-      bookedUsersToCache.add(newUser.toCache());
-    }
+
     GetStorage().write(StorageKeys.bookmark, bookedUsersToCache);
-    return bookedUsers;
+    return _bookedUsers;
   }
 
-  static Future<List<KUser>> getBookmarks() async {
-    bookedUsers = [];
+  static List<KUser> getFromCache() {
+    List<KUser> bookedUsers = [];
     var cached = GetStorage().read(StorageKeys.bookmark);
     if (cached != null) {
-      debugPrint('**************************** Geting Bookmarks from Cache : ');
-
       List? cached_books = List.from(GetStorage().read(StorageKeys.bookmark) ?? []);
       for (var element in cached_books) {
         KUser user = KUser.fromMap(element);
         bookedUsers.add(user);
       }
-      bookedUsers = bookedUsers.reversed.toList();
-      return bookedUsers;
-    } else {
-      debugPrint('**************************** Geting Bookmarks from Server : ');
-
-      try {
-        KUser user = await UserInfoService.getUser();
-        if (user.bookmark!.isNotEmpty) {
-          debugPrint('**************************** Bookmark : ${user.bookmark!.toSet()} ');
-
-          await FBCR.fbi.runTransaction(
-            (transaction) async {
-              for (var uid in user.bookmark!) {
-                final doc = await transaction.get(FBCR.users.doc(uid));
-                KUser user = KUser.fromDoc(doc);
-                debugPrint('**************************** ${user.name} : ');
-                bookedUsers.add(user);
-              }
-            },
-          );
-          bookedUsers = bookedUsers.reversed.toList();
-        }
-      } catch (e) {
-        debugPrint('**************************** Error Geting Bookmarks from Server : $e ');
-
-        rethrow;
-      }
-
-      _storeInCache();
-
-      return bookedUsers;
     }
+    return bookedUsers;
   }
 
-  static _storeInCache() {
+  static Future<List<KUser>> getFromServer() async {
+    List<KUser> bookedUsers = [];
+
+    try {
+      final List<KUser> newBooks = [];
+
+      await FBCR.fbi.runTransaction(
+        (transaction) async {
+          final me = await transaction.get(FBCR.me);
+          final KUser user = KUser.fromDoc(me);
+          debugPrint('**************************** Bookmarks on server: ${user.bookmark!.length} ');
+
+          for (var i = 0; i < ((user.bookmark ?? []).length / 10).ceil(); i++) {
+            int start = i * 10;
+            int end = (start + 10) > user.bookmark!.length ? user.bookmark!.length : (start + 10);
+            final query = await FBCR.users.where("uid", whereIn: user.bookmark?.getRange(start, end).toList()).get();
+            for (var doc in query.docs) {
+              KUser user = KUser.fromDoc(doc);
+              newBooks.add(user);
+            }
+          }
+        },
+      );
+      bookedUsers = newBooks.reversed.toList();
+    } catch (e) {
+      debugPrint('**************************** Error Geting Bookmarks from Server : $e ');
+
+      rethrow;
+    }
+
+    _storeInCache(bookedUsers);
+
+    return bookedUsers;
+  }
+
+  static _storeInCache(List<KUser> bookedUsers) {
+    List bookedUsersToCache = [];
     for (var element in bookedUsers) {
       bookedUsersToCache.add(element.toCache());
     }

@@ -32,13 +32,11 @@ class KUsersTilesBloc extends Cubit<KUsersTilesState> {
   }
 
   animateToPage(int page) {
+
     if (ctrl.page != page) {
-      ctrl.jumpToPage(page + 1);
+      ctrl.jumpToPage((ctrl.page ?? 0) < page ? page - 1 : page + 1);
+      ctrl.animateToPage(page, duration: const Duration(milliseconds: 450), curve: Curves.easeOutCubic);
     }
-    ctrl.animateToPage(
-      page,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.ease,
-    );
+    
   }
 }

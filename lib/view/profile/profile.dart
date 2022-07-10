@@ -68,9 +68,9 @@ class Profile extends StatelessWidget {
                           dialog: QRCodeView(),
                         ),
                       ),
-                      const Positioned(
+                       Positioned(
                         top: 10,
-                        child: KProfilePic(),
+                        child: KProfilePic(user: UserInfoBloc.of(context).user! ),
                       ),
                     ],
                   ),

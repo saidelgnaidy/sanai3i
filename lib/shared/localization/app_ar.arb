@@ -51,5 +51,6 @@
   "transport": "نقل",
   "available": "متاح",
   "unAvailable": "غير متاح",
-  "expand_search_rad":"توسعة نطاق البحث"
+  "expand_search_rad":"توسعة نطاق البحث",
+  "empty_bookmark":"قائمة المفضلة فارغة"
 }

@@ -142,7 +142,7 @@ class KUser {
     return KUser(
       name: map['name'],
       phone: map['phone'],
-      accType: map['accType'] != null ? AccType.fromStr(map['accType']) : null,
+      accType: map['accType'] != null ? AccType.fromStr(map['accType'].toString()) : null,
       serviceId: map['serviceId'],
       service: map['service'] != null ? ServiceModel.fromMap(map['service']) : null,
       available: map['available'],

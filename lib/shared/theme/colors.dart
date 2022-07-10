@@ -9,7 +9,7 @@ class KColors {
   }
 
   //Light
-  static const Color backgrounL = Color(0xFFF5F5F5);
+  static const Color backgrounL = Color(0xFFFDF9FF);
   static const Color elevatedBoxL = Color(0xFFFDF9FF);
   static const Color reBackL = Color(0xFF5a585e);
   static const Color shadowL = Color(0x35000000);

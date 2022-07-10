@@ -58,7 +58,8 @@ mixin _$KException {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,7 +70,8 @@ mixin _$KException {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,7 +82,8 @@ mixin _$KException {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,7 +91,9 @@ mixin _$KException {
 
 /// @nodoc
 abstract class $KExceptionCopyWith<$Res> {
-  factory $KExceptionCopyWith(KException value, $Res Function(KException) then) = _$KExceptionCopyWithImpl<$Res>;
+  factory $KExceptionCopyWith(
+          KException value, $Res Function(KException) then) =
+      _$KExceptionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -102,12 +107,17 @@ class _$KExceptionCopyWithImpl<$Res> implements $KExceptionCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$KExceptionOfflineCopyWith<$Res> {
-  factory _$$KExceptionOfflineCopyWith(_$KExceptionOffline value, $Res Function(_$KExceptionOffline) then) = __$$KExceptionOfflineCopyWithImpl<$Res>;
+  factory _$$KExceptionOfflineCopyWith(
+          _$KExceptionOffline value, $Res Function(_$KExceptionOffline) then) =
+      __$$KExceptionOfflineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionOfflineCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res> implements _$$KExceptionOfflineCopyWith<$Res> {
-  __$$KExceptionOfflineCopyWithImpl(_$KExceptionOffline _value, $Res Function(_$KExceptionOffline) _then)
+class __$$KExceptionOfflineCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionOfflineCopyWith<$Res> {
+  __$$KExceptionOfflineCopyWithImpl(
+      _$KExceptionOffline _value, $Res Function(_$KExceptionOffline) _then)
       : super(_value, (v) => _then(v as _$KExceptionOffline));
 
   @override
@@ -126,7 +136,8 @@ class _$KExceptionOffline implements KExceptionOffline {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionOffline);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$KExceptionOffline);
   }
 
   @override
@@ -187,7 +198,8 @@ class _$KExceptionOffline implements KExceptionOffline {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return offline(this);
   }
@@ -201,7 +213,8 @@ class _$KExceptionOffline implements KExceptionOffline {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return offline?.call(this);
   }
@@ -215,7 +228,8 @@ class _$KExceptionOffline implements KExceptionOffline {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (offline != null) {
@@ -231,12 +245,17 @@ abstract class KExceptionOffline implements KException {
 
 /// @nodoc
 abstract class _$$KExceptionServerCopyWith<$Res> {
-  factory _$$KExceptionServerCopyWith(_$KExceptionServer value, $Res Function(_$KExceptionServer) then) = __$$KExceptionServerCopyWithImpl<$Res>;
+  factory _$$KExceptionServerCopyWith(
+          _$KExceptionServer value, $Res Function(_$KExceptionServer) then) =
+      __$$KExceptionServerCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionServerCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res> implements _$$KExceptionServerCopyWith<$Res> {
-  __$$KExceptionServerCopyWithImpl(_$KExceptionServer _value, $Res Function(_$KExceptionServer) _then)
+class __$$KExceptionServerCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionServerCopyWith<$Res> {
+  __$$KExceptionServerCopyWithImpl(
+      _$KExceptionServer _value, $Res Function(_$KExceptionServer) _then)
       : super(_value, (v) => _then(v as _$KExceptionServer));
 
   @override
@@ -255,7 +274,8 @@ class _$KExceptionServer implements KExceptionServer {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionServer);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$KExceptionServer);
   }
 
   @override
@@ -316,7 +336,8 @@ class _$KExceptionServer implements KExceptionServer {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return server(this);
   }
@@ -330,7 +351,8 @@ class _$KExceptionServer implements KExceptionServer {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return server?.call(this);
   }
@@ -344,7 +366,8 @@ class _$KExceptionServer implements KExceptionServer {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -360,13 +383,17 @@ abstract class KExceptionServer implements KException {
 
 /// @nodoc
 abstract class _$$KExceptionEmptyCacheCopyWith<$Res> {
-  factory _$$KExceptionEmptyCacheCopyWith(_$KExceptionEmptyCache value, $Res Function(_$KExceptionEmptyCache) then) =
+  factory _$$KExceptionEmptyCacheCopyWith(_$KExceptionEmptyCache value,
+          $Res Function(_$KExceptionEmptyCache) then) =
       __$$KExceptionEmptyCacheCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionEmptyCacheCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res> implements _$$KExceptionEmptyCacheCopyWith<$Res> {
-  __$$KExceptionEmptyCacheCopyWithImpl(_$KExceptionEmptyCache _value, $Res Function(_$KExceptionEmptyCache) _then)
+class __$$KExceptionEmptyCacheCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionEmptyCacheCopyWith<$Res> {
+  __$$KExceptionEmptyCacheCopyWithImpl(_$KExceptionEmptyCache _value,
+      $Res Function(_$KExceptionEmptyCache) _then)
       : super(_value, (v) => _then(v as _$KExceptionEmptyCache));
 
   @override
@@ -385,7 +412,8 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionEmptyCache);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$KExceptionEmptyCache);
   }
 
   @override
@@ -446,7 +474,8 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return emptyCache(this);
   }
@@ -460,7 +489,8 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return emptyCache?.call(this);
   }
@@ -474,7 +504,8 @@ class _$KExceptionEmptyCache implements KExceptionEmptyCache {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (emptyCache != null) {
@@ -490,17 +521,22 @@ abstract class KExceptionEmptyCache implements KException {
 
 /// @nodoc
 abstract class _$$KExceptionUserNotFoundCopyWith<$Res> {
-  factory _$$KExceptionUserNotFoundCopyWith(_$KExceptionUserNotFound value, $Res Function(_$KExceptionUserNotFound) then) =
+  factory _$$KExceptionUserNotFoundCopyWith(_$KExceptionUserNotFound value,
+          $Res Function(_$KExceptionUserNotFound) then) =
       __$$KExceptionUserNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionUserNotFoundCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res> implements _$$KExceptionUserNotFoundCopyWith<$Res> {
-  __$$KExceptionUserNotFoundCopyWithImpl(_$KExceptionUserNotFound _value, $Res Function(_$KExceptionUserNotFound) _then)
+class __$$KExceptionUserNotFoundCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionUserNotFoundCopyWith<$Res> {
+  __$$KExceptionUserNotFoundCopyWithImpl(_$KExceptionUserNotFound _value,
+      $Res Function(_$KExceptionUserNotFound) _then)
       : super(_value, (v) => _then(v as _$KExceptionUserNotFound));
 
   @override
-  _$KExceptionUserNotFound get _value => super._value as _$KExceptionUserNotFound;
+  _$KExceptionUserNotFound get _value =>
+      super._value as _$KExceptionUserNotFound;
 }
 
 /// @nodoc
@@ -515,7 +551,8 @@ class _$KExceptionUserNotFound implements KExceptionUserNotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionUserNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$KExceptionUserNotFound);
   }
 
   @override
@@ -576,7 +613,8 @@ class _$KExceptionUserNotFound implements KExceptionUserNotFound {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return userNotFound(this);
   }
@@ -590,7 +628,8 @@ class _$KExceptionUserNotFound implements KExceptionUserNotFound {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return userNotFound?.call(this);
   }
@@ -604,7 +643,8 @@ class _$KExceptionUserNotFound implements KExceptionUserNotFound {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (userNotFound != null) {
@@ -620,17 +660,22 @@ abstract class KExceptionUserNotFound implements KException {
 
 /// @nodoc
 abstract class _$$KExceptionLocationDenaidCopyWith<$Res> {
-  factory _$$KExceptionLocationDenaidCopyWith(_$KExceptionLocationDenaid value, $Res Function(_$KExceptionLocationDenaid) then) =
+  factory _$$KExceptionLocationDenaidCopyWith(_$KExceptionLocationDenaid value,
+          $Res Function(_$KExceptionLocationDenaid) then) =
       __$$KExceptionLocationDenaidCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionLocationDenaidCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res> implements _$$KExceptionLocationDenaidCopyWith<$Res> {
-  __$$KExceptionLocationDenaidCopyWithImpl(_$KExceptionLocationDenaid _value, $Res Function(_$KExceptionLocationDenaid) _then)
+class __$$KExceptionLocationDenaidCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionLocationDenaidCopyWith<$Res> {
+  __$$KExceptionLocationDenaidCopyWithImpl(_$KExceptionLocationDenaid _value,
+      $Res Function(_$KExceptionLocationDenaid) _then)
       : super(_value, (v) => _then(v as _$KExceptionLocationDenaid));
 
   @override
-  _$KExceptionLocationDenaid get _value => super._value as _$KExceptionLocationDenaid;
+  _$KExceptionLocationDenaid get _value =>
+      super._value as _$KExceptionLocationDenaid;
 }
 
 /// @nodoc
@@ -645,7 +690,9 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionLocationDenaid);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$KExceptionLocationDenaid);
   }
 
   @override
@@ -706,7 +753,8 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return locationDenaid(this);
   }
@@ -720,7 +768,8 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return locationDenaid?.call(this);
   }
@@ -734,7 +783,8 @@ class _$KExceptionLocationDenaid implements KExceptionLocationDenaid {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (locationDenaid != null) {
@@ -750,17 +800,23 @@ abstract class KExceptionLocationDenaid implements KException {
 
 /// @nodoc
 abstract class _$$KExceptionLocationDiabledCopyWith<$Res> {
-  factory _$$KExceptionLocationDiabledCopyWith(_$KExceptionLocationDiabled value, $Res Function(_$KExceptionLocationDiabled) then) =
+  factory _$$KExceptionLocationDiabledCopyWith(
+          _$KExceptionLocationDiabled value,
+          $Res Function(_$KExceptionLocationDiabled) then) =
       __$$KExceptionLocationDiabledCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionLocationDiabledCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res> implements _$$KExceptionLocationDiabledCopyWith<$Res> {
-  __$$KExceptionLocationDiabledCopyWithImpl(_$KExceptionLocationDiabled _value, $Res Function(_$KExceptionLocationDiabled) _then)
+class __$$KExceptionLocationDiabledCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
+    implements _$$KExceptionLocationDiabledCopyWith<$Res> {
+  __$$KExceptionLocationDiabledCopyWithImpl(_$KExceptionLocationDiabled _value,
+      $Res Function(_$KExceptionLocationDiabled) _then)
       : super(_value, (v) => _then(v as _$KExceptionLocationDiabled));
 
   @override
-  _$KExceptionLocationDiabled get _value => super._value as _$KExceptionLocationDiabled;
+  _$KExceptionLocationDiabled get _value =>
+      super._value as _$KExceptionLocationDiabled;
 }
 
 /// @nodoc
@@ -775,7 +831,9 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionLocationDiabled);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$KExceptionLocationDiabled);
   }
 
   @override
@@ -836,7 +894,8 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return locationDiabled(this);
   }
@@ -850,7 +909,8 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return locationDiabled?.call(this);
   }
@@ -864,7 +924,8 @@ class _$KExceptionLocationDiabled implements KExceptionLocationDiabled {
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (locationDiabled != null) {
@@ -881,23 +942,29 @@ abstract class KExceptionLocationDiabled implements KException {
 /// @nodoc
 abstract class _$$KExceptionLocationDenaidPermenetlCopyWith<$Res> {
   factory _$$KExceptionLocationDenaidPermenetlCopyWith(
-          _$KExceptionLocationDenaidPermenetl value, $Res Function(_$KExceptionLocationDenaidPermenetl) then) =
+          _$KExceptionLocationDenaidPermenetl value,
+          $Res Function(_$KExceptionLocationDenaidPermenetl) then) =
       __$$KExceptionLocationDenaidPermenetlCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$KExceptionLocationDenaidPermenetlCopyWithImpl<$Res> extends _$KExceptionCopyWithImpl<$Res>
+class __$$KExceptionLocationDenaidPermenetlCopyWithImpl<$Res>
+    extends _$KExceptionCopyWithImpl<$Res>
     implements _$$KExceptionLocationDenaidPermenetlCopyWith<$Res> {
-  __$$KExceptionLocationDenaidPermenetlCopyWithImpl(_$KExceptionLocationDenaidPermenetl _value, $Res Function(_$KExceptionLocationDenaidPermenetl) _then)
+  __$$KExceptionLocationDenaidPermenetlCopyWithImpl(
+      _$KExceptionLocationDenaidPermenetl _value,
+      $Res Function(_$KExceptionLocationDenaidPermenetl) _then)
       : super(_value, (v) => _then(v as _$KExceptionLocationDenaidPermenetl));
 
   @override
-  _$KExceptionLocationDenaidPermenetl get _value => super._value as _$KExceptionLocationDenaidPermenetl;
+  _$KExceptionLocationDenaidPermenetl get _value =>
+      super._value as _$KExceptionLocationDenaidPermenetl;
 }
 
 /// @nodoc
 
-class _$KExceptionLocationDenaidPermenetl implements KExceptionLocationDenaidPermenetl {
+class _$KExceptionLocationDenaidPermenetl
+    implements KExceptionLocationDenaidPermenetl {
   const _$KExceptionLocationDenaidPermenetl();
 
   @override
@@ -907,7 +974,9 @@ class _$KExceptionLocationDenaidPermenetl implements KExceptionLocationDenaidPer
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$KExceptionLocationDenaidPermenetl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$KExceptionLocationDenaidPermenetl);
   }
 
   @override
@@ -968,7 +1037,8 @@ class _$KExceptionLocationDenaidPermenetl implements KExceptionLocationDenaidPer
     required TResult Function(KExceptionUserNotFound value) userNotFound,
     required TResult Function(KExceptionLocationDenaid value) locationDenaid,
     required TResult Function(KExceptionLocationDiabled value) locationDiabled,
-    required TResult Function(KExceptionLocationDenaidPermenetl value) locationDenaidPermenetl,
+    required TResult Function(KExceptionLocationDenaidPermenetl value)
+        locationDenaidPermenetl,
   }) {
     return locationDenaidPermenetl(this);
   }
@@ -982,7 +1052,8 @@ class _$KExceptionLocationDenaidPermenetl implements KExceptionLocationDenaidPer
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
   }) {
     return locationDenaidPermenetl?.call(this);
   }
@@ -996,7 +1067,8 @@ class _$KExceptionLocationDenaidPermenetl implements KExceptionLocationDenaidPer
     TResult Function(KExceptionUserNotFound value)? userNotFound,
     TResult Function(KExceptionLocationDenaid value)? locationDenaid,
     TResult Function(KExceptionLocationDiabled value)? locationDiabled,
-    TResult Function(KExceptionLocationDenaidPermenetl value)? locationDenaidPermenetl,
+    TResult Function(KExceptionLocationDenaidPermenetl value)?
+        locationDenaidPermenetl,
     required TResult orElse(),
   }) {
     if (locationDenaidPermenetl != null) {
@@ -1007,5 +1079,6 @@ class _$KExceptionLocationDenaidPermenetl implements KExceptionLocationDenaidPer
 }
 
 abstract class KExceptionLocationDenaidPermenetl implements KException {
-  const factory KExceptionLocationDenaidPermenetl() = _$KExceptionLocationDenaidPermenetl;
+  const factory KExceptionLocationDenaidPermenetl() =
+      _$KExceptionLocationDenaidPermenetl;
 }

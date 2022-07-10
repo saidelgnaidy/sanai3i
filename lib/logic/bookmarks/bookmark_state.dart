@@ -6,6 +6,7 @@ part 'bookmark_state.freezed.dart';
 abstract class BookmarksState with _$BookmarksState {
   const factory BookmarksState.loading() = BookmarksStateLoading;
   const factory BookmarksState.success({required List<KUser> bookmarks}) = BookmarksStateSuccess;
+  const factory BookmarksState.empty() = BookmarksStateEmpty;
   const factory BookmarksState.error({required String error}) = BookmarksStateError;
 }
 // flutter pub run build_runner watch --delete-conflicting-outputs 

@@ -76,12 +76,14 @@ mixin _$CompleteRegisterState {
 
 /// @nodoc
 abstract class $CompleteRegisterStateCopyWith<$Res> {
-  factory $CompleteRegisterStateCopyWith(CompleteRegisterState value, $Res Function(CompleteRegisterState) then) =
+  factory $CompleteRegisterStateCopyWith(CompleteRegisterState value,
+          $Res Function(CompleteRegisterState) then) =
       _$CompleteRegisterStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CompleteRegisterStateCopyWithImpl<$Res> implements $CompleteRegisterStateCopyWith<$Res> {
+class _$CompleteRegisterStateCopyWithImpl<$Res>
+    implements $CompleteRegisterStateCopyWith<$Res> {
   _$CompleteRegisterStateCopyWithImpl(this._value, this._then);
 
   final CompleteRegisterState _value;
@@ -91,18 +93,24 @@ class _$CompleteRegisterStateCopyWithImpl<$Res> implements $CompleteRegisterStat
 
 /// @nodoc
 abstract class _$$CompleteRegisterStateInitialCopyWith<$Res> {
-  factory _$$CompleteRegisterStateInitialCopyWith(_$CompleteRegisterStateInitial value, $Res Function(_$CompleteRegisterStateInitial) then) =
+  factory _$$CompleteRegisterStateInitialCopyWith(
+          _$CompleteRegisterStateInitial value,
+          $Res Function(_$CompleteRegisterStateInitial) then) =
       __$$CompleteRegisterStateInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CompleteRegisterStateInitialCopyWithImpl<$Res> extends _$CompleteRegisterStateCopyWithImpl<$Res>
+class __$$CompleteRegisterStateInitialCopyWithImpl<$Res>
+    extends _$CompleteRegisterStateCopyWithImpl<$Res>
     implements _$$CompleteRegisterStateInitialCopyWith<$Res> {
-  __$$CompleteRegisterStateInitialCopyWithImpl(_$CompleteRegisterStateInitial _value, $Res Function(_$CompleteRegisterStateInitial) _then)
+  __$$CompleteRegisterStateInitialCopyWithImpl(
+      _$CompleteRegisterStateInitial _value,
+      $Res Function(_$CompleteRegisterStateInitial) _then)
       : super(_value, (v) => _then(v as _$CompleteRegisterStateInitial));
 
   @override
-  _$CompleteRegisterStateInitial get _value => super._value as _$CompleteRegisterStateInitial;
+  _$CompleteRegisterStateInitial get _value =>
+      super._value as _$CompleteRegisterStateInitial;
 }
 
 /// @nodoc
@@ -117,7 +125,9 @@ class _$CompleteRegisterStateInitial implements CompleteRegisterStateInitial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$CompleteRegisterStateInitial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegisterStateInitial);
   }
 
   @override
@@ -210,18 +220,24 @@ abstract class CompleteRegisterStateInitial implements CompleteRegisterState {
 
 /// @nodoc
 abstract class _$$CompleteRegisterStateLoadingCopyWith<$Res> {
-  factory _$$CompleteRegisterStateLoadingCopyWith(_$CompleteRegisterStateLoading value, $Res Function(_$CompleteRegisterStateLoading) then) =
+  factory _$$CompleteRegisterStateLoadingCopyWith(
+          _$CompleteRegisterStateLoading value,
+          $Res Function(_$CompleteRegisterStateLoading) then) =
       __$$CompleteRegisterStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CompleteRegisterStateLoadingCopyWithImpl<$Res> extends _$CompleteRegisterStateCopyWithImpl<$Res>
+class __$$CompleteRegisterStateLoadingCopyWithImpl<$Res>
+    extends _$CompleteRegisterStateCopyWithImpl<$Res>
     implements _$$CompleteRegisterStateLoadingCopyWith<$Res> {
-  __$$CompleteRegisterStateLoadingCopyWithImpl(_$CompleteRegisterStateLoading _value, $Res Function(_$CompleteRegisterStateLoading) _then)
+  __$$CompleteRegisterStateLoadingCopyWithImpl(
+      _$CompleteRegisterStateLoading _value,
+      $Res Function(_$CompleteRegisterStateLoading) _then)
       : super(_value, (v) => _then(v as _$CompleteRegisterStateLoading));
 
   @override
-  _$CompleteRegisterStateLoading get _value => super._value as _$CompleteRegisterStateLoading;
+  _$CompleteRegisterStateLoading get _value =>
+      super._value as _$CompleteRegisterStateLoading;
 }
 
 /// @nodoc
@@ -236,7 +252,9 @@ class _$CompleteRegisterStateLoading implements CompleteRegisterStateLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$CompleteRegisterStateLoading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegisterStateLoading);
   }
 
   @override
@@ -329,18 +347,24 @@ abstract class CompleteRegisterStateLoading implements CompleteRegisterState {
 
 /// @nodoc
 abstract class _$$CompleteRegisterStateSuccessCopyWith<$Res> {
-  factory _$$CompleteRegisterStateSuccessCopyWith(_$CompleteRegisterStateSuccess value, $Res Function(_$CompleteRegisterStateSuccess) then) =
+  factory _$$CompleteRegisterStateSuccessCopyWith(
+          _$CompleteRegisterStateSuccess value,
+          $Res Function(_$CompleteRegisterStateSuccess) then) =
       __$$CompleteRegisterStateSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CompleteRegisterStateSuccessCopyWithImpl<$Res> extends _$CompleteRegisterStateCopyWithImpl<$Res>
+class __$$CompleteRegisterStateSuccessCopyWithImpl<$Res>
+    extends _$CompleteRegisterStateCopyWithImpl<$Res>
     implements _$$CompleteRegisterStateSuccessCopyWith<$Res> {
-  __$$CompleteRegisterStateSuccessCopyWithImpl(_$CompleteRegisterStateSuccess _value, $Res Function(_$CompleteRegisterStateSuccess) _then)
+  __$$CompleteRegisterStateSuccessCopyWithImpl(
+      _$CompleteRegisterStateSuccess _value,
+      $Res Function(_$CompleteRegisterStateSuccess) _then)
       : super(_value, (v) => _then(v as _$CompleteRegisterStateSuccess));
 
   @override
-  _$CompleteRegisterStateSuccess get _value => super._value as _$CompleteRegisterStateSuccess;
+  _$CompleteRegisterStateSuccess get _value =>
+      super._value as _$CompleteRegisterStateSuccess;
 }
 
 /// @nodoc
@@ -355,7 +379,9 @@ class _$CompleteRegisterStateSuccess implements CompleteRegisterStateSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$CompleteRegisterStateSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegisterStateSuccess);
   }
 
   @override
@@ -448,19 +474,25 @@ abstract class CompleteRegisterStateSuccess implements CompleteRegisterState {
 
 /// @nodoc
 abstract class _$$CompleteRegisterStateUpdatedCopyWith<$Res> {
-  factory _$$CompleteRegisterStateUpdatedCopyWith(_$CompleteRegisterStateUpdated value, $Res Function(_$CompleteRegisterStateUpdated) then) =
+  factory _$$CompleteRegisterStateUpdatedCopyWith(
+          _$CompleteRegisterStateUpdated value,
+          $Res Function(_$CompleteRegisterStateUpdated) then) =
       __$$CompleteRegisterStateUpdatedCopyWithImpl<$Res>;
   $Res call({RegisterModel model});
 }
 
 /// @nodoc
-class __$$CompleteRegisterStateUpdatedCopyWithImpl<$Res> extends _$CompleteRegisterStateCopyWithImpl<$Res>
+class __$$CompleteRegisterStateUpdatedCopyWithImpl<$Res>
+    extends _$CompleteRegisterStateCopyWithImpl<$Res>
     implements _$$CompleteRegisterStateUpdatedCopyWith<$Res> {
-  __$$CompleteRegisterStateUpdatedCopyWithImpl(_$CompleteRegisterStateUpdated _value, $Res Function(_$CompleteRegisterStateUpdated) _then)
+  __$$CompleteRegisterStateUpdatedCopyWithImpl(
+      _$CompleteRegisterStateUpdated _value,
+      $Res Function(_$CompleteRegisterStateUpdated) _then)
       : super(_value, (v) => _then(v as _$CompleteRegisterStateUpdated));
 
   @override
-  _$CompleteRegisterStateUpdated get _value => super._value as _$CompleteRegisterStateUpdated;
+  _$CompleteRegisterStateUpdated get _value =>
+      super._value as _$CompleteRegisterStateUpdated;
 
   @override
   $Res call({
@@ -491,16 +523,20 @@ class _$CompleteRegisterStateUpdated implements CompleteRegisterStateUpdated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CompleteRegisterStateUpdated && const DeepCollectionEquality().equals(other.model, model));
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegisterStateUpdated &&
+            const DeepCollectionEquality().equals(other.model, model));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(model));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(model));
 
   @JsonKey(ignore: true)
   @override
-  _$$CompleteRegisterStateUpdatedCopyWith<_$CompleteRegisterStateUpdated> get copyWith =>
-      __$$CompleteRegisterStateUpdatedCopyWithImpl<_$CompleteRegisterStateUpdated>(this, _$identity);
+  _$$CompleteRegisterStateUpdatedCopyWith<_$CompleteRegisterStateUpdated>
+      get copyWith => __$$CompleteRegisterStateUpdatedCopyWithImpl<
+          _$CompleteRegisterStateUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -584,28 +620,36 @@ class _$CompleteRegisterStateUpdated implements CompleteRegisterStateUpdated {
 }
 
 abstract class CompleteRegisterStateUpdated implements CompleteRegisterState {
-  const factory CompleteRegisterStateUpdated({required final RegisterModel model}) = _$CompleteRegisterStateUpdated;
+  const factory CompleteRegisterStateUpdated(
+      {required final RegisterModel model}) = _$CompleteRegisterStateUpdated;
 
   RegisterModel get model => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$CompleteRegisterStateUpdatedCopyWith<_$CompleteRegisterStateUpdated> get copyWith => throw _privateConstructorUsedError;
+  _$$CompleteRegisterStateUpdatedCopyWith<_$CompleteRegisterStateUpdated>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$CompleteRegisterStateErrorCopyWith<$Res> {
-  factory _$$CompleteRegisterStateErrorCopyWith(_$CompleteRegisterStateError value, $Res Function(_$CompleteRegisterStateError) then) =
+  factory _$$CompleteRegisterStateErrorCopyWith(
+          _$CompleteRegisterStateError value,
+          $Res Function(_$CompleteRegisterStateError) then) =
       __$$CompleteRegisterStateErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$CompleteRegisterStateErrorCopyWithImpl<$Res> extends _$CompleteRegisterStateCopyWithImpl<$Res>
+class __$$CompleteRegisterStateErrorCopyWithImpl<$Res>
+    extends _$CompleteRegisterStateCopyWithImpl<$Res>
     implements _$$CompleteRegisterStateErrorCopyWith<$Res> {
-  __$$CompleteRegisterStateErrorCopyWithImpl(_$CompleteRegisterStateError _value, $Res Function(_$CompleteRegisterStateError) _then)
+  __$$CompleteRegisterStateErrorCopyWithImpl(
+      _$CompleteRegisterStateError _value,
+      $Res Function(_$CompleteRegisterStateError) _then)
       : super(_value, (v) => _then(v as _$CompleteRegisterStateError));
 
   @override
-  _$CompleteRegisterStateError get _value => super._value as _$CompleteRegisterStateError;
+  _$CompleteRegisterStateError get _value =>
+      super._value as _$CompleteRegisterStateError;
 
   @override
   $Res call({
@@ -636,16 +680,20 @@ class _$CompleteRegisterStateError implements CompleteRegisterStateError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CompleteRegisterStateError && const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegisterStateError &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$$CompleteRegisterStateErrorCopyWith<_$CompleteRegisterStateError> get copyWith =>
-      __$$CompleteRegisterStateErrorCopyWithImpl<_$CompleteRegisterStateError>(this, _$identity);
+  _$$CompleteRegisterStateErrorCopyWith<_$CompleteRegisterStateError>
+      get copyWith => __$$CompleteRegisterStateErrorCopyWithImpl<
+          _$CompleteRegisterStateError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -729,9 +777,11 @@ class _$CompleteRegisterStateError implements CompleteRegisterStateError {
 }
 
 abstract class CompleteRegisterStateError implements CompleteRegisterState {
-  const factory CompleteRegisterStateError({required final String error}) = _$CompleteRegisterStateError;
+  const factory CompleteRegisterStateError({required final String error}) =
+      _$CompleteRegisterStateError;
 
   String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$CompleteRegisterStateErrorCopyWith<_$CompleteRegisterStateError> get copyWith => throw _privateConstructorUsedError;
+  _$$CompleteRegisterStateErrorCopyWith<_$CompleteRegisterStateError>
+      get copyWith => throw _privateConstructorUsedError;
 }

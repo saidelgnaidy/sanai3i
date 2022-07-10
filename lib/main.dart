@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<ServicesGetterBloc>(create: (context) => ServicesGetterBloc()..getServices()),
         BlocProvider<UserInfoBloc>(create: (context) => UserInfoBloc()..getUser()),
         BlocProvider<ServiceProvidersBloc>(create: (context) => ServiceProvidersBloc()),
-        BlocProvider<BookmarksBloc>(create: (context) => BookmarksBloc()..getBookmark()),
+        BlocProvider<BookmarksBloc>(create: (context) => BookmarksBloc()..getFromCache()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {

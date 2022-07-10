@@ -64,11 +64,14 @@ mixin _$LocationPickerState {
 
 /// @nodoc
 abstract class $LocationPickerStateCopyWith<$Res> {
-  factory $LocationPickerStateCopyWith(LocationPickerState value, $Res Function(LocationPickerState) then) = _$LocationPickerStateCopyWithImpl<$Res>;
+  factory $LocationPickerStateCopyWith(
+          LocationPickerState value, $Res Function(LocationPickerState) then) =
+      _$LocationPickerStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LocationPickerStateCopyWithImpl<$Res> implements $LocationPickerStateCopyWith<$Res> {
+class _$LocationPickerStateCopyWithImpl<$Res>
+    implements $LocationPickerStateCopyWith<$Res> {
   _$LocationPickerStateCopyWithImpl(this._value, this._then);
 
   final LocationPickerState _value;
@@ -78,18 +81,24 @@ class _$LocationPickerStateCopyWithImpl<$Res> implements $LocationPickerStateCop
 
 /// @nodoc
 abstract class _$$LocationPickerStateLoadingCopyWith<$Res> {
-  factory _$$LocationPickerStateLoadingCopyWith(_$LocationPickerStateLoading value, $Res Function(_$LocationPickerStateLoading) then) =
+  factory _$$LocationPickerStateLoadingCopyWith(
+          _$LocationPickerStateLoading value,
+          $Res Function(_$LocationPickerStateLoading) then) =
       __$$LocationPickerStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationPickerStateLoadingCopyWithImpl<$Res> extends _$LocationPickerStateCopyWithImpl<$Res>
+class __$$LocationPickerStateLoadingCopyWithImpl<$Res>
+    extends _$LocationPickerStateCopyWithImpl<$Res>
     implements _$$LocationPickerStateLoadingCopyWith<$Res> {
-  __$$LocationPickerStateLoadingCopyWithImpl(_$LocationPickerStateLoading _value, $Res Function(_$LocationPickerStateLoading) _then)
+  __$$LocationPickerStateLoadingCopyWithImpl(
+      _$LocationPickerStateLoading _value,
+      $Res Function(_$LocationPickerStateLoading) _then)
       : super(_value, (v) => _then(v as _$LocationPickerStateLoading));
 
   @override
-  _$LocationPickerStateLoading get _value => super._value as _$LocationPickerStateLoading;
+  _$LocationPickerStateLoading get _value =>
+      super._value as _$LocationPickerStateLoading;
 }
 
 /// @nodoc
@@ -104,7 +113,9 @@ class _$LocationPickerStateLoading implements LocationPickerStateLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LocationPickerStateLoading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationPickerStateLoading);
   }
 
   @override
@@ -185,18 +196,23 @@ abstract class LocationPickerStateLoading implements LocationPickerState {
 
 /// @nodoc
 abstract class _$$LocationPickerStateMarkCopyWith<$Res> {
-  factory _$$LocationPickerStateMarkCopyWith(_$LocationPickerStateMark value, $Res Function(_$LocationPickerStateMark) then) =
+  factory _$$LocationPickerStateMarkCopyWith(_$LocationPickerStateMark value,
+          $Res Function(_$LocationPickerStateMark) then) =
       __$$LocationPickerStateMarkCopyWithImpl<$Res>;
   $Res call({Marker marker});
 }
 
 /// @nodoc
-class __$$LocationPickerStateMarkCopyWithImpl<$Res> extends _$LocationPickerStateCopyWithImpl<$Res> implements _$$LocationPickerStateMarkCopyWith<$Res> {
-  __$$LocationPickerStateMarkCopyWithImpl(_$LocationPickerStateMark _value, $Res Function(_$LocationPickerStateMark) _then)
+class __$$LocationPickerStateMarkCopyWithImpl<$Res>
+    extends _$LocationPickerStateCopyWithImpl<$Res>
+    implements _$$LocationPickerStateMarkCopyWith<$Res> {
+  __$$LocationPickerStateMarkCopyWithImpl(_$LocationPickerStateMark _value,
+      $Res Function(_$LocationPickerStateMark) _then)
       : super(_value, (v) => _then(v as _$LocationPickerStateMark));
 
   @override
-  _$LocationPickerStateMark get _value => super._value as _$LocationPickerStateMark;
+  _$LocationPickerStateMark get _value =>
+      super._value as _$LocationPickerStateMark;
 
   @override
   $Res call({
@@ -227,16 +243,20 @@ class _$LocationPickerStateMark implements LocationPickerStateMark {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationPickerStateMark && const DeepCollectionEquality().equals(other.marker, marker));
+        (other.runtimeType == runtimeType &&
+            other is _$LocationPickerStateMark &&
+            const DeepCollectionEquality().equals(other.marker, marker));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(marker));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(marker));
 
   @JsonKey(ignore: true)
   @override
   _$$LocationPickerStateMarkCopyWith<_$LocationPickerStateMark> get copyWith =>
-      __$$LocationPickerStateMarkCopyWithImpl<_$LocationPickerStateMark>(this, _$identity);
+      __$$LocationPickerStateMarkCopyWithImpl<_$LocationPickerStateMark>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -308,27 +328,34 @@ class _$LocationPickerStateMark implements LocationPickerStateMark {
 }
 
 abstract class LocationPickerStateMark implements LocationPickerState {
-  const factory LocationPickerStateMark({required final Marker marker}) = _$LocationPickerStateMark;
+  const factory LocationPickerStateMark({required final Marker marker}) =
+      _$LocationPickerStateMark;
 
   Marker get marker => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$LocationPickerStateMarkCopyWith<_$LocationPickerStateMark> get copyWith => throw _privateConstructorUsedError;
+  _$$LocationPickerStateMarkCopyWith<_$LocationPickerStateMark> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LocationPickerStateErrorCopyWith<$Res> {
-  factory _$$LocationPickerStateErrorCopyWith(_$LocationPickerStateError value, $Res Function(_$LocationPickerStateError) then) =
+  factory _$$LocationPickerStateErrorCopyWith(_$LocationPickerStateError value,
+          $Res Function(_$LocationPickerStateError) then) =
       __$$LocationPickerStateErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$LocationPickerStateErrorCopyWithImpl<$Res> extends _$LocationPickerStateCopyWithImpl<$Res> implements _$$LocationPickerStateErrorCopyWith<$Res> {
-  __$$LocationPickerStateErrorCopyWithImpl(_$LocationPickerStateError _value, $Res Function(_$LocationPickerStateError) _then)
+class __$$LocationPickerStateErrorCopyWithImpl<$Res>
+    extends _$LocationPickerStateCopyWithImpl<$Res>
+    implements _$$LocationPickerStateErrorCopyWith<$Res> {
+  __$$LocationPickerStateErrorCopyWithImpl(_$LocationPickerStateError _value,
+      $Res Function(_$LocationPickerStateError) _then)
       : super(_value, (v) => _then(v as _$LocationPickerStateError));
 
   @override
-  _$LocationPickerStateError get _value => super._value as _$LocationPickerStateError;
+  _$LocationPickerStateError get _value =>
+      super._value as _$LocationPickerStateError;
 
   @override
   $Res call({
@@ -359,16 +386,21 @@ class _$LocationPickerStateError implements LocationPickerStateError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationPickerStateError && const DeepCollectionEquality().equals(other.error, error));
+        (other.runtimeType == runtimeType &&
+            other is _$LocationPickerStateError &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  _$$LocationPickerStateErrorCopyWith<_$LocationPickerStateError> get copyWith =>
-      __$$LocationPickerStateErrorCopyWithImpl<_$LocationPickerStateError>(this, _$identity);
+  _$$LocationPickerStateErrorCopyWith<_$LocationPickerStateError>
+      get copyWith =>
+          __$$LocationPickerStateErrorCopyWithImpl<_$LocationPickerStateError>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -440,9 +472,11 @@ class _$LocationPickerStateError implements LocationPickerStateError {
 }
 
 abstract class LocationPickerStateError implements LocationPickerState {
-  const factory LocationPickerStateError({required final String error}) = _$LocationPickerStateError;
+  const factory LocationPickerStateError({required final String error}) =
+      _$LocationPickerStateError;
 
   String get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$LocationPickerStateErrorCopyWith<_$LocationPickerStateError> get copyWith => throw _privateConstructorUsedError;
+  _$$LocationPickerStateErrorCopyWith<_$LocationPickerStateError>
+      get copyWith => throw _privateConstructorUsedError;
 }

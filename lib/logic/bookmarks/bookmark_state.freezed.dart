@@ -20,6 +20,7 @@ mixin _$BookmarksState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<KUser> bookmarks) success,
+    required TResult Function() empty,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$BookmarksState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$BookmarksState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,7 @@ mixin _$BookmarksState {
   TResult map<TResult extends Object?>({
     required TResult Function(BookmarksStateLoading value) loading,
     required TResult Function(BookmarksStateSuccess value) success,
+    required TResult Function(BookmarksStateEmpty value) empty,
     required TResult Function(BookmarksStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +53,7 @@ mixin _$BookmarksState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$BookmarksState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -122,6 +128,7 @@ class _$BookmarksStateLoading implements BookmarksStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<KUser> bookmarks) success,
+    required TResult Function() empty,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -132,6 +139,7 @@ class _$BookmarksStateLoading implements BookmarksStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
   }) {
     return loading?.call();
@@ -142,6 +150,7 @@ class _$BookmarksStateLoading implements BookmarksStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -156,6 +165,7 @@ class _$BookmarksStateLoading implements BookmarksStateLoading {
   TResult map<TResult extends Object?>({
     required TResult Function(BookmarksStateLoading value) loading,
     required TResult Function(BookmarksStateSuccess value) success,
+    required TResult Function(BookmarksStateEmpty value) empty,
     required TResult Function(BookmarksStateError value) error,
   }) {
     return loading(this);
@@ -166,6 +176,7 @@ class _$BookmarksStateLoading implements BookmarksStateLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
   }) {
     return loading?.call(this);
@@ -176,6 +187,7 @@ class _$BookmarksStateLoading implements BookmarksStateLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
     required TResult orElse(),
   }) {
@@ -264,6 +276,7 @@ class _$BookmarksStateSuccess implements BookmarksStateSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<KUser> bookmarks) success,
+    required TResult Function() empty,
     required TResult Function(String error) error,
   }) {
     return success(bookmarks);
@@ -274,6 +287,7 @@ class _$BookmarksStateSuccess implements BookmarksStateSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
   }) {
     return success?.call(bookmarks);
@@ -284,6 +298,7 @@ class _$BookmarksStateSuccess implements BookmarksStateSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -298,6 +313,7 @@ class _$BookmarksStateSuccess implements BookmarksStateSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(BookmarksStateLoading value) loading,
     required TResult Function(BookmarksStateSuccess value) success,
+    required TResult Function(BookmarksStateEmpty value) empty,
     required TResult Function(BookmarksStateError value) error,
   }) {
     return success(this);
@@ -308,6 +324,7 @@ class _$BookmarksStateSuccess implements BookmarksStateSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
   }) {
     return success?.call(this);
@@ -318,6 +335,7 @@ class _$BookmarksStateSuccess implements BookmarksStateSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
     required TResult orElse(),
   }) {
@@ -336,6 +354,123 @@ abstract class BookmarksStateSuccess implements BookmarksState {
   @JsonKey(ignore: true)
   _$$BookmarksStateSuccessCopyWith<_$BookmarksStateSuccess> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BookmarksStateEmptyCopyWith<$Res> {
+  factory _$$BookmarksStateEmptyCopyWith(_$BookmarksStateEmpty value,
+          $Res Function(_$BookmarksStateEmpty) then) =
+      __$$BookmarksStateEmptyCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BookmarksStateEmptyCopyWithImpl<$Res>
+    extends _$BookmarksStateCopyWithImpl<$Res>
+    implements _$$BookmarksStateEmptyCopyWith<$Res> {
+  __$$BookmarksStateEmptyCopyWithImpl(
+      _$BookmarksStateEmpty _value, $Res Function(_$BookmarksStateEmpty) _then)
+      : super(_value, (v) => _then(v as _$BookmarksStateEmpty));
+
+  @override
+  _$BookmarksStateEmpty get _value => super._value as _$BookmarksStateEmpty;
+}
+
+/// @nodoc
+
+class _$BookmarksStateEmpty implements BookmarksStateEmpty {
+  const _$BookmarksStateEmpty();
+
+  @override
+  String toString() {
+    return 'BookmarksState.empty()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$BookmarksStateEmpty);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<KUser> bookmarks) success,
+    required TResult Function() empty,
+    required TResult Function(String error) error,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
+    TResult Function(String error)? error,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BookmarksStateLoading value) loading,
+    required TResult Function(BookmarksStateSuccess value) success,
+    required TResult Function(BookmarksStateEmpty value) empty,
+    required TResult Function(BookmarksStateError value) error,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BookmarksStateLoading value)? loading,
+    TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
+    TResult Function(BookmarksStateError value)? error,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BookmarksStateLoading value)? loading,
+    TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
+    TResult Function(BookmarksStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarksStateEmpty implements BookmarksState {
+  const factory BookmarksStateEmpty() = _$BookmarksStateEmpty;
 }
 
 /// @nodoc
@@ -406,6 +541,7 @@ class _$BookmarksStateError implements BookmarksStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<KUser> bookmarks) success,
+    required TResult Function() empty,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -416,6 +552,7 @@ class _$BookmarksStateError implements BookmarksStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -426,6 +563,7 @@ class _$BookmarksStateError implements BookmarksStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<KUser> bookmarks)? success,
+    TResult Function()? empty,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -440,6 +578,7 @@ class _$BookmarksStateError implements BookmarksStateError {
   TResult map<TResult extends Object?>({
     required TResult Function(BookmarksStateLoading value) loading,
     required TResult Function(BookmarksStateSuccess value) success,
+    required TResult Function(BookmarksStateEmpty value) empty,
     required TResult Function(BookmarksStateError value) error,
   }) {
     return error(this);
@@ -450,6 +589,7 @@ class _$BookmarksStateError implements BookmarksStateError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
   }) {
     return error?.call(this);
@@ -460,6 +600,7 @@ class _$BookmarksStateError implements BookmarksStateError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookmarksStateLoading value)? loading,
     TResult Function(BookmarksStateSuccess value)? success,
+    TResult Function(BookmarksStateEmpty value)? empty,
     TResult Function(BookmarksStateError value)? error,
     required TResult orElse(),
   }) {

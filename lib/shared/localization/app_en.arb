@@ -51,5 +51,6 @@
   "transport": "Transport",
   "available": "Available",
   "unAvailable": "UnAvailable",
-  "expand_search_rad": "Expand Search Radius"
+  "expand_search_rad": "Expand Search Radius",
+  "empty_bookmark": "Bookmark List Empty"
 }

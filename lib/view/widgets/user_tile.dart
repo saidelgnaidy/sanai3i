@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -9,6 +8,7 @@ import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 
 import 'package:sanai3i/shared/theme/text_theme.dart';
+import 'package:sanai3i/view/profile/profile_pic.dart';
 import 'package:sanai3i/view/widgets/shared_components.dart';
 
 class KUserTileWidget extends StatefulWidget {
@@ -59,11 +59,9 @@ class _KUserTileWidgetState extends State<KUserTileWidget> with TickerProviderSt
       width: (widget.tileWidth ?? Get.width),
       child: Row(
         children: [
-          CircleAvatar(
-            radius: (widget.tileHeight ?? 80) * .7 / 2,
-            backgroundColor: Colors.transparent,
-            backgroundImage:
-                (widget.user.picURL != null) ? CachedNetworkImageProvider(widget.user.picURL!) : const AssetImage('assets/proPic.png') as ImageProvider,
+          KProfilePic(
+            user: widget.user,
+            radius: (widget.tileHeight ?? 80) * .85,
           ),
           const SizedBox(width: 10),
           Expanded(

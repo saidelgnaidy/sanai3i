@@ -19,37 +19,64 @@ class BookmarksBloc extends Cubit<BookmarksState> {
   GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
 
   addToBookmark(KUser user) async {
-    if (bookmarks.contains(user) && (listKey.currentState?.mounted ?? false)) {
-      listKey.currentState!.removeItem(bookmarks.indexOf(user), (context, animation) => KUserTileWidget(user: user, animation: animation));
-    }
     try {
+      _animateRemoving(user);
       emit(const BookmarksState.loading());
-      bookmarks = BookmarksService.addToCache(user);
-      getBookmark();
+      bookmarks = BookmarksService.toogleOnCache(bookedUsers: bookmarks, newUser: user);
       emit(BookmarksState.success(bookmarks: bookmarks));
-      debugPrint('**************************** bookmarks : ${bookmarks.length} ');
       await BookmarksService.toogleOnServer(user.uid!);
     } on KExceptionOffline {
-      debugPrint('**************************** BookmarksBloc Error : No Connection');
+      debugPrint('**************************** (Bloc) Bookmarks Error : No Connection');
       emit(BookmarksState.error(error: Tr.get.no_connection));
     } catch (e) {
-      debugPrint('**************************** BookmarksBloc Error : $e');
+      debugPrint('**************************** (Bloc) Bookmarks Error : $e');
       emit(BookmarksState.error(error: Tr.get.something_went_wrong));
     }
   }
 
-  getBookmark() async {
+  _animateRemoving(KUser user) {
+    if (bookmarks.contains(user) && (listKey.currentState?.mounted ?? false)) {
+      listKey.currentState!.removeItem(
+        bookmarks.indexOf(user),
+        (context, animation) => KUserTileWidget(
+          user: user,
+          tileHeight: 100,
+          inBookmarks: true,
+          animation: animation,
+        ),
+      );
+    }
+  }
+
+  emitEmpty() {
+    emit(const BookmarksState.empty());
+  }
+
+  getFromCache() async {
     try {
       emit(const BookmarksState.loading());
-      bookmarks = await BookmarksService.getBookmarks();
-      debugPrint('**************************** Loaded Bookmarks : ${bookmarks.length} ');
-
+      bookmarks = BookmarksService.getFromCache();
       emit(BookmarksState.success(bookmarks: bookmarks));
+      debugPrint('**************************** (Bloc) Loaded Bookmarks FromCache : ${bookmarks.length} ');
     } on KExceptionOffline {
-      debugPrint('**************************** Bookmarks Bloc Error : ${Tr.get.no_connection} ');
+      debugPrint('**************************** (Bloc) Bookmarks  Error FromCache : ${Tr.get.no_connection} ');
       emit(BookmarksState.error(error: Tr.get.no_connection));
     } catch (e) {
-      debugPrint('**************************** Bookmarks Bloc Error : $e ');
+      debugPrint('**************************** (Bloc) Bookmarks  Error FromCache: $e ');
+      emit(BookmarksState.error(error: Tr.get.something_went_wrong));
+    }
+  }
+
+  getFromServer() async {
+    try {
+      bookmarks = await BookmarksService.getFromServer();
+      emit(BookmarksState.success(bookmarks: bookmarks));
+      debugPrint('**************************** (Bloc) Loaded Bookmarks FromServer: ${bookmarks.length} ');
+    } on KExceptionOffline {
+      debugPrint('**************************** (Bloc) Bookmarks  Error FromServer: ${Tr.get.no_connection} ');
+      emit(BookmarksState.error(error: Tr.get.no_connection));
+    } catch (e) {
+      debugPrint('**************************** (Bloc) Bookmarks  Error FromServer: $e ');
       emit(BookmarksState.error(error: Tr.get.something_went_wrong));
     }
   }
