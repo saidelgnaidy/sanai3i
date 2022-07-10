@@ -15,11 +15,6 @@ class KNavigatorBloc extends Cubit<KNavigatorState> {
     return BlocProvider.of<KNavigatorBloc>(context);
   }
 
-  IconData get fabIcon {
-    if (pageCtrl.page?.toInt() == 1) return KHelper.add;
-    return KHelper.search;
-  }
-
   PageController pageCtrl = PageController();
 
   ///  0  , 1 , 2 , 3

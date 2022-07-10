@@ -47,6 +47,10 @@ class KColors {
     return Theme.of(context!).brightness == Brightness.light ? elevatedBoxL : elevatedBoxD;
   }
 
+  Color get msgBubble {
+    return Colors.blueAccent;
+  }
+
   Color get reBackground {
     return Theme.of(context!).brightness == Brightness.light ? backgroundD : backgrounL;
   }

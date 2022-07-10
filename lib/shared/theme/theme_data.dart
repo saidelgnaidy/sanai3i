@@ -27,7 +27,7 @@ class KThemeData {
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowL,
-      inputDecorationTheme: inputDecorationTheme(color: KColors.backgroundD),
+      inputDecorationTheme: inputDecorationTheme(color: KColors.backgroundD.withOpacity(.5)),
       iconTheme: const IconThemeData(color: KColors.activeIconsD),
       elevatedButtonTheme: elevatedBtnTheme(shadow: KColors.shadowL, background: KColors.elevatedBoxL),
     );
@@ -45,7 +45,7 @@ class KThemeData {
       ),
       textTheme: _textTheme,
       shadowColor: KColors.shadowD,
-      inputDecorationTheme: inputDecorationTheme(color: KColors.backgrounL),
+      inputDecorationTheme: inputDecorationTheme(color: KColors.backgrounL.withOpacity(.5)),
       iconTheme: const IconThemeData(color: KColors.activeIconsL),
       elevatedButtonTheme: elevatedBtnTheme(shadow: KColors.shadowD, background: KColors.elevatedBoxD),
     );

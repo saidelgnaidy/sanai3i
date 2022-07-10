@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
 import 'package:sanai3i/shared/theme/colors.dart';
 import 'package:sanai3i/view/bookmarks/bookmarks_view.dart';
+import 'package:sanai3i/view/chats/chats_list.dart';
 import 'package:sanai3i/view/home/home_view.dart';
 import 'package:sanai3i/view/profile/profile.dart';
 import 'package:sanai3i/view/widgets/appbar.dart';
@@ -30,7 +31,7 @@ class _MainNavigationState extends State<MainNavigation> {
             children: const [
               HomeView(),
               BookmarksView(),
-              SizedBox(),
+              ChatsList(),
               Profile(),
             ],
           ),

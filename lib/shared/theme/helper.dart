@@ -61,8 +61,6 @@ class KHelper {
   static const IconData add = Icons.add;
   static const IconData search = Icons.search;
 
-
-
   static const double btnRadius = 12.0;
   static const double cornerRadius = 8.0;
   static const double hPading = 12.0;
@@ -74,6 +72,22 @@ class KHelper {
     return BoxDecoration(
       color: KColors.of(context!).elevatedBox,
       borderRadius: BorderRadius.circular(cornerRadius),
+      boxShadow: [
+        BoxShadow(color: KColors.of(context!).shadow, blurRadius: 4, offset: const Offset(0, 4)),
+      ],
+    );
+  }
+
+  BoxDecoration messageBubble(bool isSender) {
+    return BoxDecoration(
+      color: KColors.of(context!).elevatedBox,
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(isSender ? btnRadius : 0),
+        bottomRight: Radius.circular(isSender ? 0 : btnRadius),
+        topLeft: const Radius.circular(btnRadius),
+        topRight: const Radius.circular(btnRadius),
+      ),
+      border: Border.all(color: KColors.of(context!).border, width: .5),
       boxShadow: [
         BoxShadow(color: KColors.of(context!).shadow, blurRadius: 4, offset: const Offset(0, 4)),
       ],
