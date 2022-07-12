@@ -11,14 +11,17 @@ class KAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text('صنايعي'),
-      centerTitle: true,
-      titleTextStyle: KTextStyle.of(context).appBar,
-      leading: ThemeToggleBtn(),
-      actions: const [
-        LangSwitch(),
-      ],
+    return Hero(
+      tag: 'appBar',
+      child: AppBar(
+        title: const Text('صنايعي'),
+        centerTitle: true,
+        titleTextStyle: KTextStyle.of(context).appBar,
+        leading: ThemeToggleBtn(),
+        actions: const [
+          LangSwitch(),
+        ],
+      ),
     );
   }
 }

@@ -340,7 +340,7 @@ abstract class _ServicesGetterStateSuccess implements ServicesGetterState {
           {required final List<ServiceModel> services}) =
       _$_ServicesGetterStateSuccess;
 
-  List<ServiceModel> get services => throw _privateConstructorUsedError;
+  List<ServiceModel> get services;
   @JsonKey(ignore: true)
   _$$_ServicesGetterStateSuccessCopyWith<_$_ServicesGetterStateSuccess>
       get copyWith => throw _privateConstructorUsedError;
@@ -484,7 +484,7 @@ abstract class _ServicesGetterStateError implements ServicesGetterState {
   const factory _ServicesGetterStateError({required final String error}) =
       _$_ServicesGetterStateError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$_ServicesGetterStateErrorCopyWith<_$_ServicesGetterStateError>
       get copyWith => throw _privateConstructorUsedError;

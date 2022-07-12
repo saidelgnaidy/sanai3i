@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
@@ -15,11 +16,11 @@ class BookmarksService {
       try {
         FBCR.fbi.runTransaction(
           (transaction) async {
-            final doc = await transaction.get(FBCR.me);
+            final doc = await transaction.get(FBCR.me(FirebaseAuth.instance.currentUser!.uid));
             KUser user = KUser.fromDoc(doc);
             final List newBookc = user.bookmark ?? [];
             newBookc.contains(uid) ? newBookc.remove(uid) : newBookc.add(uid);
-            transaction.update(FBCR.me, {'bookmark': newBookc});
+            transaction.update(FBCR.me(FirebaseAuth.instance.currentUser!.uid), {'bookmark': newBookc});
           },
         );
         debugPrint('**************************** Toggle bookmark on server success ');
@@ -33,23 +34,21 @@ class BookmarksService {
 
   static List<KUser> toogleOnCache({required KUser newUser, required List<KUser> bookedUsers}) {
     List bookedUsersToCache = [];
-    List<KUser> _bookedUsers = bookedUsers;
-
     if (bookedUsers.where((element) => element.uid == newUser.uid).isNotEmpty) {
-      _bookedUsers = bookedUsers
+      bookedUsers = bookedUsers
         ..removeWhere((element) {
           return element.uid == newUser.uid;
         });
     } else {
-      _bookedUsers.insert(0, newUser);
+      bookedUsers.insert(0, newUser);
     }
 
-    for (var user in _bookedUsers) {
+    for (var user in bookedUsers) {
       bookedUsersToCache.add(user.toCache());
     }
 
     GetStorage().write(StorageKeys.bookmark, bookedUsersToCache);
-    return _bookedUsers;
+    return bookedUsers;
   }
 
   static List<KUser> getFromCache() {
@@ -73,7 +72,7 @@ class BookmarksService {
 
       await FBCR.fbi.runTransaction(
         (transaction) async {
-          final me = await transaction.get(FBCR.me);
+          final me = await transaction.get(FBCR.me(FirebaseAuth.instance.currentUser!.uid));
           final KUser user = KUser.fromDoc(me);
           debugPrint('**************************** Bookmarks on server: ${user.bookmark!.length} ');
 

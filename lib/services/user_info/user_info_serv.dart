@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
@@ -18,7 +19,7 @@ class UserInfoService {
     bool connected = await ConnectivityCheck.call();
     if (connected) {
       try {
-        final doc = await FBCR.me.get();
+        final doc = await FBCR.me(FirebaseAuth.instance.currentUser!.uid).get();
         if (doc.exists) {
           final user = KUser.fromDoc(doc);
           GetStorage().write(StorageKeys.user, user.toCache());

@@ -437,7 +437,7 @@ abstract class UserInfoStateError implements UserInfoState {
   const factory UserInfoStateError({required final String error}) =
       _$UserInfoStateError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$UserInfoStateErrorCopyWith<_$UserInfoStateError> get copyWith =>
       throw _privateConstructorUsedError;

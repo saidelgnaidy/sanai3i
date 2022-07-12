@@ -623,7 +623,7 @@ abstract class CompleteRegisterStateUpdated implements CompleteRegisterState {
   const factory CompleteRegisterStateUpdated(
       {required final RegisterModel model}) = _$CompleteRegisterStateUpdated;
 
-  RegisterModel get model => throw _privateConstructorUsedError;
+  RegisterModel get model;
   @JsonKey(ignore: true)
   _$$CompleteRegisterStateUpdatedCopyWith<_$CompleteRegisterStateUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -780,7 +780,7 @@ abstract class CompleteRegisterStateError implements CompleteRegisterState {
   const factory CompleteRegisterStateError({required final String error}) =
       _$CompleteRegisterStateError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$CompleteRegisterStateErrorCopyWith<_$CompleteRegisterStateError>
       get copyWith => throw _privateConstructorUsedError;

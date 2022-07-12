@@ -20,6 +20,7 @@ class KColors {
   static const Color inactiveIconsL = Color(0xFF5a585e);
   static const Color activeIconsL = Color(0xFFD8D8D8);
   static const Color bANDwL = Color(0xFF000000);
+  static const Color msgBubbleL = Color(0xFFFDF9FF);
 
   //Dark
   static const Color backgroundD = Color(0xFF191720);
@@ -33,6 +34,7 @@ class KColors {
   static const Color inactiveIconsD = Color(0xFFBDBDBD);
   static const Color activeIconsD = Color(0xFF585858);
   static const Color bANDwD = Color(0xFFffffff);
+  static const Color msgBubbleD = Color(0xFF1D1C25);
 
   //Getters
   Color get appbar {
@@ -48,7 +50,7 @@ class KColors {
   }
 
   Color get msgBubble {
-    return Colors.blueAccent;
+    return Theme.of(context!).brightness == Brightness.light ? msgBubbleL : msgBubbleD;
   }
 
   Color get reBackground {

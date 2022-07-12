@@ -331,7 +331,7 @@ abstract class LocationPickerStateMark implements LocationPickerState {
   const factory LocationPickerStateMark({required final Marker marker}) =
       _$LocationPickerStateMark;
 
-  Marker get marker => throw _privateConstructorUsedError;
+  Marker get marker;
   @JsonKey(ignore: true)
   _$$LocationPickerStateMarkCopyWith<_$LocationPickerStateMark> get copyWith =>
       throw _privateConstructorUsedError;
@@ -475,7 +475,7 @@ abstract class LocationPickerStateError implements LocationPickerState {
   const factory LocationPickerStateError({required final String error}) =
       _$LocationPickerStateError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$LocationPickerStateErrorCopyWith<_$LocationPickerStateError>
       get copyWith => throw _privateConstructorUsedError;

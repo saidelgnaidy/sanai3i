@@ -1,25 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
-import 'package:sanai3i/logic/connection_ckecker.dart';
 import 'package:sanai3i/models/service_model/service_model.dart';
-import 'package:sanai3i/shared/error/exceptions.dart';
 
 class ServicesGetterService {
   static Future<List<ServiceModel>> call() async {
     List<ServiceModel> list = [];
-    bool connected = await ConnectivityCheck.call();
-    if (connected) {
-      try {
-        final QuerySnapshot<Object?> query = await FBCR.services.get();
-        for (var doc in query.docs) {
-          list.add(ServiceModel.fromMap(doc.data() as Map<String, dynamic>).copyWith(id: doc.id));
-        }
-        return list;
-      } catch (e) {
-        rethrow;
+
+    try {
+      final QuerySnapshot<Object?> query = await FBCR.services.get();
+      for (var doc in query.docs) {
+        list.add(ServiceModel.fromMap(doc.data() as Map<String, dynamic>).copyWith(id: doc.id));
       }
-    } else {
-      throw const KException.offline();
+      return list;
+    } catch (e) {
+      rethrow;
     }
   }
 }

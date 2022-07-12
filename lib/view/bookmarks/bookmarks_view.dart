@@ -25,7 +25,7 @@ class BookmarksView extends StatelessWidget {
       },
       builder: (context, bookmarks) {
         return bookmarks.map(
-          empty: (value) => KErrorWidget(error: Tr.get.empty_bookmark, onTryAgain: BookmarksBloc.of(context).getFromServer),
+          empty: (value) => KErrorWidget(error: Tr.get.empty_bookmark, isError: false),
           loading: (load) => const KLoadingWidget(),
           error: (error) => KErrorWidget(error: error.error, onTryAgain: BookmarksBloc.of(context).getFromServer),
           success: (state) {

@@ -729,7 +729,7 @@ abstract class _AuthStatePhoneError implements AuthState {
   const factory _AuthStatePhoneError(final String error) =
       _$_AuthStatePhoneError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$_AuthStatePhoneErrorCopyWith<_$_AuthStatePhoneError> get copyWith =>
       throw _privateConstructorUsedError;

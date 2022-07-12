@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
 import 'package:sanai3i/logic/connection_ckecker.dart';
 import 'package:sanai3i/models/auth/register_model.dart';
@@ -10,7 +11,7 @@ class CompleteRegisterService {
     bool connected = await ConnectivityCheck.call();
     if (connected) {
       try {
-        await FBCR.me.set(model.toMap());
+        await FBCR.me(FirebaseAuth.instance.currentUser!.uid).set(model.toMap());
       } catch (e) {
         rethrow;
       }

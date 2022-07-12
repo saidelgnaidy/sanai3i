@@ -350,7 +350,7 @@ abstract class BookmarksStateSuccess implements BookmarksState {
   const factory BookmarksStateSuccess({required final List<KUser> bookmarks}) =
       _$BookmarksStateSuccess;
 
-  List<KUser> get bookmarks => throw _privateConstructorUsedError;
+  List<KUser> get bookmarks;
   @JsonKey(ignore: true)
   _$$BookmarksStateSuccessCopyWith<_$BookmarksStateSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -615,7 +615,7 @@ abstract class BookmarksStateError implements BookmarksState {
   const factory BookmarksStateError({required final String error}) =
       _$BookmarksStateError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$BookmarksStateErrorCopyWith<_$BookmarksStateError> get copyWith =>
       throw _privateConstructorUsedError;

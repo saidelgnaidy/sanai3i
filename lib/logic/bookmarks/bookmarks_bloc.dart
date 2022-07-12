@@ -5,6 +5,7 @@ import 'package:sanai3i/models/user/user_model.dart';
 import 'package:sanai3i/services/bookmarks/bookmark_service.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
 import 'package:sanai3i/shared/localization/trans.dart';
+import 'package:sanai3i/shared/theme/helper.dart';
 import 'package:sanai3i/view/widgets/user_tile.dart';
 
 class BookmarksBloc extends Cubit<BookmarksState> {
@@ -23,11 +24,14 @@ class BookmarksBloc extends Cubit<BookmarksState> {
       _animateRemoving(user);
       emit(const BookmarksState.loading());
       bookmarks = BookmarksService.toogleOnCache(bookedUsers: bookmarks, newUser: user);
-      emit(BookmarksState.success(bookmarks: bookmarks));
+      bookmarks.isEmpty ? emitEmpty() : emit(BookmarksState.success(bookmarks: bookmarks));
       await BookmarksService.toogleOnServer(user.uid!);
     } on KExceptionOffline {
+      KHelper.showSnackBar(Tr.get.no_connection, isTop: true);
+      bookmarks = BookmarksService.toogleOnCache(bookedUsers: bookmarks, newUser: user);
+      emit(BookmarksState.success(bookmarks: bookmarks));
       debugPrint('**************************** (Bloc) Bookmarks Error : No Connection');
-      emit(BookmarksState.error(error: Tr.get.no_connection));
+      emit(BookmarksState.success(bookmarks: bookmarks));
     } catch (e) {
       debugPrint('**************************** (Bloc) Bookmarks Error : $e');
       emit(BookmarksState.error(error: Tr.get.something_went_wrong));
@@ -56,7 +60,10 @@ class BookmarksBloc extends Cubit<BookmarksState> {
     try {
       emit(const BookmarksState.loading());
       bookmarks = BookmarksService.getFromCache();
-      emit(BookmarksState.success(bookmarks: bookmarks));
+      if (bookmarks.isEmpty) {
+        await getFromServer();
+      }
+      bookmarks.isEmpty ? emitEmpty() : emit(BookmarksState.success(bookmarks: bookmarks));
       debugPrint('**************************** (Bloc) Loaded Bookmarks FromCache : ${bookmarks.length} ');
     } on KExceptionOffline {
       debugPrint('**************************** (Bloc) Bookmarks  Error FromCache : ${Tr.get.no_connection} ');
@@ -70,7 +77,7 @@ class BookmarksBloc extends Cubit<BookmarksState> {
   getFromServer() async {
     try {
       bookmarks = await BookmarksService.getFromServer();
-      emit(BookmarksState.success(bookmarks: bookmarks));
+      bookmarks.isEmpty ? emitEmpty() : emit(BookmarksState.success(bookmarks: bookmarks));
       debugPrint('**************************** (Bloc) Loaded Bookmarks FromServer: ${bookmarks.length} ');
     } on KExceptionOffline {
       debugPrint('**************************** (Bloc) Bookmarks  Error FromServer: ${Tr.get.no_connection} ');

@@ -78,15 +78,16 @@ class KHelper {
     );
   }
 
-  BoxDecoration messageBubble(bool isSender) {
+  BoxDecoration messageBubble({required bool isSender}) {
     return BoxDecoration(
-      color: KColors.of(context!).elevatedBox,
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(isSender ? btnRadius : 0),
-        bottomRight: Radius.circular(isSender ? 0 : btnRadius),
-        topLeft: const Radius.circular(btnRadius),
-        topRight: const Radius.circular(btnRadius),
-      ),
+      color: KColors.of(context!).msgBubble.withOpacity(isSender ? 1 : .5),
+      borderRadius: isSender
+          ? BorderRadius.circular(btnRadius).copyWith(
+              bottomRight: const Radius.circular(0),
+            )
+          : BorderRadius.circular(btnRadius).copyWith(
+              topLeft: const Radius.circular(0),
+            ),
       border: Border.all(color: KColors.of(context!).border, width: .5),
       boxShadow: [
         BoxShadow(color: KColors.of(context!).shadow, blurRadius: 4, offset: const Offset(0, 4)),

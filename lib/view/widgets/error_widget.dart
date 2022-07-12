@@ -5,9 +5,10 @@ import 'package:sanai3i/shared/theme/text_theme.dart';
 class KErrorWidget extends StatelessWidget {
   final void Function()? onTryAgain;
   final String? error;
+  final bool? isError;
   final Widget? widget;
 
-  const KErrorWidget({Key? key, this.onTryAgain, this.error, this.widget}) : super(key: key);
+  const KErrorWidget({Key? key, this.onTryAgain, this.error, this.widget, this.isError = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class KErrorWidget extends StatelessWidget {
             if (widget != null) widget!,
             Text(
               error ?? Tr.get.try_later,
-              style: KTextStyle.of(context).error,
+              style: isError!?  KTextStyle.of(context).error : KTextStyle.of(context).body,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 25),

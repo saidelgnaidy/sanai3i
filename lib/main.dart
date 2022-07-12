@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/auth/auth_bloc.dart';
 import 'package:sanai3i/logic/bookmarks/bookmarks_bloc.dart';
+import 'package:sanai3i/logic/chat/chats_bloc.dart';
 import 'package:sanai3i/logic/complete_register/complete_regster.dart';
 import 'package:sanai3i/logic/maps_ctrl/pick_location_bloc.dart';
 import 'package:sanai3i/logic/navigator_handler/k_navigator_blok.dart';
@@ -32,7 +33,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
   //await GetStorage().erase();
-  // await FirebaseAuth.instance.signOut();
+  //await FirebaseAuth.instance.signOut();
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
   debugPrint('**************************** My UID is  : ${FirebaseAuth.instance.currentUser?.uid} ');
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<UserInfoBloc>(create: (context) => UserInfoBloc()..getUser()),
         BlocProvider<ServiceProvidersBloc>(create: (context) => ServiceProvidersBloc()),
         BlocProvider<BookmarksBloc>(create: (context) => BookmarksBloc()..getFromCache()),
+        BlocProvider<ChatBloc>(create: (context) => ChatBloc()),
       ],
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) {
@@ -94,9 +96,10 @@ class Wrapper extends StatelessWidget {
       child: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) {
+          if (!snapshot.hasData || snapshot.data == null) {
             return const LandingView();
           }
+
           return BlocBuilder<UserExistenceBloc, UserExistenceState>(
             builder: (context, state) {
               return state.when(

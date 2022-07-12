@@ -13,7 +13,7 @@ updateAllUsers() async {
 
   debugPrint('**************************** Found ${users.length} user ');
 
-  WriteBatch batch = FBCR.batch;
+  WriteBatch batch = FirebaseFirestore.instance.batch();
 
   for (var element in users) {
     final docRef = FBCR.users.doc(element.uid);

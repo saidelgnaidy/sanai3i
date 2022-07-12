@@ -8,6 +8,7 @@ import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/helper.dart';
 
 import 'package:sanai3i/shared/theme/text_theme.dart';
+import 'package:sanai3i/view/chats/chat_view.dart';
 import 'package:sanai3i/view/profile/profile_pic.dart';
 import 'package:sanai3i/view/widgets/shared_components.dart';
 
@@ -36,7 +37,7 @@ class _KUserTileWidgetState extends State<KUserTileWidget> with TickerProviderSt
       const SizedBox(width: 10),
       KIconButton(
         onPressed: () {
-          debugPrint('**********************  TODO  Go To Chat ${widget.user.phone!}');
+          Get.to(() => ChatView(user: widget.user));
         },
         child: const Icon(KHelper.chat, size: 18),
       ),

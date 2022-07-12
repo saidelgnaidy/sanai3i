@@ -7,7 +7,7 @@ part 'service_provider_states.freezed.dart';
 @freezed
 abstract class ServiceProvidersState with _$ServiceProvidersState {
   const factory ServiceProvidersState.loading() = ServiceProvidersStateLoading;
-  const factory ServiceProvidersState.success({required List<Marker> allMarkers, required double rad, required double sliderPos}) = ServiceProvidersStateSuccess;
+  const factory ServiceProvidersState.success({required List<Marker> allMarkers, required double rad}) = ServiceProvidersStateSuccess;
   const factory ServiceProvidersState.error({required String error}) = ServiceProvidersStateError;
   const factory ServiceProvidersState.markertabed({required KUser user , Timestamp? stamp}) = ServiceProvidersStateMarkertabed;
   const factory ServiceProvidersState.locationError({required String error}) = ServiceProvidersStateLocationError;

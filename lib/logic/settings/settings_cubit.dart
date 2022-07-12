@@ -26,7 +26,19 @@ class SettingsBloc extends Cubit<SettingsState> {
   }
 
   void updateThemeMode() {
-    _themeMode == ThemeMode.dark ? _themeMode = ThemeMode.light : _themeMode = ThemeMode.dark;
+    switch (_themeMode) {
+      case ThemeMode.dark:
+        _themeMode = ThemeMode.light;
+        break;
+      case ThemeMode.light:
+        _themeMode = ThemeMode.dark;
+        break;
+      case ThemeMode.system:
+        _themeMode = Get.theme.brightness == Brightness.dark ? ThemeMode.light : ThemeMode.light;
+        break;
+      default:
+        _themeMode = ThemeMode.system;
+    }
     emit(SettingsState());
     storage.write('themeMode', _themeMode.toString());
   }
@@ -47,7 +59,7 @@ class SettingsBloc extends Cubit<SettingsState> {
 
   Locale _readLocale() {
     if (storage.read('locale') == null) {
-      return const Locale('en');
+      return const Locale('ar');
     } else {
       return Locale(storage.read('locale'));
     }

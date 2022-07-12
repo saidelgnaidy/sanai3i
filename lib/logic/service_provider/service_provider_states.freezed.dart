@@ -19,9 +19,7 @@ mixin _$ServiceProvidersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
@@ -31,8 +29,7 @@ mixin _$ServiceProvidersState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -42,8 +39,7 @@ mixin _$ServiceProvidersState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -150,9 +146,7 @@ class _$ServiceProvidersStateLoading implements ServiceProvidersStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
@@ -165,8 +159,7 @@ class _$ServiceProvidersStateLoading implements ServiceProvidersStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -179,8 +172,7 @@ class _$ServiceProvidersStateLoading implements ServiceProvidersStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -250,7 +242,7 @@ abstract class _$$ServiceProvidersStateSuccessCopyWith<$Res> {
           _$ServiceProvidersStateSuccess value,
           $Res Function(_$ServiceProvidersStateSuccess) then) =
       __$$ServiceProvidersStateSuccessCopyWithImpl<$Res>;
-  $Res call({List<Marker> allMarkers, double rad, double sliderPos});
+  $Res call({List<Marker> allMarkers, double rad});
 }
 
 /// @nodoc
@@ -270,7 +262,6 @@ class __$$ServiceProvidersStateSuccessCopyWithImpl<$Res>
   $Res call({
     Object? allMarkers = freezed,
     Object? rad = freezed,
-    Object? sliderPos = freezed,
   }) {
     return _then(_$ServiceProvidersStateSuccess(
       allMarkers: allMarkers == freezed
@@ -281,10 +272,6 @@ class __$$ServiceProvidersStateSuccessCopyWithImpl<$Res>
           ? _value.rad
           : rad // ignore: cast_nullable_to_non_nullable
               as double,
-      sliderPos: sliderPos == freezed
-          ? _value.sliderPos
-          : sliderPos // ignore: cast_nullable_to_non_nullable
-              as double,
     ));
   }
 }
@@ -293,9 +280,7 @@ class __$$ServiceProvidersStateSuccessCopyWithImpl<$Res>
 
 class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
   const _$ServiceProvidersStateSuccess(
-      {required final List<Marker> allMarkers,
-      required this.rad,
-      required this.sliderPos})
+      {required final List<Marker> allMarkers, required this.rad})
       : _allMarkers = allMarkers;
 
   final List<Marker> _allMarkers;
@@ -307,12 +292,10 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
 
   @override
   final double rad;
-  @override
-  final double sliderPos;
 
   @override
   String toString() {
-    return 'ServiceProvidersState.success(allMarkers: $allMarkers, rad: $rad, sliderPos: $sliderPos)';
+    return 'ServiceProvidersState.success(allMarkers: $allMarkers, rad: $rad)';
   }
 
   @override
@@ -322,16 +305,14 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
             other is _$ServiceProvidersStateSuccess &&
             const DeepCollectionEquality()
                 .equals(other._allMarkers, _allMarkers) &&
-            const DeepCollectionEquality().equals(other.rad, rad) &&
-            const DeepCollectionEquality().equals(other.sliderPos, sliderPos));
+            const DeepCollectionEquality().equals(other.rad, rad));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_allMarkers),
-      const DeepCollectionEquality().hash(rad),
-      const DeepCollectionEquality().hash(sliderPos));
+      const DeepCollectionEquality().hash(rad));
 
   @JsonKey(ignore: true)
   @override
@@ -343,37 +324,33 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
     required TResult Function() offlineError,
   }) {
-    return success(allMarkers, rad, sliderPos);
+    return success(allMarkers, rad);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
     TResult Function()? offlineError,
   }) {
-    return success?.call(allMarkers, rad, sliderPos);
+    return success?.call(allMarkers, rad);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -381,7 +358,7 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(allMarkers, rad, sliderPos);
+      return success(allMarkers, rad);
     }
     return orElse();
   }
@@ -436,12 +413,10 @@ class _$ServiceProvidersStateSuccess implements ServiceProvidersStateSuccess {
 abstract class ServiceProvidersStateSuccess implements ServiceProvidersState {
   const factory ServiceProvidersStateSuccess(
       {required final List<Marker> allMarkers,
-      required final double rad,
-      required final double sliderPos}) = _$ServiceProvidersStateSuccess;
+      required final double rad}) = _$ServiceProvidersStateSuccess;
 
-  List<Marker> get allMarkers => throw _privateConstructorUsedError;
-  double get rad => throw _privateConstructorUsedError;
-  double get sliderPos => throw _privateConstructorUsedError;
+  List<Marker> get allMarkers;
+  double get rad;
   @JsonKey(ignore: true)
   _$$ServiceProvidersStateSuccessCopyWith<_$ServiceProvidersStateSuccess>
       get copyWith => throw _privateConstructorUsedError;
@@ -517,9 +492,7 @@ class _$ServiceProvidersStateError implements ServiceProvidersStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
@@ -532,8 +505,7 @@ class _$ServiceProvidersStateError implements ServiceProvidersStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -546,8 +518,7 @@ class _$ServiceProvidersStateError implements ServiceProvidersStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -611,7 +582,7 @@ abstract class ServiceProvidersStateError implements ServiceProvidersState {
   const factory ServiceProvidersStateError({required final String error}) =
       _$ServiceProvidersStateError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$ServiceProvidersStateErrorCopyWith<_$ServiceProvidersStateError>
       get copyWith => throw _privateConstructorUsedError;
@@ -699,9 +670,7 @@ class _$ServiceProvidersStateMarkertabed
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
@@ -714,8 +683,7 @@ class _$ServiceProvidersStateMarkertabed
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -728,8 +696,7 @@ class _$ServiceProvidersStateMarkertabed
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -795,8 +762,8 @@ abstract class ServiceProvidersStateMarkertabed
       {required final KUser user,
       final Timestamp? stamp}) = _$ServiceProvidersStateMarkertabed;
 
-  KUser get user => throw _privateConstructorUsedError;
-  Timestamp? get stamp => throw _privateConstructorUsedError;
+  KUser get user;
+  Timestamp? get stamp;
   @JsonKey(ignore: true)
   _$$ServiceProvidersStateMarkertabedCopyWith<
           _$ServiceProvidersStateMarkertabed>
@@ -875,9 +842,7 @@ class _$ServiceProvidersStateLocationError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
@@ -890,8 +855,7 @@ class _$ServiceProvidersStateLocationError
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -904,8 +868,7 @@ class _$ServiceProvidersStateLocationError
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -970,7 +933,7 @@ abstract class ServiceProvidersStateLocationError
   const factory ServiceProvidersStateLocationError(
       {required final String error}) = _$ServiceProvidersStateLocationError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$ServiceProvidersStateLocationErrorCopyWith<
           _$ServiceProvidersStateLocationError>
@@ -1024,9 +987,7 @@ class _$ServiceProvidersStateOfflineError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(
-            List<Marker> allMarkers, double rad, double sliderPos)
-        success,
+    required TResult Function(List<Marker> allMarkers, double rad) success,
     required TResult Function(String error) error,
     required TResult Function(KUser user, Timestamp? stamp) markertabed,
     required TResult Function(String error) locationError,
@@ -1039,8 +1000,7 @@ class _$ServiceProvidersStateOfflineError
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,
@@ -1053,8 +1013,7 @@ class _$ServiceProvidersStateOfflineError
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Marker> allMarkers, double rad, double sliderPos)?
-        success,
+    TResult Function(List<Marker> allMarkers, double rad)? success,
     TResult Function(String error)? error,
     TResult Function(KUser user, Timestamp? stamp)? markertabed,
     TResult Function(String error)? locationError,

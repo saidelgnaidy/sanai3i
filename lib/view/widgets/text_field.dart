@@ -43,8 +43,8 @@ class KTextFormField extends StatelessWidget {
           hintStyle: KTextStyle.of(context).hint,
           errorStyle: KTextStyle.of(context).error,
           errorText: errorText,
-          suffixIcon: SizedBox(width: 65, child: suffixIcon),
-          prefixIcon: SizedBox(width: 75, child: prefixIcon),
+          suffixIcon: suffixIcon == null ? null : SizedBox(width: 65, child: suffixIcon),
+          prefixIcon: prefixIcon == null ? null : SizedBox(width: 75, child: prefixIcon),
         ),
       ),
     );
