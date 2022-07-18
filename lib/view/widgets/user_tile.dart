@@ -46,7 +46,7 @@ class _KUserTileWidgetState extends State<KUserTileWidget> with TickerProviderSt
         builder: (context, state) {
           return KIconButton(
             onPressed: () {
-              BookmarksBloc.of(context).addToBookmark(widget.user);
+              BookmarksBloc.of(context).toggleBookmark(widget.user);
             },
             child: Icon(KHelper.favorite, size: 18, color: BookmarksBloc.of(context).isBooked(widget.user.uid ?? '') ? Colors.red : null),
           );

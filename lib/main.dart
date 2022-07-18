@@ -32,8 +32,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
-  //await GetStorage().erase();
-  //await FirebaseAuth.instance.signOut();
+  await GetStorage().erase();
+  await FirebaseAuth.instance.signOut();
   NotificationCtrl.firebaseMSG();
   NotificationCtrl.initNotification();
   debugPrint('**************************** My UID is  : ${FirebaseAuth.instance.currentUser?.uid} ');
@@ -99,7 +99,6 @@ class Wrapper extends StatelessWidget {
           if (!snapshot.hasData || snapshot.data == null) {
             return const LandingView();
           }
-
           return BlocBuilder<UserExistenceBloc, UserExistenceState>(
             builder: (context, state) {
               return state.when(

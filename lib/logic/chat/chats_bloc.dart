@@ -91,7 +91,7 @@ class ChatBloc extends Cubit<ChatState> {
         });
       }
     } catch (e) {
-      print(e);
+      debugPrint('**************************** $e : ');
     }
 
     final result = await chats.doc(calcRoomId(receiverUid)).collection('messages').where('seen', isEqualTo: false).get();

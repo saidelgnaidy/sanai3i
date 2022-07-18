@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
 import 'package:sanai3i/models/service_model/service_model.dart';
+import 'package:sanai3i/models/service_model/service_type.dart';
 
 Future addServices() async {
   try {

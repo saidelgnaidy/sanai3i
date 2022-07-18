@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sanai3i/logic/user_existace/user_existace_state.dart';
-import 'package:sanai3i/services/complete_register/user_exist_ser.dart';
+import 'package:sanai3i/services/user_exist/user_exist_ser.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
 import 'package:sanai3i/shared/localization/trans.dart';
 import 'package:sanai3i/shared/theme/helper.dart';

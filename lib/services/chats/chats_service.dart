@@ -38,10 +38,10 @@ class ChatService {
 
   static String _calcRoomId(String receiverUid) {
     String roomId = '';
-    if (FirebaseAuth.instance.currentUser!.uid.substring(0, 1).codeUnitAt(0) > receiverUid.substring(0, 1).codeUnitAt(0)) {
-      roomId = '${receiverUid}_${FirebaseAuth.instance.currentUser!.uid}';
-    } else {
+    if (FirebaseAuth.instance.currentUser!.uid.codeUnits.fold<int>(0, (p, c) => p + c) > receiverUid.codeUnits.fold<int>(0, (p, c) => p + c)) {
       roomId = '${FirebaseAuth.instance.currentUser!.uid}_$receiverUid';
+    } else {
+      roomId = '${receiverUid}_${FirebaseAuth.instance.currentUser!.uid}';
     }
     return roomId;
   }

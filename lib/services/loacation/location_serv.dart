@@ -1,5 +1,5 @@
 import 'package:geolocator/geolocator.dart';
-import 'package:sanai3i/logic/connection_ckecker.dart';
+import 'package:sanai3i/services/connection_ckecker.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
 
 class KLocationService {

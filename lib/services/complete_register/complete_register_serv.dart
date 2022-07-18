@@ -1,13 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
-import 'package:sanai3i/logic/connection_ckecker.dart';
+import 'package:sanai3i/services/connection_ckecker.dart';
 import 'package:sanai3i/models/auth/register_model.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
 
 class CompleteRegisterService {
   static Future call(RegisterModel model) async {
-    //GetStorage().write(StorageKeys.user, model.toMap());
-
     bool connected = await ConnectivityCheck.call();
     if (connected) {
       try {

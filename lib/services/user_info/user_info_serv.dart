@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:sanai3i/logic/collections_referance.dart';
-import 'package:sanai3i/logic/connection_ckecker.dart';
+import 'package:sanai3i/services/connection_ckecker.dart';
 import 'package:sanai3i/models/user/user_model.dart';
 import 'package:sanai3i/shared/error/exceptions.dart';
 import 'package:sanai3i/shared/storage_key.dart';

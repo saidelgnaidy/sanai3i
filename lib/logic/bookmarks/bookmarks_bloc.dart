@@ -19,7 +19,7 @@ class BookmarksBloc extends Cubit<BookmarksState> {
   ScrollController scrollController = ScrollController();
   GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
 
-  addToBookmark(KUser user) async {
+  toggleBookmark(KUser user) async {
     try {
       _animateRemoving(user);
       emit(const BookmarksState.loading());
@@ -31,7 +31,6 @@ class BookmarksBloc extends Cubit<BookmarksState> {
       bookmarks = BookmarksService.toogleOnCache(bookedUsers: bookmarks, newUser: user);
       emit(BookmarksState.success(bookmarks: bookmarks));
       debugPrint('**************************** (Bloc) Bookmarks Error : No Connection');
-      emit(BookmarksState.success(bookmarks: bookmarks));
     } catch (e) {
       debugPrint('**************************** (Bloc) Bookmarks Error : $e');
       emit(BookmarksState.error(error: Tr.get.something_went_wrong));

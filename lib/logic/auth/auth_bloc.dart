@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:sanai3i/logic/auth/auth_state_event.dart';
-import 'package:sanai3i/logic/connection_ckecker.dart';
+import 'package:sanai3i/services/connection_ckecker.dart';
 import 'package:sanai3i/main.dart';
 import 'package:sanai3i/shared/localization/trans.dart';
 
